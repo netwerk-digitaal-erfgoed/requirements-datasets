@@ -7,7 +7,7 @@ Markup Shorthands: css yes, markdown yes
 URL: https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/
 Editor: David de Boer, Netwerk Digitaal Erfgoed https://www.netwerkdigitaalerfgoed.nl, david@ddeboer.nl, https://github.com/ddeboer
 Abstract: This document describes requirements for publishing datasets. 
-    By following these rules, publishers enable users to find and use their datasets.
+    By following these requirements, publishers enable users to find and use their datasets.
 </pre>
 
 <div class="advisement">
@@ -33,7 +33,7 @@ They do so on four levels: that of the organization, the dataset, the data itsel
 - organization metadata tells [=consumers=] who is behind the data publication ([[#organization-information]])
 - dataset metadata lets consumers know how they can use the dataset ([[#dataset-information]])
 - the data contained in the dataset must itself be described in a way that it can be understood, connected and re-used ([[#data]])
-- global requirements apply to all of the above levels ([[#validation]], [[#durable]]).
+- global requirements apply to all of the above levels ([[#rdf]], [[#available]]).
 
 Audience {#audience}
 --------------------
@@ -57,13 +57,11 @@ Definitions {#definitions}
 ==========================
 
 : <dfn>Dataset</dfn>
-:: A collection of data. A dataset is identified with at least a name.
+:: A collection of data. A dataset is identified with at least a name and creator.
 
 : <dfn export>Term Source</dfn>
+:: A set of [=terms=].
 :: Issue: TODO
-
-: <dfn export>Data Manager</dfn>
-:: Issue: Is this a correct translation of ‘bronhouder’?
 
 : <dfn export>Application Programming Interface</dfn> (<dfn>API</dfn>)
 :: Issue: TODO
@@ -74,12 +72,18 @@ Definitions {#definitions}
 : <dfn>Publisher</dfn>
 :: On organization that provides one or more [=datasets=].
    
-    Issue: add examples
+    Issue: is this a good translation for ‘bronhouder’? And add examples.
 
 : <dfn>Consumer</dfn>
 :: On organization or an individual that uses one or more [=datasets=] that are provided by a [=publisher=].
 
     Issue: add examples
+    
+: <dfn>Term</dfn>
+:: Terms describe what digital heritage is about.
+    Terms are subjects, persons, places or time units, for example.
+    Take The Night Watch: it is a *painting*, created by *Rembrandt* in *Amsterdam*, in the year *1642*.
+    See also [[LD-GLOSSARY#term]].
 
 
 Requirements {#requirements#}
@@ -87,17 +91,17 @@ Requirements {#requirements#}
 
 ## Organization information ## {#organization-information}
 
-Users want to know where the [=dataset=] came from ([[DWBP#provenance|provenance]]). Providing information about the organization answers user questions
-such as:
+Users want to know where the [=dataset=] came from ([[DWBP#provenance|provenance]]).
+Providing information about the organization behind the dataset (the [=publisher=]) answers user questions such as:
 
 - Which organization has published this dataset? How reliable and credible does that make the dataset?
 - How can I contact the organization for questions or feedback?
 
-Therefore, Data Managers *MUST* publish basic information about the organization. 
-Data Managers *SHOULD* publish this information in the [[SCHEMA-ORG]] vocabulary.
+> Therefore, publishers *must* publish basic information about the organization.
+> They *should* do so in the [[SCHEMA-ORG]] vocabulary.
 
 <div class="example">
-    An organization description:
+    An organization description in [[SCHEMA-ORG]]:
 
     <pre class=include-code>
     path: examples/organization.jsonld
@@ -150,11 +154,11 @@ This information answers user questions such as:
 - How can I use the data? Are there any restrictions? Under which license is the data published?
 - Where can I get the data? In what formats?
 
-Therefore, Data managers *MUST* publish basic information about the dataset.
+> Therefore, publishers *MUST* publish basic information about the dataset.
 
 ### Basic information ### {#dataset-basic}
 
-Publishers *MUST* include basic information about the dataset.
+Publishers *MUST* include basic information about the dataset, at the very minimum its title and [=publisher=]. 
 
 <div class="example">
     Basic dataset information:
@@ -164,14 +168,40 @@ Publishers *MUST* include basic information about the dataset.
           "@context": "https://schema.org/",
           "@type": "Dataset",
           "name": "Alba amicorum van de Koninklijke Bibliotheek",
-          "description": "Alba amicorum van de Koninklijke Bibliotheek, een dataset gedefinieerd voor het Europeana Rise of Literacy project.",
+          "creator": {
+            "@type": "Organization",
+            "url": "https://www.kb.nl/",
+            "name": "Koninklijke Bibliotheek",
+            "sameAs": "https://ror.org/02w4jbg70"
+          }
+        }
+    </pre>
+</div>
+
+If more information is available, publishers *SHOULD* add it.
+
+<div class="example" line-numbers line-highlight="11-15" >
+    More information about the dataset.
+    
+    <pre highlight=json-ld>
+        {
+          "@context": "https://schema.org/",
+          "@type": "Dataset",
+          "name": "Alba amicorum van de Koninklijke Bibliotheek",
+          "creator": {
+            "@type": "Organization",
+            "url": "https://www.kb.nl/",
+            "name": "Koninklijke Bibliotheek",
+            "sameAs": "https://ror.org/02w4jbg70"
+          },
           "url": "https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum",
           "identifier": "http://data.bibliotheken.nl/id/dataset/rise-alba",
           "keywords": [
             "alba amicorum"
-          ],
+          ]
         }
     </pre>
+
 </div>
 
 ### License ### {#dataset-license}
@@ -197,7 +227,7 @@ for example one of the [Creative Commons](https://creativecommons.org/choose/) l
 Publishers *SHOULD* make known when the dataset was originally published and when it was last updated.
 
 <div class="example">
-    Specifying publication dates:
+    Specify publication dates:
     
     <pre highlight=json-ld>
         {
@@ -211,7 +241,13 @@ Publishers *SHOULD* make known when the dataset was originally published and whe
 
 ### Version information ### {#dataset-versions}
 
-Issue: TODO
+Data may change over time. 
+[=consumers=], such as researchers, may want to determine which information was valid at a certain moment.
+
+> Therefore, publishers *should* not only publish the current version of the dataset,
+> but keep historical versions accessible to users.
+
+It is up to the publisher to determine when to publish new versions.
 
 ### Full example ### {#dataset-example}
 
@@ -323,34 +359,31 @@ Required attributes:
 
 ## Data information ## {#data}
 
-### Durable identifiers ### {#identifiers}
-
-Issue: TODO
-
 ### Relations to terms ### {#relations}
 
-To understand and connect data, it must be described in [[LD-GLOSSARY#term|terms]] that provide meaning to the data for humans as well as machines.
+To understand and connect data,
+it must be described in [=terms=] that provide meaning to the data for humans as well as machines.
 
-Therefore, data publishers *SHOULD* describe their data with terms.
+> Therefore, data publishers *SHOULD* describe their data with [=terms=].
 
 <div class="example">
-    A painting without terms, where ‘Rembrandt’ is a literal string:
+    A painting in plain JSON, where all values are [[RDF11-CONCEPTS#section-literals|string literals]]:
     
-    <pre highlight="json-ld" line-numbers>
+    <pre highlight="json" line-numbers>
         {
-          "@context": "https://your-context.org/",
-          "@type": "Painting",
+          "type": "Artwork",
           "name": "The Night Watch",
           "creator": "Rembrandt"
         }
     </pre>
     
-    With terms, where we refer to the painter by his RKDArtists [[IRI]]:
+    Now, with relations to [=terms=].
+    We [[JSON-LD-SYNTAX#specifying-the-type|specify the item’s type]] in the [[SCHEMA-ORG]] vocabulary
+    and refer to the painter by his RKDArtists [[IRI]].
 
-    <pre highlight="json-ld" line-highlight="2,5" line-numbers>
+    <pre highlight="json-ld" line-highlight="2,4" line-numbers>
         {
-          "@context": "https://schema.org.org/",
-          "@type": "Painting",
+          "@type": "https://schema.org/Painting",
           "name": "The Night Watch",
           "creator": "https://data.rkd.nl/artists/66219"
         }
@@ -359,20 +392,35 @@ Therefore, data publishers *SHOULD* describe their data with terms.
 
 ## Developer documentation ## {#developer-docs}
 
-Data Managers *MUST* publish documentation for their [=API=].
+Publishers *MUST* publish documentation for their data access [=API=].
 
 Issue: TODO
 
-## Validated metadata ## {#validation}
+## Durable identifiers ## {#identifiers}
+
+[=Consumers=] want to refer to data in datasets. Preferably they do so by linking to it.
+
+> Therefore, publishers *must* maintain permanent identifiers for their [[#data|data]],
+> as well as their [[#organization-information|organization]] and [[#dataset-information|dataset]] information.
+> Publishers *should* use [[IRI|IRIs]] as identifiers.
+
+## Information in RDF ## {#rdf}
+
+For [=machine-readability|machine-readable=] access to data,
+it needs to be published in an [[RDF11-PRIMER#section-graph-syntax|RDF format]].
+RDF formats include [[JSON-LD]], [[N3]] and [[Turtle]].
+
+> Therefore, publishers *must* publish their [[#organization-information|organization information]] 
+> and [[#dataset-information|dataset information]] in RDF. 
+> Publishers *should* also publish the [[#data|data]] itself in RDF.
 
 Google’s [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/)
+can help with testing RDF metadata.
 
-Issue: TODO
+## Information remains available ## {#available}
 
-## Information is durably available ## {#durable}
+Datasets will be used by all kinds of [=consumers=] and their systems.
+For stability, users must be able to trust that the datasets will remain available
+so they can be consulted in the future.
 
-Information will be used by all kinds of users and their systems.
-To build stable systems, users must be able to trust that datasets will be durably available.
-
-Therefore, Data Managers *MUST* make information available at permanent [[IRI|IRIs]].
-
+> Therefore, publishers *must* ensure information remains available in the future.
