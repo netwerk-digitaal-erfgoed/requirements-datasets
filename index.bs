@@ -49,6 +49,8 @@ this document is based on broader, international best practices for publishing d
 Code examples {#examples}
 -------------------------
 
+Some extra text here.
+
 RDF code examples are in the [[SCHEMA-ORG]] vocabulary, serialized as [[JSON-LD]].
 
 Issue: explain why 
