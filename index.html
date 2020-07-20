@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 40de15f9, updated Thu Jun 11 17:47:04 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="a81cb9b8834cd84fe465f9fe4badd314fe77921e" name="document-revision">
+  <meta content="83c46f1c05d2352528f1ea1a912c514da249eec3" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1537,7 +1537,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2020-07-08">8 July 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2020-07-20">20 July 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1552,7 +1552,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 8 July 2020,
+In addition, as of 20 July 2020,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -1590,7 +1590,7 @@ Parts of this work may be from another specification document.  If so, those par
         <li><a href="#dataset-basic"><span class="secno">3.2.1</span> <span class="content">Basic information</span></a>
         <li><a href="#dataset-license"><span class="secno">3.2.2</span> <span class="content">License</span></a>
         <li><a href="#dataset-date"><span class="secno">3.2.3</span> <span class="content">Publication date</span></a>
-        <li><a href="#dataset-versions"><span class="secno">3.2.4</span> <span class="content">Version information</span></a>
+        <li><a href="#dataset-versions"><span class="secno">3.2.4</span> <span class="content">Version</span></a>
         <li><a href="#dataset-example"><span class="secno">3.2.5</span> <span class="content">Full example</span></a>
         <li><a href="#dataset-overview"><span class="secno">3.2.6</span> <span class="content">Overview</span></a>
        </ol>
@@ -1645,7 +1645,7 @@ They do so on four levels: that of the organization, the dataset, the data itsel
    <p>Dataset <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publishers</a></p>
    <h3 class="heading settled" data-level="1.2" id="context"><span class="secno">1.2. </span><span class="content">Context</span><a class="self-link" href="#context"></a></h3>
    <p>While focused on digital heritage institutions in The Netherlands,
-this document is based on broader, international best practices for publishing datasets, including <a data-link-type="biblio" href="#biblio-dwbp">[DWBP]</a> and <a data-link-type="biblio" href="#biblio-ld-bp">[LD-BP]</a>.</p>
+this document is based on broader, international best practices for publishing datasets, including <a data-link-type="biblio" href="#biblio-dwbp-ucr">[DWBP-UCR]</a>, <a data-link-type="biblio" href="#biblio-dwbp">[DWBP]</a> and <a data-link-type="biblio" href="#biblio-ld-bp">[LD-BP]</a>.</p>
    <h3 class="heading settled" data-level="1.3" id="examples"><span class="secno">1.3. </span><span class="content">Code examples</span><a class="self-link" href="#examples"></a></h3>
    <p>RDF code examples are in the <a data-link-type="biblio" href="#biblio-schema-org">[SCHEMA-ORG]</a> vocabulary, serialized as <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]</a>.</p>
    <p class="issue" id="issue-7f20da03"><a class="self-link" href="#issue-7f20da03"></a> explain why</p>
@@ -1668,7 +1668,8 @@ this document is based on broader, international best practices for publishing d
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="publisher">Publisher</dfn>
     <dd data-md>
      <p>On organization that provides one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset①">datasets</a>.</p>
-     <p class="issue" id="issue-752facde"><a class="self-link" href="#issue-752facde"></a> is this a good translation for ‘bronhouder’? And add examples.</p>
+     <p class="issue" id="issue-6f3bbb3f"><a class="self-link" href="#issue-6f3bbb3f"></a> is this a good translation for ‘bronhouder’? And add examples.
+This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="consumer">Consumer</dfn>
     <dd data-md>
      <p>On organization or an individual that uses one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset②">datasets</a> that are provided by a <a data-link-type="dfn" href="#publisher" id="ref-for-publisher②">publisher</a>.</p>
@@ -1678,7 +1679,7 @@ this document is based on broader, international best practices for publishing d
      <p>Terms describe what digital heritage is about.
 Terms are subjects, persons, places or time units, for example.
 Take The Night Watch: it is a <em>painting</em>, created by <em>Rembrandt</em> in <em>Amsterdam</em>, in the year <em>1642</em>.
-See also <a href="https://www.w3.org/TR/ld-glossary/#term">Linked Data Glossary §term</a>.</p>
+See also <a href="https://www.w3.org/TR/ld-glossary/#term">Linked Data Glossary</a>.</p>
    </dl>
    <h2 class="heading settled" data-level="3" id="requirements#"><span class="secno">3. </span><span class="content">Requirements</span><a class="self-link" href="#requirements%23"></a></h2>
    <h3 class="heading settled" data-level="3.1" id="organization-information"><span class="secno">3.1. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
@@ -1705,6 +1706,7 @@ They <em>should</em> do so in the <a data-link-type="biblio" href="#biblio-schem
 <c- p>}</c->
 </pre>
    </div>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-ProvAvailable">Data on the Web Best Practices Use Cases &amp; Requirements §R-ProvAvailable</a>.</p>
    <h4 class="heading settled" data-level="3.1.1" id="organization-overview"><span class="secno">3.1.1. </span><span class="content">Overview</span><a class="self-link" href="#organization-overview"></a></h4>
    <table>
     <thead>
@@ -1784,6 +1786,7 @@ for example one of the <a href="https://creativecommons.org/choose/">Creative Co
 <c- p>}</c->
 </pre>
    </div>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-LicenseAvailable">Data on the Web Best Practices Use Cases &amp; Requirements §R-LicenseAvailable</a>.</p>
    <h4 class="heading settled" data-level="3.2.3" id="dataset-date"><span class="secno">3.2.3. </span><span class="content">Publication date</span><a class="self-link" href="#dataset-date"></a></h4>
    <p>Publishers <em>SHOULD</em> make known when the dataset was originally published and when it was last updated.</p>
    <div class="example" id="example-f6c0505a">
@@ -1796,13 +1799,14 @@ for example one of the <a href="https://creativecommons.org/choose/">Creative Co
 <c- p>}</c->
 </pre>
    </div>
-   <h4 class="heading settled" data-level="3.2.4" id="dataset-versions"><span class="secno">3.2.4. </span><span class="content">Version information</span><a class="self-link" href="#dataset-versions"></a></h4>
-   <p>Data may change over time. <a data-link-type="dfn" href="#consumer" id="ref-for-consumer②">consumers</a>, such as researchers, may want to determine which information was valid at a certain moment.</p>
+   <h4 class="heading settled" data-level="3.2.4" id="dataset-versions"><span class="secno">3.2.4. </span><span class="content">Version</span><a class="self-link" href="#dataset-versions"></a></h4>
+   <p>Data may change over time. <a data-link-type="dfn" href="#consumer" id="ref-for-consumer②">Consumers</a>, such as researchers, may want to determine which information was valid at a certain moment.</p>
    <blockquote>
     <p>Therefore, publishers <em>should</em> not only publish the current version of the dataset,
 but keep historical versions accessible to users.</p>
    </blockquote>
    <p>It is up to the publisher to determine when to publish new versions.</p>
+   <p>See also <a href="https://www.w3.org/TR/dwbp/#dataVersioning">Data on the Web Best Practices §dataVersioning</a>.</p>
    <h4 class="heading settled" data-level="3.2.5" id="dataset-example"><span class="secno">3.2.5. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
    <div class="example" id="example-3c9f1e16">
     <a class="self-link" href="#example-3c9f1e16"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 3.2.1 Basic information</a>), 
@@ -1930,33 +1934,58 @@ it must be described in <a data-link-type="dfn" href="#term" id="ref-for-term①
    <blockquote>
     <p>Therefore, data publishers <em>SHOULD</em> describe their data with <a data-link-type="dfn" href="#term" id="ref-for-term②">terms</a>.</p>
    </blockquote>
-   <div class="example" id="example-50c008b7">
-    <a class="self-link" href="#example-50c008b7"></a> A painting in plain JSON, where all values are <a href="https://www.w3.org/TR/rdf11-concepts/#section-literals">string literals</a>: 
+   <div class="example" id="example-592f0be1">
+    <a class="self-link" href="#example-592f0be1"></a> A painting in plain JSON, where all values are <a href="https://www.w3.org/TR/rdf11-concepts/#section-literals">string literals</a>: 
 <pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- f>"type"</c-><c- p>:</c-> <c- u>"Artwork"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"creator"</c-><c- p>:</c-> <c- u>"Rembrandt"</c-></span><span class="line-no" data-line="5"></span><span class="line"><c- p>}</c-></span></pre>
     <p>Now, with relations to <a data-link-type="dfn" href="#term" id="ref-for-term③">terms</a>.
     We <a href="https://www.w3.org/TR/json-ld/#specifying-the-type">specify the item’s type</a> in the <a data-link-type="biblio" href="#biblio-schema-org">[SCHEMA-ORG]</a> vocabulary
     and refer to the painter by his RKDArtists <a data-link-type="biblio" href="#biblio-iri">[IRI]</a>.</p>
-<pre class="highlight line-numbered" line-highlight="2,4"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no highlight-line" data-line="2"></span><span class="line highlight-line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"https://schema.org/Painting"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="4"></span><span class="line highlight-line">  <c- f>"creator"</c-><c- p>:</c-> <c- u>"https://data.rkd.nl/artists/66219"</c-></span><span class="line-no" data-line="5"></span><span class="line"><c- p>}</c-></span></pre>
+<pre class="highlight line-numbered" line-highlight="3,5"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="3"></span><span class="line highlight-line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Painting"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="5"></span><span class="line highlight-line">  <c- f>"creator"</c-><c- p>:</c-> <c- u>"https://data.rkd.nl/artists/66219"</c-></span><span class="line-no" data-line="6"></span><span class="line"><c- p>}</c-></span></pre>
    </div>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-VocabReference">Data on the Web Best Practices Use Cases &amp; Requirements §R-VocabReference</a>.</p>
    <h3 class="heading settled" data-level="3.4" id="developer-docs"><span class="secno">3.4. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h3>
    <p>Publishers <em>MUST</em> publish documentation for their data access <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>.</p>
    <p class="issue" id="issue-b7b1e314③"><a class="self-link" href="#issue-b7b1e314③"></a> TODO</p>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements §R-APIDocumented</a></p>
    <h3 class="heading settled" data-level="3.5" id="identifiers"><span class="secno">3.5. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h3>
    <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> want to refer to data in datasets. Preferably they do so by linking to it.</p>
    <blockquote>
-    <p>Therefore, publishers <em>must</em> maintain permanent identifiers for their <a href="#data">data</a>,
+    <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a href="#data">data</a> resource,
 as well as their <a href="#organization-information">organization</a> and <a href="#dataset-information">dataset</a> information.
 Publishers <em>should</em> use <a data-link-type="biblio" href="#biblio-iri">IRIs</a> as identifiers.</p>
    </blockquote>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-UniqueIdentifier">Data on the Web Best Practices Use Cases &amp; Requirements §R-UniqueIdentifier</a> and <a href="https://www.w3.org/TR/dwbp-ucr/#R-PersistentIdentification">Data on the Web Best Practices Use Cases &amp; Requirements §R-PersistentIdentification</a>.</p>
    <h3 class="heading settled" data-level="3.6" id="rdf"><span class="secno">3.6. </span><span class="content">Information in RDF</span><a class="self-link" href="#rdf"></a></h3>
    <p>For <a data-link-type="dfn" href="#machine-readability" id="ref-for-machine-readability①">machine-readable</a> access to data,
 it needs to be published in an <a href="https://www.w3.org/TR/rdf11-primer/#section-graph-syntax">RDF format</a>.
 RDF formats include <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]</a>, <a data-link-type="biblio" href="#biblio-n3">[N3]</a> and <a data-link-type="biblio" href="#biblio-turtle">[Turtle]</a>.</p>
    <blockquote>
-    <p>Therefore, publishers <em>must</em> publish their <a href="#organization-information">organization information</a> and <a href="#dataset-information">dataset information</a> in RDF.
-Publishers <em>should</em> also publish the <a href="#data">data</a> itself in RDF.</p>
+    <p>Therefore, publishers <em>must</em> make their <a href="#organization-information">organization information</a> and <a href="#dataset-information">dataset information</a> available in RDF.
+Publishers <em>should</em> also make the data <a href="#data">data</a> itself available in RDF.</p>
    </blockquote>
+   <div class="example" id="example-b8cb3ac5">
+    <a class="self-link" href="#example-b8cb3ac5"></a> <a href="https://developers.google.com/search/docs/guides/intro-structured-data">Google recommends</a> including the JSON-LD directly in the HTML source of your collection’s web pages. 
+    <p>So, on your organization’s web page, for instance <a href="https://www.kb.nl">www.kb.nl</a>, include:</p>
+<pre class="highlight"><c- p>&lt;</c-><c- f>html</c-><c- p>></c->
+  <c- p>&lt;</c-><c- f>head</c-><c- p>></c->
+    <c- p>&lt;</c-><c- f>title</c-><c- p>></c->Koninklijke Bibliotheek<c- p>&lt;/</c-><c- f>title</c-><c- p>></c->
+    <c- p>&lt;</c-><c- f>script</c-> <c- e>type</c-><c- o>=</c-><c- s>"application/ld+json"</c-><c- p>></c->
+      <c- p>{</c->
+        <c- u>"@context"</c-><c- o>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+        <c- u>"@type"</c-><c- o>:</c-> <c- u>"Organization"</c-><c- p>,</c->
+        <c- u>"name"</c-><c- o>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
+        <c- u>"url"</c-><c- o>:</c-> <c- u>""</c->url<c- u>": "</c->https<c- o>:</c-><c- c1>//www.kb.nl/",</c->
+      <c- p>}</c->
+    <c- p>&lt;/</c-><c- f>script</c-><c- p>></c->
+  <c- p>&lt;/</c-><c- f>head</c-><c- p>></c->
+  <c- p>&lt;</c-><c- f>body</c-><c- p>></c->
+    Here continues the web page of the organization...
+  <c- p>&lt;/</c-><c- f>body</c-><c- p>></c->
+<c- p>&lt;/</c-><c- f>html</c-><c- p>></c->    
+</pre>
+   </div>
    <p>Google’s <a href="https://search.google.com/structured-data/testing-tool/">Structured Data Testing Tool</a> can help with testing RDF metadata.</p>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-FormatMachineRead">Data on the Web Best Practices Use Cases &amp; Requirements §R-FormatMachineRead</a>.</p>
    <h3 class="heading settled" data-level="3.7" id="available"><span class="secno">3.7. </span><span class="content">Information remains available</span><a class="self-link" href="#available"></a></h3>
    <p>Datasets will be used by all kinds of <a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">consumers</a> and their systems.
 For stability, users must be able to trust that the datasets will remain available
@@ -2133,6 +2162,8 @@ so they can be consulted in the future.</p>
   <dl>
    <dt id="biblio-dwbp">[DWBP]
    <dd>Bernadette Farias Loscio; Caroline Burle; Newton Calegari. <a href="https://www.w3.org/TR/dwbp/">Data on the Web Best Practices</a>. 31 January 2017. REC. URL: <a href="https://www.w3.org/TR/dwbp/">https://www.w3.org/TR/dwbp/</a>
+   <dt id="biblio-dwbp-ucr">[DWBP-UCR]
+   <dd>Deirdre Lee; Bernadette Farias Loscio; Phil Archer. <a href="https://www.w3.org/TR/dwbp-ucr/">Data on the Web Best Practices Use Cases &amp; Requirements</a>. 24 February 2015. NOTE. URL: <a href="https://www.w3.org/TR/dwbp-ucr/">https://www.w3.org/TR/dwbp-ucr/</a>
    <dt id="biblio-iri">[IRI]
    <dd>M. Duerst; M. Suignard. <a href="https://tools.ietf.org/html/rfc3987">Internationalized Resource Identifiers (IRIs)</a>. January 2005. Proposed Standard. URL: <a href="https://tools.ietf.org/html/rfc3987">https://tools.ietf.org/html/rfc3987</a>
    <dt id="biblio-json-ld">[JSON-LD]
@@ -2152,7 +2183,8 @@ so they can be consulted in the future.</p>
    <div class="issue"> TODO<a href="#issue-b7b1e314"> ↵ </a></div>
    <div class="issue"> TODO<a href="#issue-b7b1e314①"> ↵ </a></div>
    <div class="issue"> TODO<a href="#issue-b7b1e314②"> ↵ </a></div>
-   <div class="issue"> is this a good translation for ‘bronhouder’? And add examples.<a href="#issue-752facde"> ↵ </a></div>
+   <div class="issue"> is this a good translation for ‘bronhouder’? And add examples.
+This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>.<a href="#issue-6f3bbb3f"> ↵ </a></div>
    <div class="issue"> add examples<a href="#issue-a71b8ddb"> ↵ </a></div>
    <div class="issue"> TODO<a href="#issue-b7b1e314③"> ↵ </a></div>
   </div>
@@ -2193,7 +2225,7 @@ so they can be consulted in the future.</p>
    <ul>
     <li><a href="#ref-for-consumer">1. Introduction</a>
     <li><a href="#ref-for-consumer①">3.2.2. License</a>
-    <li><a href="#ref-for-consumer②">3.2.4. Version information</a>
+    <li><a href="#ref-for-consumer②">3.2.4. Version</a>
     <li><a href="#ref-for-consumer③">3.5. Durable identifiers</a>
     <li><a href="#ref-for-consumer④">3.7. Information remains available</a>
    </ul>
