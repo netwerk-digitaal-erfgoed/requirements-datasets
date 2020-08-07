@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 40de15f9, updated Thu Jun 11 17:47:04 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="95731fc24ec3a034375356e729e34330f2577c6e" name="document-revision">
+  <meta content="27c60660e886c2411577b89360ea1683b88f0d4d" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1645,10 +1645,12 @@ They do so on four levels: that of the organization, the dataset, the data itsel
    </ul>
    <h3 class="heading settled" data-level="1.1" id="audience"><span class="secno">1.1. </span><span class="content">Audience</span><a class="self-link" href="#audience"></a></h3>
    <p>This document is mainly geared towards two groups of readers.</p>
-   <p>Digital heritage collection managers can follow these requirements to make their published datasets findable and usable,
+   <p>Digital heritage collection managers can follow the requirements in this document to make their published datasets findable and usable,
 for instance through <a href="https://datasetsearch.research.google.com">Google Dataset Search</a> and the <a href="https://www.netwerkdigitaalerfgoed.nl/kennis-en-voorzieningen/digitaal-erfgoed-bruikbaar/register/">NDE Registry</a>.</p>
    <p>Suppliers of collection management system can implement these requirements in their software
-to help collection managers using it to publish datasets in the correct format.</p>
+to help collection managers using it to publish datasets in the correct format.
+These requirements are scoped to the online publication output of collection management systems;
+they do not prescribe how those systems should store data internally.</p>
    <h3 class="heading settled" data-level="1.2" id="context"><span class="secno">1.2. </span><span class="content">Context</span><a class="self-link" href="#context"></a></h3>
    <p>While focused on digital heritage institutions in The Netherlands,
 this document is based on broader, international best practices for publishing datasets, including <a data-link-type="biblio" href="#biblio-dwbp-ucr">[DWBP-UCR]</a>, <a data-link-type="biblio" href="#biblio-dwbp">[DWBP]</a> and <a data-link-type="biblio" href="#biblio-ld-bp">[LD-BP]</a>.</p>
@@ -2159,10 +2161,10 @@ it needs to be published in an <a href="https://www.w3.org/TR/rdf11-primer/#sect
 RDF formats include <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]</a>, <a data-link-type="biblio" href="#biblio-n3">[N3]</a> and <a data-link-type="biblio" href="#biblio-turtle">[Turtle]</a>.</p>
    <blockquote>
     <p>Therefore, publishers <em>must</em> make their <a href="#organization-information">organization information</a> and <a href="#dataset-information">dataset information</a> available in RDF.
-Publishers <em>should</em> also make the data <a href="#data">data</a> itself available in RDF.</p>
+Publishers <em>should</em> also make the <a href="#data">data</a> itself available in RDF.</p>
    </blockquote>
-   <div class="example" id="example-5e45b2d2">
-    <a class="self-link" href="#example-5e45b2d2"></a> <a href="https://developers.google.com/search/docs/guides/intro-structured-data">Google recommends</a> including the JSON-LD directly in the HTML source of your collection’s web pages. 
+   <div class="example" id="example-7733a969">
+    <a class="self-link" href="#example-7733a969"></a> <a href="https://developers.google.com/search/docs/guides/intro-structured-data#structured-data">Google recommends</a> including the JSON-LD directly in the HTML source of web pages. 
     <p>So, on your organization’s web page, for instance <a href="https://www.kb.nl">www.kb.nl</a>, include:</p>
 <pre class="highlight"><c- p>&lt;</c-><c- f>html</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>head</c-><c- p>></c->
