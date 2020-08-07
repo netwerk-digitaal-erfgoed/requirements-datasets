@@ -94,7 +94,7 @@ Conceptual model {#conceptual-model}
 ===============
 
 <pre class=include>
-path: Model.svg
+path: model.svg
 </pre>
 
 Requirements {#requirements#}
