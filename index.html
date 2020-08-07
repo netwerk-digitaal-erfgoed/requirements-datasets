@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 40de15f9, updated Thu Jun 11 17:47:04 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="dfb4a121f11c2fe4ab90575773fe7e5d193e0c8a" name="document-revision">
+  <meta content="09af44f5dc0a1a781011cbfea1e71adf683932cf" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1628,9 +1628,9 @@ Parts of this work may be from another specification document.  If so, those par
    <p>To enable <a data-link-type="dfn" href="#dataset" id="ref-for-dataset">datasets</a> to be found and used,
 they must be published according to a well-documented,
 shared and <a data-link-type="dfn" href="#machine-readability" id="ref-for-machine-readability">machine-readable</a> publication model.</p>
-   <p>This document describes rules for such a model.
-When <a data-link-type="dfn" href="#publisher" id="ref-for-publisher">publishers</a> make their datasets adhere to these requirements,
-they enable consumers (both humans and machines) to use the published data in new and better ways.</p>
+   <p>This document describes such a model and its rules.
+When <a data-link-type="dfn" href="#publisher" id="ref-for-publisher">publishers</a> make their datasets adhere to these rules,
+they enable consumers – both humans and machines – to use the published data in new and better ways.</p>
    <p>The requirements prescribe the metadata that publishers should provide with their data.
 They do so on four levels: that of the organization, the dataset, the data itself and a global level:</p>
    <ul>
@@ -1644,7 +1644,11 @@ They do so on four levels: that of the organization, the dataset, the data itsel
      <p>global requirements apply to all of the above levels (<a href="#rdf">§ 4.6 Information in RDF</a>, <a href="#available">§ 4.7 Information remains available</a>).</p>
    </ul>
    <h3 class="heading settled" data-level="1.1" id="audience"><span class="secno">1.1. </span><span class="content">Audience</span><a class="self-link" href="#audience"></a></h3>
-   <p>Dataset <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publishers</a></p>
+   <p>This document is mainly geared towards two groups of readers.</p>
+   <p>Digital heritage collection managers can follow these requirements to make their published datasets findable and usable,
+for instance through <a href="https://datasetsearch.research.google.com">Google Dataset Search</a> and the <a href="https://www.netwerkdigitaalerfgoed.nl/kennis-en-voorzieningen/digitaal-erfgoed-bruikbaar/register/">NDE Registry</a>.</p>
+   <p>Suppliers of collection management system can implement these requirements in their software
+to help collection managers using it to publish datasets in the correct format.</p>
    <h3 class="heading settled" data-level="1.2" id="context"><span class="secno">1.2. </span><span class="content">Context</span><a class="self-link" href="#context"></a></h3>
    <p>While focused on digital heritage institutions in The Netherlands,
 this document is based on broader, international best practices for publishing datasets, including <a data-link-type="biblio" href="#biblio-dwbp-ucr">[DWBP-UCR]</a>, <a data-link-type="biblio" href="#biblio-dwbp">[DWBP]</a> and <a data-link-type="biblio" href="#biblio-ld-bp">[LD-BP]</a>.</p>
@@ -1673,12 +1677,12 @@ for example a CSV file download or a <a data-link-type="biblio" href="#biblio-sp
      <p class="issue" id="issue-b7b1e314②"><a class="self-link" href="#issue-b7b1e314②"></a> TODO</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="publisher">Publisher</dfn>
     <dd data-md>
-     <p>On organization that provides one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset②">datasets</a>.</p>
+     <p>An individual or organization that provides one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset②">datasets</a>.</p>
      <p class="issue" id="issue-6f3bbb3f"><a class="self-link" href="#issue-6f3bbb3f"></a> is this a good translation for ‘bronhouder’? And add examples.
 This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="consumer">Consumer</dfn>
     <dd data-md>
-     <p>On organization or an individual that uses one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset③">datasets</a> that are provided by a <a data-link-type="dfn" href="#publisher" id="ref-for-publisher②">publisher</a>.</p>
+     <p>On organization or an individual that uses one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset③">datasets</a> that are provided by a <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publisher</a>.</p>
      <p class="issue" id="issue-a71b8ddb"><a class="self-link" href="#issue-a71b8ddb"></a> add examples</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="term">Term</dfn>
     <dd data-md>
@@ -1825,7 +1829,7 @@ See also <a href="https://www.w3.org/TR/ld-glossary/#term">Linked Data Glossary<
    <h2 class="heading settled" data-level="4" id="requirements#"><span class="secno">4. </span><span class="content">Requirements</span><a class="self-link" href="#requirements%23"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="organization-information"><span class="secno">4.1. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
    <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset④">dataset</a> came from (<a href="https://www.w3.org/TR/dwbp/#provenance">provenance</a>).
-Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">publisher</a>) answers user questions such as:</p>
+Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher②">publisher</a>) answers user questions such as:</p>
    <ul>
     <li data-md>
      <p>Which organization has published this dataset? How reliable and credible does that make the dataset?</p>
@@ -1893,7 +1897,7 @@ This information answers user questions such as:</p>
     <p>Therefore, publishers <em>MUST</em> publish basic information about the dataset.</p>
    </blockquote>
    <h4 class="heading settled" data-level="4.2.1" id="dataset-basic"><span class="secno">4.2.1. </span><span class="content">Basic information</span><a class="self-link" href="#dataset-basic"></a></h4>
-   <p>Publishers <em>MUST</em> include basic information about the dataset, at the very minimum its title and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">publisher</a>.</p>
+   <p>Publishers <em>MUST</em> include basic information about the dataset, at the very minimum its title and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">publisher</a>.</p>
    <div class="example" id="example-0afbfdef">
     <a class="self-link" href="#example-0afbfdef"></a> Basic dataset information: 
 <pre class="highlight"><c- p>{</c->
@@ -2415,10 +2419,9 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    <b><a href="#publisher">#publisher</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-publisher">1. Introduction</a>
-    <li><a href="#ref-for-publisher①">1.1. Audience</a>
-    <li><a href="#ref-for-publisher②">2. Definitions</a>
-    <li><a href="#ref-for-publisher③">4.1. Organization information</a>
-    <li><a href="#ref-for-publisher④">4.2.1. Basic information</a>
+    <li><a href="#ref-for-publisher①">2. Definitions</a>
+    <li><a href="#ref-for-publisher②">4.1. Organization information</a>
+    <li><a href="#ref-for-publisher③">4.2.1. Basic information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="consumer">
