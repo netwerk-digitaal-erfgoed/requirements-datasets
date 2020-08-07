@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 40de15f9, updated Thu Jun 11 17:47:04 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="e871495acd9294ef5562e10eda05e9d203511b58" name="document-revision">
+  <meta content="dfb4a121f11c2fe4ab90575773fe7e5d193e0c8a" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1576,34 +1576,35 @@ Parts of this work may be from another specification document.  If so, those par
       <li><a href="#examples"><span class="secno">1.3</span> <span class="content">Code examples</span></a>
      </ol>
     <li><a href="#definitions"><span class="secno">2</span> <span class="content">Definitions</span></a>
+    <li><a href="#conceptual-model"><span class="secno">3</span> <span class="content">Conceptual model</span></a>
     <li>
-     <a href="#requirements#"><span class="secno">3</span> <span class="content">Requirements</span></a>
+     <a href="#requirements#"><span class="secno">4</span> <span class="content">Requirements</span></a>
      <ol class="toc">
       <li>
-       <a href="#organization-information"><span class="secno">3.1</span> <span class="content">Organization information</span></a>
+       <a href="#organization-information"><span class="secno">4.1</span> <span class="content">Organization information</span></a>
        <ol class="toc">
-        <li><a href="#organization-overview"><span class="secno">3.1.1</span> <span class="content">Overview</span></a>
+        <li><a href="#organization-overview"><span class="secno">4.1.1</span> <span class="content">Overview</span></a>
        </ol>
       <li>
-       <a href="#dataset-information"><span class="secno">3.2</span> <span class="content">Dataset information</span></a>
+       <a href="#dataset-information"><span class="secno">4.2</span> <span class="content">Dataset information</span></a>
        <ol class="toc">
-        <li><a href="#dataset-basic"><span class="secno">3.2.1</span> <span class="content">Basic information</span></a>
-        <li><a href="#dataset-license"><span class="secno">3.2.2</span> <span class="content">License</span></a>
-        <li><a href="#dataset-date"><span class="secno">3.2.3</span> <span class="content">Publication date</span></a>
-        <li><a href="#dataset-versions"><span class="secno">3.2.4</span> <span class="content">Version</span></a>
-        <li><a href="#dataset-distributions"><span class="secno">3.2.5</span> <span class="content">Distributions</span></a>
-        <li><a href="#dataset-example"><span class="secno">3.2.6</span> <span class="content">Full example</span></a>
-        <li><a href="#dataset-overview"><span class="secno">3.2.7</span> <span class="content">Overview</span></a>
+        <li><a href="#dataset-basic"><span class="secno">4.2.1</span> <span class="content">Basic information</span></a>
+        <li><a href="#dataset-license"><span class="secno">4.2.2</span> <span class="content">License</span></a>
+        <li><a href="#dataset-date"><span class="secno">4.2.3</span> <span class="content">Publication date</span></a>
+        <li><a href="#dataset-versions"><span class="secno">4.2.4</span> <span class="content">Version</span></a>
+        <li><a href="#dataset-distributions"><span class="secno">4.2.5</span> <span class="content">Distributions</span></a>
+        <li><a href="#dataset-example"><span class="secno">4.2.6</span> <span class="content">Full example</span></a>
+        <li><a href="#dataset-overview"><span class="secno">4.2.7</span> <span class="content">Overview</span></a>
        </ol>
       <li>
-       <a href="#data"><span class="secno">3.3</span> <span class="content">Data information</span></a>
+       <a href="#data"><span class="secno">4.3</span> <span class="content">Data information</span></a>
        <ol class="toc">
-        <li><a href="#relations"><span class="secno">3.3.1</span> <span class="content">Relations to terms</span></a>
+        <li><a href="#relations"><span class="secno">4.3.1</span> <span class="content">Relations to terms</span></a>
        </ol>
-      <li><a href="#developer-docs"><span class="secno">3.4</span> <span class="content">Developer documentation</span></a>
-      <li><a href="#identifiers"><span class="secno">3.5</span> <span class="content">Durable identifiers</span></a>
-      <li><a href="#rdf"><span class="secno">3.6</span> <span class="content">Information in RDF</span></a>
-      <li><a href="#available"><span class="secno">3.7</span> <span class="content">Information remains available</span></a>
+      <li><a href="#developer-docs"><span class="secno">4.4</span> <span class="content">Developer documentation</span></a>
+      <li><a href="#identifiers"><span class="secno">4.5</span> <span class="content">Durable identifiers</span></a>
+      <li><a href="#rdf"><span class="secno">4.6</span> <span class="content">Information in RDF</span></a>
+      <li><a href="#available"><span class="secno">4.7</span> <span class="content">Information remains available</span></a>
      </ol>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
     <li>
@@ -1634,13 +1635,13 @@ they enable consumers (both humans and machines) to use the published data in ne
 They do so on four levels: that of the organization, the dataset, the data itself and a global level:</p>
    <ul>
     <li data-md>
-     <p>organization metadata tells <a data-link-type="dfn" href="#consumer" id="ref-for-consumer">consumers</a> who is behind the data publication (<a href="#organization-information">§ 3.1 Organization information</a>)</p>
+     <p>organization metadata tells <a data-link-type="dfn" href="#consumer" id="ref-for-consumer">consumers</a> who is behind the data publication (<a href="#organization-information">§ 4.1 Organization information</a>)</p>
     <li data-md>
-     <p>dataset metadata lets consumers know how they can use the dataset (<a href="#dataset-information">§ 3.2 Dataset information</a>)</p>
+     <p>dataset metadata lets consumers know how they can use the dataset (<a href="#dataset-information">§ 4.2 Dataset information</a>)</p>
     <li data-md>
-     <p>the data contained in the dataset must itself be described in a way that it can be understood, connected and re-used (<a href="#data">§ 3.3 Data information</a>)</p>
+     <p>the data contained in the dataset must itself be described in a way that it can be understood, connected and re-used (<a href="#data">§ 4.3 Data information</a>)</p>
     <li data-md>
-     <p>global requirements apply to all of the above levels (<a href="#rdf">§ 3.6 Information in RDF</a>, <a href="#available">§ 3.7 Information remains available</a>).</p>
+     <p>global requirements apply to all of the above levels (<a href="#rdf">§ 4.6 Information in RDF</a>, <a href="#available">§ 4.7 Information remains available</a>).</p>
    </ul>
    <h3 class="heading settled" data-level="1.1" id="audience"><span class="secno">1.1. </span><span class="content">Audience</span><a class="self-link" href="#audience"></a></h3>
    <p>Dataset <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publishers</a></p>
@@ -1686,8 +1687,143 @@ Terms are subjects, persons, places or time units, for example.
 Take The Night Watch: it is a <em>painting</em>, created by <em>Rembrandt</em> in <em>Amsterdam</em>, in the year <em>1642</em>.
 See also <a href="https://www.w3.org/TR/ld-glossary/#term">Linked Data Glossary</a>.</p>
    </dl>
-   <h2 class="heading settled" data-level="3" id="requirements#"><span class="secno">3. </span><span class="content">Requirements</span><a class="self-link" href="#requirements%23"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="organization-information"><span class="secno">3.1. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
+   <h2 class="heading settled" data-level="3" id="conceptual-model"><span class="secno">3. </span><span class="content">Conceptual model</span><a class="self-link" href="#conceptual-model"></a></h2>
+   <p></p>
+   <svg content="<mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2020-08-07T14:28:08.210Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.2 Safari/605.1.15&quot; etag=&quot;21FS2PwCBkXwAwMtmtNH&quot; version=&quot;13.5.8&quot; type=&quot;github&quot; pages=&quot;2&quot;><diagram id=&quot;urrUrFw95YwCIsGvFkr1&quot; name=&quot;Overview&quot;>7VjbcpswEP0aHu3hYrD9GF+Sduo0naSdpk8dGQSokVki5Bjn6yssYcAY6th1kunUDza7WlbinKPVYs0aL9IrhuLwGjxMNVP3Us2aaKZpDxzxnTnWytE3pSNgxJMuo3DckWesnLryLomHk0ogB6CcxFWnC1GEXV7xIcZgVQ3zgVZnjVGAa447F9G69zvxeCi9A7Nf+D9gEoT5zIYzlCMLlAerJ0lC5MGq5LKmmjVmAFxeLdIxphl2OS7yvsuG0e3CGI74ITeAF34aXd0kzI37D/3xaHb786nTk1meEF2qB54gjiawiiggTy2cr3M0fELpGCiwjWl5CA98V7NGCWfwgEsjjjvAc1+MUDTHdITch4DBMvLykAgikXIU8gUVliEufYi4ot/oCVstDDOO08YnNrY4Cv1hWGDO1iJE3ZAjr6RnOspeFUQalvKFJRLzOKS0E2wzF/CKC4XwC9C2/mW0jR207VdE+7Hn3zudj0Pz+vPMIfMYT9N5xzRrcHtEYEfmS04gqsGNPbHzlQmMhxBAhOi08I42oOJsTl1YRcwMIFbA/sKcrxWyaMmhCns7P4iSIBImxT5v5KhGiHgGWDIXtyChdMcRCzBvQ0wlzJBopTwv5jKcYYo4eapWzH10qkRfgIgnKELA9xOxrl2+t/Mdv+Hsk0jOGHNhQdzjCRdUsfW9un9j/MiMrp2bk7Q8OFkrq10oOPIusrNNeFyKkiRbYea8JLRpg+facsU8mG3VtMP0eeVlWPvV9DL9iCdH61JAnKkp2SOvvC4NqoXJ0HfOyT/FqxO9kKZcwV8VqlMrVS7DiAvS9wl4lqmjKrQav1ktJ6KPuVADC+J5Ut84Ic9ovsmXSU3hJ5LbI82e7NFOEiOXRMHXjeb1ttNCdWEqe9H7lFXVvFEbjxaxXxy7f1qxUakGXcPUSx+jyrXZ7TnD8qea/3yVql8TACWCywT/r2DvqILJt5kWnTqOZVYVZR0j29eucZauNZa4M53XbTzsNMj5ZOVdUO5lX9wmH9xZ1UpcYyvUf+tu16hjp5kOzRvJCnrO4xLygU6yAeJCBBi9OC0GxVWQ/d6wAEXixJA9s8woViiTypDzsoOSWL7Z+yTNqtpJdOWvhvbOhukdyJ897OrDM1E4qHcB325n71f6u1i+3ZueUQPufb1Yn1RazEO1eQS+wiz+gZJVvPgbz5r+Bg==</diagram><diagram id=&quot;a6mHWFwkpfAQTan6lGMU&quot; name=&quot;Classes&quot;>ldHJDsIgEADQr+FoYouperWucYv24BnLWEig0yDG6tdbQxeJFz0Bj2FgBkJjXS4MK8QWOSgS9nlJ6JSEYTCIomp4y6MRGjjJjOS1dZDIJ9TYr/UmOVy9QIuorCx8TDHPIbWeMWPw7oddUPm3FiyDL0hSpr71JLkVTkfhsPMlyEw0NwfR2O1o1gTXlVwF43j/IDojNDaI1s10GYN6d6/tizju10xPVnLztLvbBg9n6Llk83+OtCUYyO2vqatJ97Rq4f0wnb0A</diagram></mxfile>" height="321px" resource="https://app.diagrams.net/?src=about#Hnetwerk-digitaal-erfgoed%2Frequirements-datasets%2Fdiagram%2Fmodel.svg" version="1.1" viewBox="-0.5 -0.5 381 321" width="381px" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+    <defs></defs>
+    <g>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="20" y="260"></rect>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 290px; margin-left: 85px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">DataDownload</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="85" y="294">DataDownload</text>
+      </switch>
+     </g>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="10" y="250"></rect>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 280px; margin-left: 75px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">DataDownload</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="75" y="284">DataDownload</text>
+      </switch>
+     </g>
+     <path d="M 65 130 L 65 233.63" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 65 238.88 L 61.5 231.88 L 65 233.63 L 68.5 231.88 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 185px; margin-left: 72px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: left; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">distribution</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" x="72" y="189">distribution</text>
+      </switch>
+     </g>
+     <path d="M 130 100 L 170 100 Q 180 100 180 110 L 180 159.52 Q 180 169.52 190 169.52 L 243.63 169.54" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 248.88 169.54 L 241.88 173.04 L 243.63 169.54 L 241.88 166.04 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 182px; margin-left: 217px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; background-color: #ffffff; white-space: nowrap; ">creator</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="217" y="186">creator</text>
+      </switch>
+     </g>
+     <path d="M 130 100 L 170 100 Q 180 100 180 90 L 180 40 Q 180 30 190 30 L 243.63 30" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 248.88 30 L 241.88 33.5 L 243.63 30 L 241.88 26.5 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 17px; margin-left: 218px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">license</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="218" y="21">license</text>
+      </switch>
+     </g>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="0" y="70"></rect>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 100px; margin-left: 65px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Dataset</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="65" y="104">Dataset</text>
+      </switch>
+     </g>
+     <rect fill="#dae8fc" height="59.09" pointer-events="all" stroke="#6c8ebf" width="130" x="250" y="140"></rect>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 170px; margin-left: 315px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">
+           <font style="font-size: 14px">Organization</font>
+          </div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="315" y="174">Organization</text>
+      </switch>
+     </g>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="250" y="0"></rect>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 30px; margin-left: 315px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">URL</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="315" y="34">URL</text>
+      </switch>
+     </g>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="0" y="240"></rect>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 270px; margin-left: 65px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">DataDownload</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="65" y="274">DataDownload</text>
+      </switch>
+     </g>
+    </g>
+    <switch>
+     <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"></g>
+     <a target="_blank" transform="translate(0,-5)" href="https://desk.draw.io/support/solutions/articles/16000042487">
+      <text font-size="10px" text-anchor="middle" x="50%" y="100%">Viewer does not support full SVG 1.1</text>
+     </a>
+    </switch>
+   </svg>
+   <h2 class="heading settled" data-level="4" id="requirements#"><span class="secno">4. </span><span class="content">Requirements</span><a class="self-link" href="#requirements%23"></a></h2>
+   <h3 class="heading settled" data-level="4.1" id="organization-information"><span class="secno">4.1. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
    <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset④">dataset</a> came from (<a href="https://www.w3.org/TR/dwbp/#provenance">provenance</a>).
 Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">publisher</a>) answers user questions such as:</p>
    <ul>
@@ -1712,7 +1848,7 @@ They <em>should</em> do so in the <a data-link-type="biblio" href="#biblio-schem
 </pre>
    </div>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-ProvAvailable">Data on the Web Best Practices Use Cases &amp; Requirements §R-ProvAvailable</a>.</p>
-   <h4 class="heading settled" data-level="3.1.1" id="organization-overview"><span class="secno">3.1.1. </span><span class="content">Overview</span><a class="self-link" href="#organization-overview"></a></h4>
+   <h4 class="heading settled" data-level="4.1.1" id="organization-overview"><span class="secno">4.1.1. </span><span class="content">Overview</span><a class="self-link" href="#organization-overview"></a></h4>
    <table>
     <thead>
      <tr>
@@ -1737,7 +1873,7 @@ They <em>should</em> do so in the <a data-link-type="biblio" href="#biblio-schem
       <td><strong>OPTIONAL.</strong> Links to the organization in other databases.
       <th scope="row"><a href="https://schema.org/sameAs">schema:sameAs</a>
    </table>
-   <h3 class="heading settled" data-level="3.2" id="dataset-information"><span class="secno">3.2. </span><span class="content">Dataset information</span><a class="self-link" href="#dataset-information"></a></h3>
+   <h3 class="heading settled" data-level="4.2" id="dataset-information"><span class="secno">4.2. </span><span class="content">Dataset information</span><a class="self-link" href="#dataset-information"></a></h3>
    <p>For users, having access to the data contained in the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">dataset</a> is not enough.
 Users want to consult information about the dataset to decide whether and how they want to use its data.
 This information answers user questions such as:</p>
@@ -1756,7 +1892,7 @@ This information answers user questions such as:</p>
    <blockquote>
     <p>Therefore, publishers <em>MUST</em> publish basic information about the dataset.</p>
    </blockquote>
-   <h4 class="heading settled" data-level="3.2.1" id="dataset-basic"><span class="secno">3.2.1. </span><span class="content">Basic information</span><a class="self-link" href="#dataset-basic"></a></h4>
+   <h4 class="heading settled" data-level="4.2.1" id="dataset-basic"><span class="secno">4.2.1. </span><span class="content">Basic information</span><a class="self-link" href="#dataset-basic"></a></h4>
    <p>Publishers <em>MUST</em> include basic information about the dataset, at the very minimum its title and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">publisher</a>.</p>
    <div class="example" id="example-0afbfdef">
     <a class="self-link" href="#example-0afbfdef"></a> Basic dataset information: 
@@ -1778,7 +1914,7 @@ This information answers user questions such as:</p>
     <a class="self-link" href="#example-6402610a"></a> More information about the dataset. 
 <pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="5"></span><span class="line">  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no" data-line="6"></span><span class="line">    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c-></span><span class="line-no" data-line="7"></span><span class="line">    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c-></span><span class="line-no" data-line="8"></span><span class="line">    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="9"></span><span class="line">    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c-></span><span class="line-no" data-line="10"></span><span class="line">  <c- p>},</c-></span><span class="line-no" data-line="11"></span><span class="line">  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c-></span><span class="line-no" data-line="12"></span><span class="line">  <c- f>"identifier"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c-></span><span class="line-no" data-line="13"></span><span class="line">  <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no" data-line="14"></span><span class="line">    <c- u>"alba amicorum"</c-></span><span class="line-no" data-line="15"></span><span class="line">  <c- p>]</c-></span><span class="line-no" data-line="16"></span><span class="line"><c- p>}</c-></span></pre>
    </div>
-   <h4 class="heading settled" data-level="3.2.2" id="dataset-license"><span class="secno">3.2.2. </span><span class="content">License</span><a class="self-link" href="#dataset-license"></a></h4>
+   <h4 class="heading settled" data-level="4.2.2" id="dataset-license"><span class="secno">4.2.2. </span><span class="content">License</span><a class="self-link" href="#dataset-license"></a></h4>
    <p>Publishers <em>MUST</em> make known under which <a href="https://www.w3.org/TR/dwbp/#licenses">license</a> the dataset can be used.
 This <em>SHOULD</em> be an open license that allows the data to used by <a data-link-type="dfn" href="#consumer" id="ref-for-consumer①">consumers</a>,
 for example one of the <a href="https://creativecommons.org/choose/">Creative Commons</a> licenses.</p>
@@ -1792,7 +1928,7 @@ for example one of the <a href="https://creativecommons.org/choose/">Creative Co
 </pre>
    </div>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-LicenseAvailable">Data on the Web Best Practices Use Cases &amp; Requirements §R-LicenseAvailable</a>.</p>
-   <h4 class="heading settled" data-level="3.2.3" id="dataset-date"><span class="secno">3.2.3. </span><span class="content">Publication date</span><a class="self-link" href="#dataset-date"></a></h4>
+   <h4 class="heading settled" data-level="4.2.3" id="dataset-date"><span class="secno">4.2.3. </span><span class="content">Publication date</span><a class="self-link" href="#dataset-date"></a></h4>
    <p>Publishers <em>SHOULD</em> make known when the dataset was originally published and when it was last updated.</p>
    <div class="example" id="example-f6c0505a">
     <a class="self-link" href="#example-f6c0505a"></a> Specify publication dates: 
@@ -1804,7 +1940,7 @@ for example one of the <a href="https://creativecommons.org/choose/">Creative Co
 <c- p>}</c->
 </pre>
    </div>
-   <h4 class="heading settled" data-level="3.2.4" id="dataset-versions"><span class="secno">3.2.4. </span><span class="content">Version</span><a class="self-link" href="#dataset-versions"></a></h4>
+   <h4 class="heading settled" data-level="4.2.4" id="dataset-versions"><span class="secno">4.2.4. </span><span class="content">Version</span><a class="self-link" href="#dataset-versions"></a></h4>
    <p>Data may change over time. <a data-link-type="dfn" href="#consumer" id="ref-for-consumer②">Consumers</a>, such as researchers, may want to determine which information was valid at a certain moment.</p>
    <blockquote>
     <p>Therefore, publishers <em>should</em> not only publish the current version of the dataset,
@@ -1812,7 +1948,7 @@ but keep historical versions accessible to users.</p>
    </blockquote>
    <p>It is up to the publisher to determine when to publish new versions.</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp/#dataVersioning">Data on the Web Best Practices §dataVersioning</a>.</p>
-   <h4 class="heading settled" data-level="3.2.5" id="dataset-distributions"><span class="secno">3.2.5. </span><span class="content">Distributions</span><a class="self-link" href="#dataset-distributions"></a></h4>
+   <h4 class="heading settled" data-level="4.2.5" id="dataset-distributions"><span class="secno">4.2.5. </span><span class="content">Distributions</span><a class="self-link" href="#dataset-distributions"></a></h4>
    <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> that are interested in a dataset should be able to access the data in it. <a data-link-type="dfn" href="#distribution" id="ref-for-distribution">Distributions</a> tell consumers where and how they can get the data.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> add at least one distribution.</p>
@@ -1863,11 +1999,11 @@ even if it is a query endpoint.</p>
 <c- p>}</c->
 </pre>
    </div>
-   <h4 class="heading settled" data-level="3.2.6" id="dataset-example"><span class="secno">3.2.6. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
+   <h4 class="heading settled" data-level="4.2.6" id="dataset-example"><span class="secno">4.2.6. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
    <div class="example" id="example-3c9f1e16">
-    <a class="self-link" href="#example-3c9f1e16"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 3.2.1 Basic information</a>), 
-    a license (<a href="#dataset-license">§ 3.2.2 License</a>)
-    and publication dates (<a href="#dataset-date">§ 3.2.3 Publication date</a>): 
+    <a class="self-link" href="#example-3c9f1e16"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 4.2.1 Basic information</a>), 
+    a license (<a href="#dataset-license">§ 4.2.2 License</a>)
+    and publication dates (<a href="#dataset-date">§ 4.2.3 Publication date</a>): 
 <pre class="include-code highlight" path="examples/dataset.jsonld"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -1911,7 +2047,7 @@ even if it is a query endpoint.</p>
 <c- p>}</c->
 </pre>
    </div>
-   <h4 class="heading settled" data-level="3.2.7" id="dataset-overview"><span class="secno">3.2.7. </span><span class="content">Overview</span><a class="self-link" href="#dataset-overview"></a></h4>
+   <h4 class="heading settled" data-level="4.2.7" id="dataset-overview"><span class="secno">4.2.7. </span><span class="content">Overview</span><a class="self-link" href="#dataset-overview"></a></h4>
    <p>Required attributes:</p>
    <table>
     <caption><a href="https://schema.org/Dataset">schema:Dataset</a></caption>
@@ -1924,15 +2060,15 @@ even if it is a query endpoint.</p>
      <tr>
       <th scope="row"><a href="https://schema.org/identifier">schema:identifier</a>
       <td>1
-      <td><strong>REQUIRED.</strong> See <a href="#dataset-basic">§ 3.2.1 Basic information</a>.
+      <td><strong>REQUIRED.</strong> See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
      <tr>
       <th scope="row"><a href="https://schema.org/name">schema:name</a>
       <td>1
-      <td><strong>REQUIRED.</strong> See <a href="#dataset-basic">§ 3.2.1 Basic information</a>
+      <td><strong>REQUIRED.</strong> See <a href="#dataset-basic">§ 4.2.1 Basic information</a>
      <tr>
       <th scope="row"><a href="https://schema.org/description">schema:description</a>
       <td>1..n
-      <td><strong>REQUIRED.</strong> See <a href="#dataset-basic">§ 3.2.1 Basic information</a>.
+      <td><strong>REQUIRED.</strong> See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
      <tr>
       <th scope="row"><a href="https://schema.org/creator">schema:creator</a>
       <td>1
@@ -1944,7 +2080,7 @@ even if it is a query endpoint.</p>
      <tr>
       <th scope="row"><a href="https://schema.org/license">schema:license</a>
       <td>1
-      <td><strong>REQUIRED.</strong> See <a href="#dataset-license">§ 3.2.2 License</a>.
+      <td><strong>REQUIRED.</strong> See <a href="#dataset-license">§ 4.2.2 License</a>.
      <tr>
       <th scope="row"><a href="https://schema.org/distribution">schema:distribution</a>
       <td>1..n
@@ -1952,11 +2088,11 @@ even if it is a query endpoint.</p>
      <tr>
       <th scope="row"><a href="https://schema.org/datePublished">schema:datePublished</a>
       <td>1
-      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 3.2.3 Publication date</a>.
+      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Publication date</a>.
      <tr>
       <th scope="row"><a href="https://schema.org/dateModified">schema:dateModified</a>
       <td>1
-      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 3.2.3 Publication date</a>.
+      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Publication date</a>.
    </table>
    <table>
     <caption>This is a caption</caption>
@@ -1983,8 +2119,8 @@ even if it is a query endpoint.</p>
       <td>1..n
       <td><strong>REQUIRED</strong>
    </table>
-   <h3 class="heading settled" data-level="3.3" id="data"><span class="secno">3.3. </span><span class="content">Data information</span><a class="self-link" href="#data"></a></h3>
-   <h4 class="heading settled" data-level="3.3.1" id="relations"><span class="secno">3.3.1. </span><span class="content">Relations to terms</span><a class="self-link" href="#relations"></a></h4>
+   <h3 class="heading settled" data-level="4.3" id="data"><span class="secno">4.3. </span><span class="content">Data information</span><a class="self-link" href="#data"></a></h3>
+   <h4 class="heading settled" data-level="4.3.1" id="relations"><span class="secno">4.3.1. </span><span class="content">Relations to terms</span><a class="self-link" href="#relations"></a></h4>
    <p>To understand and connect data,
 it must be described in <a data-link-type="dfn" href="#term" id="ref-for-term①">terms</a> that provide meaning to the data for humans as well as machines.</p>
    <blockquote>
@@ -1999,11 +2135,11 @@ it must be described in <a data-link-type="dfn" href="#term" id="ref-for-term①
 <pre class="highlight line-numbered" line-highlight="3,5"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="3"></span><span class="line highlight-line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Painting"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="5"></span><span class="line highlight-line">  <c- f>"creator"</c-><c- p>:</c-> <c- u>"https://data.rkd.nl/artists/66219"</c-></span><span class="line-no" data-line="6"></span><span class="line"><c- p>}</c-></span></pre>
    </div>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-VocabReference">Data on the Web Best Practices Use Cases &amp; Requirements §R-VocabReference</a>.</p>
-   <h3 class="heading settled" data-level="3.4" id="developer-docs"><span class="secno">3.4. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h3>
+   <h3 class="heading settled" data-level="4.4" id="developer-docs"><span class="secno">4.4. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h3>
    <p>Publishers <em>MUST</em> publish documentation for their data access <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>.</p>
    <p class="issue" id="issue-b7b1e314③"><a class="self-link" href="#issue-b7b1e314③"></a> TODO</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements §R-APIDocumented</a></p>
-   <h3 class="heading settled" data-level="3.5" id="identifiers"><span class="secno">3.5. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h3>
+   <h3 class="heading settled" data-level="4.5" id="identifiers"><span class="secno">4.5. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h3>
    <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">Consumers</a> want to refer to data in datasets. Preferably they do so by linking to it.</p>
    <blockquote>
     <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a href="#data">data</a> resource,
@@ -2011,7 +2147,7 @@ as well as their <a href="#organization-information">organization</a> and <a hre
 Publishers <em>should</em> use <a data-link-type="biblio" href="#biblio-iri">IRIs</a> as identifiers.</p>
    </blockquote>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-UniqueIdentifier">Data on the Web Best Practices Use Cases &amp; Requirements §R-UniqueIdentifier</a> and <a href="https://www.w3.org/TR/dwbp-ucr/#R-PersistentIdentification">Data on the Web Best Practices Use Cases &amp; Requirements §R-PersistentIdentification</a>.</p>
-   <h3 class="heading settled" data-level="3.6" id="rdf"><span class="secno">3.6. </span><span class="content">Information in RDF</span><a class="self-link" href="#rdf"></a></h3>
+   <h3 class="heading settled" data-level="4.6" id="rdf"><span class="secno">4.6. </span><span class="content">Information in RDF</span><a class="self-link" href="#rdf"></a></h3>
    <p>For <a data-link-type="dfn" href="#machine-readability" id="ref-for-machine-readability①">machine-readable</a> access to data,
 it needs to be published in an <a href="https://www.w3.org/TR/rdf11-primer/#section-graph-syntax">RDF format</a>.
 RDF formats include <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]</a>, <a data-link-type="biblio" href="#biblio-n3">[N3]</a> and <a data-link-type="biblio" href="#biblio-turtle">[Turtle]</a>.</p>
@@ -2042,7 +2178,7 @@ Publishers <em>should</em> also make the data <a href="#data">data</a> itself av
    </div>
    <p>Google’s <a href="https://search.google.com/structured-data/testing-tool/">Structured Data Testing Tool</a> can help with testing RDF metadata.</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-FormatMachineRead">Data on the Web Best Practices Use Cases &amp; Requirements §R-FormatMachineRead</a>.</p>
-   <h3 class="heading settled" data-level="3.7" id="available"><span class="secno">3.7. </span><span class="content">Information remains available</span><a class="self-link" href="#available"></a></h3>
+   <h3 class="heading settled" data-level="4.7" id="available"><span class="secno">4.7. </span><span class="content">Information remains available</span><a class="self-link" href="#available"></a></h3>
    <p>Datasets will be used by all kinds of <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">consumers</a> and their systems.
 For stability, users must be able to trust that the datasets will remain available
 so they can be consulted in the future.</p>
@@ -2252,27 +2388,27 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    <ul>
     <li><a href="#ref-for-dataset">1. Introduction</a>
     <li><a href="#ref-for-dataset①">2. Definitions</a> <a href="#ref-for-dataset②">(2)</a> <a href="#ref-for-dataset③">(3)</a>
-    <li><a href="#ref-for-dataset④">3.1. Organization information</a>
-    <li><a href="#ref-for-dataset⑤">3.2. Dataset information</a>
+    <li><a href="#ref-for-dataset④">4.1. Organization information</a>
+    <li><a href="#ref-for-dataset⑤">4.2. Dataset information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="distribution">
    <b><a href="#distribution">#distribution</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-distribution">3.2.5. Distributions</a>
+    <li><a href="#ref-for-distribution">4.2.5. Distributions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="api">
    <b><a href="#api">#api</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-api">3.4. Developer documentation</a>
+    <li><a href="#ref-for-api">4.4. Developer documentation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="machine-readability">
    <b><a href="#machine-readability">#machine-readability</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-machine-readability">1. Introduction</a>
-    <li><a href="#ref-for-machine-readability①">3.6. Information in RDF</a>
+    <li><a href="#ref-for-machine-readability①">4.6. Information in RDF</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="publisher">
@@ -2281,26 +2417,26 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
     <li><a href="#ref-for-publisher">1. Introduction</a>
     <li><a href="#ref-for-publisher①">1.1. Audience</a>
     <li><a href="#ref-for-publisher②">2. Definitions</a>
-    <li><a href="#ref-for-publisher③">3.1. Organization information</a>
-    <li><a href="#ref-for-publisher④">3.2.1. Basic information</a>
+    <li><a href="#ref-for-publisher③">4.1. Organization information</a>
+    <li><a href="#ref-for-publisher④">4.2.1. Basic information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="consumer">
    <b><a href="#consumer">#consumer</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-consumer">1. Introduction</a>
-    <li><a href="#ref-for-consumer①">3.2.2. License</a>
-    <li><a href="#ref-for-consumer②">3.2.4. Version</a>
-    <li><a href="#ref-for-consumer③">3.2.5. Distributions</a>
-    <li><a href="#ref-for-consumer④">3.5. Durable identifiers</a>
-    <li><a href="#ref-for-consumer⑤">3.7. Information remains available</a>
+    <li><a href="#ref-for-consumer①">4.2.2. License</a>
+    <li><a href="#ref-for-consumer②">4.2.4. Version</a>
+    <li><a href="#ref-for-consumer③">4.2.5. Distributions</a>
+    <li><a href="#ref-for-consumer④">4.5. Durable identifiers</a>
+    <li><a href="#ref-for-consumer⑤">4.7. Information remains available</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term">
    <b><a href="#term">#term</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-term">2. Definitions</a>
-    <li><a href="#ref-for-term①">3.3.1. Relations to terms</a> <a href="#ref-for-term②">(2)</a> <a href="#ref-for-term③">(3)</a>
+    <li><a href="#ref-for-term①">4.3.1. Relations to terms</a> <a href="#ref-for-term②">(2)</a> <a href="#ref-for-term③">(3)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
