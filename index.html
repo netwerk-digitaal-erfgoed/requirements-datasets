@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 40de15f9, updated Thu Jun 11 17:47:04 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="72c7569ff116d639ee6876b26a1e5aa753a3b7df" name="document-revision">
+  <meta content="95731fc24ec3a034375356e729e34330f2577c6e" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1661,7 +1661,7 @@ improving findability, one of the main goals of publishing datasets on the web.<
    <dl>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="dataset">Dataset</dfn>
     <dd data-md>
-     <p>A collection of data. A dataset is identified with at least a name and creator.</p>
+     <p>A collection of data. A dataset is identified with at least its name and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publisher</a>.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="distribution">Distribution</dfn>
     <dd data-md>
      <p>A channel through which a <a data-link-type="dfn" href="#dataset" id="ref-for-dataset①">dataset</a> is available,
@@ -1684,7 +1684,7 @@ for example a CSV file download or a <a data-link-type="biblio" href="#biblio-sp
 This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="consumer">Consumer</dfn>
     <dd data-md>
-     <p>On organization or an individual that uses one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset③">datasets</a> that are provided by a <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publisher</a>.</p>
+     <p>On organization or an individual that uses one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset③">datasets</a> that are provided by a <a data-link-type="dfn" href="#publisher" id="ref-for-publisher②">publisher</a>.</p>
      <p class="issue" id="issue-a71b8ddb"><a class="self-link" href="#issue-a71b8ddb"></a> add examples</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="term">Term</dfn>
     <dd data-md>
@@ -1831,7 +1831,7 @@ See also <a href="https://www.w3.org/TR/ld-glossary/#term">Linked Data Glossary<
    <h2 class="heading settled" data-level="4" id="requirements#"><span class="secno">4. </span><span class="content">Requirements</span><a class="self-link" href="#requirements%23"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="organization-information"><span class="secno">4.1. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
    <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset④">dataset</a> came from (<a href="https://www.w3.org/TR/dwbp/#provenance">provenance</a>).
-Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher②">publisher</a>) answers user questions such as:</p>
+Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">publisher</a>) answers user questions such as:</p>
    <ul>
     <li data-md>
      <p>Which organization has published this dataset? How reliable and credible does that make the dataset?</p>
@@ -1899,7 +1899,7 @@ This information answers user questions such as:</p>
     <p>Therefore, publishers <em>MUST</em> publish basic information about the dataset.</p>
    </blockquote>
    <h4 class="heading settled" data-level="4.2.1" id="dataset-basic"><span class="secno">4.2.1. </span><span class="content">Basic information</span><a class="self-link" href="#dataset-basic"></a></h4>
-   <p>Publishers <em>MUST</em> include basic information about the dataset, at the very minimum its title and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">publisher</a>.</p>
+   <p>Publishers <em>MUST</em> include basic information about the dataset, at the very minimum its title and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">publisher</a>.</p>
    <div class="example" id="example-0afbfdef">
     <a class="self-link" href="#example-0afbfdef"></a> Basic dataset information: 
 <pre class="highlight"><c- p>{</c->
@@ -2422,9 +2422,9 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    <b><a href="#publisher">#publisher</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-publisher">1. Introduction</a>
-    <li><a href="#ref-for-publisher①">2. Definitions</a>
-    <li><a href="#ref-for-publisher②">4.1. Organization information</a>
-    <li><a href="#ref-for-publisher③">4.2.1. Basic information</a>
+    <li><a href="#ref-for-publisher①">2. Definitions</a> <a href="#ref-for-publisher②">(2)</a>
+    <li><a href="#ref-for-publisher③">4.1. Organization information</a>
+    <li><a href="#ref-for-publisher④">4.2.1. Basic information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="consumer">
