@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="661b6150ef2bf395263c254fc73181ef1e5e94a1" name="document-revision">
+  <meta content="64438d324f7447d7feed617abdae8890937b42d4" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1530,7 +1530,8 @@ Parts of this work may be from another specification document.  If so, those par
         <li><a href="#dataset-distributions"><span class="secno">4.2.5</span> <span class="content">Distributions</span></a>
         <li><a href="#dataset-example"><span class="secno">4.2.6</span> <span class="content">Full example</span></a>
         <li><a href="#dataset-overview"><span class="secno">4.2.7</span> <span class="content">Overview</span></a>
-        <li><a href="#data-catalog"><span class="secno">4.2.8</span> <span class="content">Data catalog</span></a>
+        <li><a href="#dataset-extended"><span class="secno">4.2.8</span> <span class="content">Extended information</span></a>
+        <li><a href="#data-catalog"><span class="secno">4.2.9</span> <span class="content">Data catalog</span></a>
        </ol>
       <li>
        <a href="#data"><span class="secno">4.3</span> <span class="content">Data information</span></a>
@@ -2043,7 +2044,7 @@ even if it is a query endpoint.</p>
 </pre>
    </div>
    <h4 class="heading settled" data-level="4.2.7" id="dataset-overview"><span class="secno">4.2.7. </span><span class="content">Overview</span><a class="self-link" href="#dataset-overview"></a></h4>
-   <p>Required attributes:</p>
+   <p>Required and recommended attributes:</p>
    <table>
     <caption><a href="https://schema.org/Dataset">schema:Dataset</a> properties</caption>
     <thead>
@@ -2071,7 +2072,7 @@ even if it is a query endpoint.</p>
      <tr>
       <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
       <td>1
-      <td><strong>REQUIRED</strong> 
+      <td><strong>REQUIRED</strong> The publisher of the dataset.
      <tr>
       <th scope="row"><a href="https://schema.org/license">schema:license</a>
       <td>1
@@ -2079,7 +2080,7 @@ even if it is a query endpoint.</p>
      <tr>
       <th scope="row"><a href="https://schema.org/distribution">schema:distribution</a>
       <td>1..n
-      <td><strong>REQUIRED</strong> 
+      <td><strong>REQUIRED</strong> See <a href="#dataset-distributions">§ 4.2.5 Distributions</a>.
      <tr>
       <th scope="row"><a href="https://schema.org/dateCreated">schema:dateCreated</a>
       <td>1
@@ -2092,9 +2093,63 @@ even if it is a query endpoint.</p>
       <th scope="row"><a href="https://schema.org/dateModified">schema:dateModified</a>
       <td>1
       <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
+     <tr>
+      <th scope="row"><a href="https://schema.org/version">schema:version</a>
+      <td>1
+      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-versions">§ 4.2.4 Version</a>.
    </table>
-   <h4 class="heading settled" data-level="4.2.8" id="data-catalog"><span class="secno">4.2.8. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog"></a></h4>
-   <p>A collection of datasets is a data catalog. A catalog provides the <a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">Consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
+   <h4 class="heading settled" data-level="4.2.8" id="dataset-extended"><span class="secno">4.2.8. </span><span class="content">Extended information</span><a class="self-link" href="#dataset-extended"></a></h4>
+   <p>The following dataset attributes provided extra information, which improves the richness of the description and helps <a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">Consumers</a> in finding and selecting datasets.</p>
+   <blockquote>
+    <p>Therefore, publishers <em>SHOULD</em> provide extended information.</p>
+   </blockquote>
+   <table>
+    <caption><a href="https://schema.org/Dataset">schema:Dataset</a> properties</caption>
+    <thead>
+     <tr>
+      <th>Property
+      <th>Cardinality
+      <th>Description
+    <tbody>
+     <tr>
+      <th scope="row"><a href="https://schema.org/mainEntityOfPage">schema:mainEntityOfPage</a>
+      <td>1
+      <td><strong>RECOMMENDED.</strong> URL of a webpage where the dataset is described.
+     <tr>
+      <th scope="row"><a href="https://schema.org/inLanguage">schema:inLanguage</a>
+      <td>1
+      <td><strong>RECOMMENDED.</strong> Language or languages in which the dataset is available. Use one of the language codes from the <a href="https://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>, such as "nl-NL".
+     <tr>
+      <th scope="row"><a href="https://schema.org/isBasedOnUrl">schema:isBasedOnUrl</a>
+      <td>1
+      <td><strong>RECOMMENDED.</strong> The URL of dataset this dataset is based on.
+     <tr>
+      <th scope="row"><a href="https://schema.org/citation">schema:citation</a>
+      <td>1
+      <td><strong>RECOMMENDED</strong> A citation or reference for the dataset.
+     <tr>
+      <th scope="row"><a href="https://schema.org/genre">schema:genre</a>
+      <td>1
+      <td><strong>RECOMMENDED</strong> The genre or genres which describe the dataset.
+     <tr>
+      <th scope="row"><a href="https://schema.org/keywords">schema:keywords</a>
+      <td>1
+      <td><strong>RECOMMENDED.</strong> One or more keyword which describe the dataset.
+     <tr>
+      <th scope="row"><a href="https://schema.org/spatialCoverage">schema:spatialCoverage</a>
+      <td>1..n
+      <td><strong>RECOMMENDED</strong> Indicates the place(s) which are the focus of the dataset.
+     <tr>
+      <th scope="row"><a href="https://schema.org/temporalCoverage">schema:temporalCoverage</a>
+      <td>1
+      <td><strong>RECOMMENDED.</strong> Indicates the period that the dataset applies to.
+     <tr>
+      <th scope="row"><a href="https://schema.org/includedInDataCatalog">schema:includedInDataCatalog</a>
+      <td>1
+      <td><strong>RECOMMENDED.</strong> The URI of the data catalog in which the dataset is.
+   </table>
+   <h4 class="heading settled" data-level="4.2.9" id="data-catalog"><span class="secno">4.2.9. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog"></a></h4>
+   <p>A collection of datasets is a data catalog. A catalog provides the <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">Consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
    </blockquote>
@@ -2179,7 +2234,7 @@ it must be described in <a data-link-type="dfn" href="#term" id="ref-for-term①
    <p class="issue" id="issue-b7b1e314③"><a class="self-link" href="#issue-b7b1e314③"></a> TODO</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements §R-APIDocumented</a></p>
    <h3 class="heading settled" data-level="4.5" id="identifiers"><span class="secno">4.5. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h3>
-   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">Consumers</a> want to refer to data in datasets. Preferably they do so by linking to it.</p>
+   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑥">Consumers</a> want to refer to data in datasets. Preferably they do so by linking to it.</p>
    <blockquote>
     <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a href="#data">data</a> resource,
 as well as their <a href="#organization-information">organization</a> and <a href="#dataset-information">dataset</a> information.
@@ -2219,7 +2274,7 @@ Publishers <em>should</em> also make the <a href="#data">data</a> itself availab
 can help with testing RDF metadata.</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-FormatMachineRead">Data on the Web Best Practices Use Cases &amp; Requirements §R-FormatMachineRead</a>.</p>
    <h3 class="heading settled" data-level="4.7" id="available"><span class="secno">4.7. </span><span class="content">Information remains available</span><a class="self-link" href="#available"></a></h3>
-   <p>Datasets will be used by all kinds of <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑥">consumers</a> and their systems.
+   <p>Datasets will be used by all kinds of <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑦">consumers</a> and their systems.
 For stability, users must be able to trust that the datasets will remain available
 so they can be consulted in the future.</p>
    <blockquote>
@@ -2474,9 +2529,10 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
     <li><a href="#ref-for-consumer①">4.2.2. License</a>
     <li><a href="#ref-for-consumer②">4.2.4. Version</a>
     <li><a href="#ref-for-consumer③">4.2.5. Distributions</a>
-    <li><a href="#ref-for-consumer④">4.2.8. Data catalog</a>
-    <li><a href="#ref-for-consumer⑤">4.5. Durable identifiers</a>
-    <li><a href="#ref-for-consumer⑥">4.7. Information remains available</a>
+    <li><a href="#ref-for-consumer④">4.2.8. Extended information</a>
+    <li><a href="#ref-for-consumer⑤">4.2.9. Data catalog</a>
+    <li><a href="#ref-for-consumer⑥">4.5. Durable identifiers</a>
+    <li><a href="#ref-for-consumer⑦">4.7. Information remains available</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term">
