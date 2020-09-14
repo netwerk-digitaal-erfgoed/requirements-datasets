@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="c48c2f6a76a6cd6738697ccdffa8f0e7c00c1982" name="document-revision">
+  <meta content="74ab1f08ca79755ea55a1c88fdea1c4e555f1ec9" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1829,28 +1829,29 @@ They <em>should</em> do so in the <a data-link-type="biblio" href="#biblio-schem
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-ProvAvailable">Data on the Web Best Practices Use Cases &amp; Requirements §R-ProvAvailable</a>.</p>
    <h4 class="heading settled" data-level="4.1.1" id="organization-overview"><span class="secno">4.1.1. </span><span class="content">Overview</span><a class="self-link" href="#organization-overview"></a></h4>
    <table>
+    <caption><a href="https://schema.org/Organization">schema:Organization</a> properties</caption>
     <thead>
      <tr>
       <th>Property
-      <th>Cardinality
       <th>Description
-      <th>Schema.org
+      <th>Cardinality
+      <th>Usage
     <tbody>
      <tr>
-      <th scope="row">Name
-      <td>1
-      <td><strong>REQUIRED.</strong> The organization’s full name.
       <th scope="row"><a href="https://schema.org/name">schema:name</a>
-     <tr>
-      <th scope="row">Organization URL
+      <td>The organization’s full name.
       <td>1
-      <td><strong>REQUIRED.</strong> A link to the organization’s website.
-      <th scope="row"><a href="https://schema.org/url">schema:url</a>
+      <td>Required
      <tr>
-      <th scope="row">Identifications
-      <td>0..n
-      <td><strong>OPTIONAL.</strong> Links to the organization in other databases.
+      <th scope="row"><a href="https://schema.org/url">schema:url</a>
+      <td>A link to the organization’s website.
+      <td>1
+      <td>Required
+     <tr>
       <th scope="row"><a href="https://schema.org/sameAs">schema:sameAs</a>
+      <td>Links to the organization in other databases.
+      <td>0..n
+      <td>Recommended
    </table>
    <h3 class="heading settled" data-level="4.2" id="dataset-information"><span class="secno">4.2. </span><span class="content">Dataset information</span><a class="self-link" href="#dataset-information"></a></h3>
    <p>For users, having access to the data contained in the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">dataset</a> is not enough.
@@ -1957,22 +1958,60 @@ even if it is a query endpoint.</p>
      <tr>
       <th>Property
       <th>Description
+      <th>Cardinality
       <th>Usage
     <tbody>
      <tr>
       <th scope="row">@id
       <td>The IRI where the distribution is available in a browser.
+      <td>1
       <td>Required
      <tr>
+      <th scope="row"><a href="https://schema.org/name">schema:name</a>
+      <td>Name of the distribution, depicting the type of distribution.
+      <td>1
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/description">schema:description</a>
+      <td>A description of the the distribution.
+      <td>0..1
+      <td>Recommended
+     <tr>
       <th scope="row"><a href="https://schema.org/encodingFormat">schema:encodingFormat</a>
-      <td> The distribution’s MIME format,
-                for example <code>application/sparql-query</code> for a SPARL endpoint
-                or <code>application/ld+json</code> for a data dump serialized as JSON-LD. 
+      <td>The distribution’s MIME format, for example <code>application/sparql-query</code> for a SPARL endpoint
+ or <code>application/ld+json</code> for a data dump serialized as JSON-LD. See <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">IANA-site</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types">MDN-reference</a> for more information. 
+      <td>1..n
       <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/contentUrl">schema:contentUrl</a>
       <td>The URL where the distribution can be directly accessed.
+      <td>1
       <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/datePublished">schema:datePublished</a>
+      <td>Date (or datatime) the distribution was published.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/dateModified">schema:dateModified</a>
+      <td>Date (or datetime) the distribution was last modified.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/inLanguage">schema:inLanguage</a>
+      <td>Language or languages in which the dataset is available. Use one of the language codes from the <a href="https://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>, such as "nl-NL".
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/license">schema:license</a>
+      <td>See <a href="#dataset-license">§ 4.2.2 License</a>.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/contentSize">schema:contentSize</a>
+      <td>A measure indicating the size of the distribution.
+      <td>0..1
+      <td>Recommended
    </table>
    <div class="example" id="example-53ea2b53">
     <a class="self-link" href="#example-53ea2b53"></a> A dataset with two distributions: a SPARQL endpoint and a JSON-LD data dump download: 
@@ -2050,53 +2089,65 @@ even if it is a query endpoint.</p>
     <thead>
      <tr>
       <th>Property
-      <th>Cardinality
       <th>Description
+      <th>Cardinality
+      <th>Usage
     <tbody>
      <tr>
       <th scope="row"><a href="https://schema.org/identifier">schema:identifier</a>
+      <td>See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
       <td>1
-      <td><strong>REQUIRED.</strong> See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
+      <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/name">schema:name</a>
+      <td>See [[#dataset-basic]
       <td>1
-      <td><strong>REQUIRED.</strong> See <a href="#dataset-basic">§ 4.2.1 Basic information</a>
+      <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/description">schema:description</a>
+      <td>See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
       <td>1
-      <td><strong>REQUIRED.</strong> See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
+      <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/creator">schema:creator</a>
+      <td>The owner of the dataset.
       <td>1
-      <td><strong>REQUIRED</strong> The owner of the dataset.
-     <tr>
-      <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
-      <td>1
-      <td><strong>REQUIRED</strong> The publisher of the dataset.
+      <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/license">schema:license</a>
+      <td>See <a href="#dataset-license">§ 4.2.2 License</a>.
       <td>1
-      <td><strong>REQUIRED.</strong> See <a href="#dataset-license">§ 4.2.2 License</a>.
+      <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/distribution">schema:distribution</a>
+      <td>See <a href="#dataset-distributions">§ 4.2.5 Distributions</a>.
       <td>1..n
-      <td><strong>REQUIRED</strong> See <a href="#dataset-distributions">§ 4.2.5 Distributions</a>.
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
+      <td>The publisher of the dataset.
+      <td>0..1
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/dateCreated">schema:dateCreated</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
+      <td>See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
+      <td>0..1
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/datePublished">schema:datePublished</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
+      <td>See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
+      <td>0..1
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/dateModified">schema:dateModified</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
+      <td>See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
+      <td>0..1
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/version">schema:version</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-versions">§ 4.2.4 Version</a>.
+      <td>See <a href="#dataset-versions">§ 4.2.4 Version</a>.
+      <td>0..1
+      <td>Recommended
    </table>
    <h4 class="heading settled" data-level="4.2.8" id="dataset-extended"><span class="secno">4.2.8. </span><span class="content">Extended information</span><a class="self-link" href="#dataset-extended"></a></h4>
    <p>The following dataset attributes provided extra information, which improves the richness of the description and helps <a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">Consumers</a> in finding and selecting datasets.</p>
@@ -2108,51 +2159,98 @@ even if it is a query endpoint.</p>
     <thead>
      <tr>
       <th>Property
-      <th>Cardinality
       <th>Description
+      <th>Cardinality
+      <th>Usage
     <tbody>
      <tr>
       <th scope="row"><a href="https://schema.org/mainEntityOfPage">schema:mainEntityOfPage</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> URL of a webpage where the dataset is described.
+      <td>URL of a webpage where the dataset is described.
+      <td>0..1
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/inLanguage">schema:inLanguage</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> Language or languages in which the dataset is available. Use one of the language codes from the <a href="https://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>, such as "nl-NL".
+      <td>Language or languages in which the dataset is available. Use one of the language codes from the <a href="https://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>, such as "nl-NL".
+      <td>0..n
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/isBasedOnUrl">schema:isBasedOnUrl</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> The URL of dataset this dataset is based on.
+      <td>The URL of dataset this dataset is based on.
+      <td>0..1
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/citation">schema:citation</a>
-      <td>1
-      <td><strong>RECOMMENDED</strong> A citation or reference for the dataset.
+      <td>A citation or reference for the dataset.
+      <td>0..1
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/genre">schema:genre</a>
-      <td>1
-      <td><strong>RECOMMENDED</strong> The genre or genres which describe the dataset.
+      <td>The genre or genres which describe the dataset.
+      <td>0..n
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/keywords">schema:keywords</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> One or more keyword which describe the dataset.
+      <td>One or more keyword which describe the dataset.
+      <td>0..n
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/spatialCoverage">schema:spatialCoverage</a>
-      <td>1
-      <td><strong>RECOMMENDED</strong> Indicates the place(s) which are the focus of the dataset.
+      <td>Indicates the place(s) which are the focus of the dataset.
+      <td>0..1
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/temporalCoverage">schema:temporalCoverage</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> Indicates the period that the dataset applies to.
+      <td>Indicates the period that the dataset applies to.
+      <td>0..1
+      <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/includedInDataCatalog">schema:includedInDataCatalog</a>
-      <td>1
-      <td><strong>RECOMMENDED.</strong> The URI of the data catalog in which the dataset is.
+      <td>The URI of the data catalog in which the dataset is.
+      <td>0..1
+      <td>Recommended
    </table>
    <h4 class="heading settled" data-level="4.2.9" id="data-catalog"><span class="secno">4.2.9. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog"></a></h4>
    <p>A collection of datasets is a data catalog. A catalog provides the <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">Consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
    </blockquote>
+   <svg height="600" overflow="hidden" style="zoom:0.6" width="1280" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+     <clipPath id="clip0">
+      <path clip-rule="evenodd" d="M0 0 1280 0 1280 600 0 720Z" fill-rule="evenodd"></path>
+     </clipPath>
+    </defs>
+    <g clip-path="url(#clip0)">
+     <rect fill="#dae8fc" height="164" stroke="#dae8fc" stroke-linejoin="round" stroke-miterlimit="10" width="380" x="48.5001" y="39.5001"></rect>
+     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(188.549 73)">
+      Catalog
+      <tspan font-size="24" font-weight="400" x="-124.253" y="60">A catalog is a compiled collection of</tspan>
+      <tspan font-size="24" font-weight="400" x="-75.1067" y="88">metadata about datasets.</tspan>
+     </text>
+     <rect fill="#dae8fc" height="165" stroke="#dae8fc" stroke-linejoin="round" stroke-miterlimit="10" width="380" x="428.5" y="237.5"></rect>
+     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(566.668 272)">
+      Dataset
+      <tspan font-size="24" font-weight="400" x="-122.613" y="60">A dataset is a general description of</tspan>
+      <tspan font-size="24" font-weight="400" x="-108.56" y="88">a collection of data, published or</tspan>
+      <tspan font-size="24" font-weight="400" x="-118.28" y="117">compiled by a single administrator.</tspan>
+     </text>
+     <rect fill="#dae8fc" height="165" stroke="#A9D18E" stroke-linejoin="round" stroke-miterlimit="10" width="379" x="808.5" y="435.5"></rect>
+     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(918.194 470)">
+      Distribution
+      <tspan font-size="24" font-weight="400" x="-100.88" y="60">A distribution describes the channels</tspan>
+      <tspan font-size="24" font-weight="400" x="-79.58" y="88">through which a dataset is made</tspan>
+      <tspan font-size="24" font-weight="400" x="33.3666" y="117">available.</tspan>
+     </text>
+     <path d="M428 118 620.798 118 620.798 221.865 614.798 221.865 614.798 121 617.798 124 428 124ZM626.798 218.865 617.798 236.865 608.798 218.865Z" fill="#111111"></path>
+     <path d="M808 316 1000.8 316 1000.8 419.865 994.798 419.865 994.798 319 997.798 322 808 322ZM1006.8 416.865 997.798 434.865 988.798 416.865Z" fill="#111111"></path>
+     <text fill="#111111" font-family="Calibri,sans-serif" font-size="24" font-weight="400" transform="translate(868.653 307)">
+      available via
+      <tspan x="-342.303" y="-198">contains</tspan>
+      <tspan x="-297.35" y="-157">1..n</tspan>
+      <tspan x="82.2466" y="44">1..n</tspan>
+     </text>
+    </g>
+   </svg>
    <div class="example" id="example-9b89d49c">
     <a class="self-link" href="#example-9b89d49c"></a> A catalog of available datasets: 
 <pre class="highlight"><c- p>{</c->
@@ -2182,25 +2280,30 @@ even if it is a query endpoint.</p>
     <thead>
      <tr>
       <th>Property
-      <th>Cardinality
       <th>Description
+      <th>Cardinality
+      <th>Usage
     <tbody>
      <tr>
       <th scope="row"><a href="https://schema.org/name">schema:name</a>
+      <td>The name of the datacatalog.
       <td>1
-      <td><strong>REQUIRED</strong>
+      <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/description">schema:description</a>
+      <td>A description of the data catalog.
       <td>1
-      <td><strong>REQUIRED</strong>
+      <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
-      <td>1..n
-      <td><strong>REQUIRED</strong>
+      <td>The publisher of the data catalog.
+      <td>1
+      <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/dataset">schema:dataset</a>
+      <td>The datasets containing all dataset information.
       <td>1..n
-      <td><strong>REQUIRED</strong>
+      <td>Required
    </table>
    <h3 class="heading settled" data-level="4.3" id="data"><span class="secno">4.3. </span><span class="content">Data information</span><a class="self-link" href="#data"></a></h3>
    <h4 class="heading settled" data-level="4.3.1" id="relations"><span class="secno">4.3.1. </span><span class="content">Relations to terms</span><a class="self-link" href="#relations"></a></h4>
