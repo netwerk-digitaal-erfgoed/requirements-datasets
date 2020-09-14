@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="74ab1f08ca79755ea55a1c88fdea1c4e555f1ec9" name="document-revision">
+  <meta content="eebe8823ce10bd6a25f52282041a72829e9d6d5d" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1351,6 +1351,73 @@ figcaption:not(.no-marker)::before {
 }
 
 .dfn-paneled { cursor: pointer; }
+</style>
+<style>/* style-line-highlighting */
+
+.line-numbered {
+    display: grid !important;
+    grid-template-columns: min-content 1fr;
+    grid-auto-flow: rows;
+}
+.line-numbered > *,
+.line-numbered::before,
+.line-numbered::after {
+    grid-column: 1/-1;
+}
+.line-no {
+    grid-column: 1;
+    color: gray;
+}
+.line {
+    grid-column: 2;
+}
+.line.highlight-line {
+    background: rgba(0,0,0,.05);
+}
+.line-no.highlight-line {
+    background: rgba(0,0,0,.05);
+    color: #444;
+    font-weight: bold;
+}
+.line-no.highlight-line[data-line]::before {
+    padding: 0 .5em 0 .1em;
+    content: attr(data-line);
+}
+.line-no.highlight-line[data-line-end]::after {
+    padding: 0 .5em 0 .1em;
+    content: attr(data-line-end);
+}
+</style>
+<style>/* style-line-numbers */
+
+.line-numbered {
+    display: grid !important;
+    grid-template-columns: min-content 1fr;
+    grid-auto-flow: row;
+}
+.line-numbered > *,
+.line-numbered::before,
+.line-numbered::after {
+    grid-column: 1/-1;
+}
+.line-no {
+    grid-column: 1;
+    color: gray;
+}
+.line {
+    grid-column: 2;
+}
+.line:hover {
+    background: rgba(0,0,0,.05);
+}
+.line-no[data-line]::before {
+    padding: 0 .5em 0 .1em;
+    content: attr(data-line);
+}
+.line-no[data-line-end]::after {
+    padding: 0 .5em 0 .1em;
+    content: attr(data-line-end);
+}
 </style>
 <style>/* style-md-lists */
 
@@ -1890,25 +1957,9 @@ This information answers user questions such as:</p>
 </pre>
    </div>
    <p>If more information is available, publishers <em>SHOULD</em> add it.</p>
-   <div class="example" id="example-6402610a">
+   <div class="example" id="example-6402610a" line-highlight="11-15">
     <a class="self-link" href="#example-6402610a"></a> More information about the dataset. 
-<pre class="highlight"><c- p>{</c->
-  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
-  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
-  <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c->
-  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c->
-    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
-    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c->
-    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
-  <c- p>},</c->
-  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c->
-  <c- f>"identifier"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c->
-  <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c->
-    <c- u>"alba amicorum"</c->
-  <c- p>]</c->
-<c- p>}</c->
-</pre>
+<pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="5"></span><span class="line">  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no" data-line="6"></span><span class="line">    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c-></span><span class="line-no" data-line="7"></span><span class="line">    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c-></span><span class="line-no" data-line="8"></span><span class="line">    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="9"></span><span class="line">    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c-></span><span class="line-no" data-line="10"></span><span class="line">  <c- p>},</c-></span><span class="line-no" data-line="11"></span><span class="line">  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c-></span><span class="line-no" data-line="12"></span><span class="line">  <c- f>"identifier"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c-></span><span class="line-no" data-line="13"></span><span class="line">  <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no" data-line="14"></span><span class="line">    <c- u>"alba amicorum"</c-></span><span class="line-no" data-line="15"></span><span class="line">  <c- p>]</c-></span><span class="line-no" data-line="16"></span><span class="line"><c- p>}</c-></span></pre>
    </div>
    <h4 class="heading settled" data-level="4.2.2" id="dataset-license"><span class="secno">4.2.2. </span><span class="content">License</span><a class="self-link" href="#dataset-license"></a></h4>
    <p>Publishers <em>MUST</em> make known under which <a href="https://www.w3.org/TR/dwbp/#licenses">license</a> the dataset can be used.
@@ -2314,22 +2365,11 @@ it must be described in <a data-link-type="dfn" href="#term" id="ref-for-term①
    </blockquote>
    <div class="example" id="example-592f0be1">
     <a class="self-link" href="#example-592f0be1"></a> A painting in plain JSON, where all values are <a href="https://www.w3.org/TR/rdf11-concepts/#section-literals">string literals</a>: 
-<pre class="highlight"><c- p>{</c->
-  <c- f>"type"</c-><c- p>:</c-> <c- u>"Artwork"</c-><c- p>,</c->
-  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c->
-  <c- f>"creator"</c-><c- p>:</c-> <c- u>"Rembrandt"</c->
-<c- p>}</c->
-</pre>
+<pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- f>"type"</c-><c- p>:</c-> <c- u>"Artwork"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"creator"</c-><c- p>:</c-> <c- u>"Rembrandt"</c-></span><span class="line-no" data-line="5"></span><span class="line"><c- p>}</c-></span></pre>
     <p>Now, with relations to <a data-link-type="dfn" href="#term" id="ref-for-term③">terms</a>.
     We <a href="https://www.w3.org/TR/json-ld/#specifying-the-type">specify the item’s type</a> in the <a data-link-type="biblio" href="#biblio-schema-org">[SCHEMA-ORG]</a> vocabulary
     and refer to the painter by his RKDArtists <a data-link-type="biblio" href="#biblio-iri">[IRI]</a>.</p>
-<pre class="highlight"><c- p>{</c->
-  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
-  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Painting"</c-><c- p>,</c->
-  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c->
-  <c- f>"creator"</c-><c- p>:</c-> <c- u>"https://data.rkd.nl/artists/66219"</c->
-<c- p>}</c->
-</pre>
+<pre class="highlight line-numbered" line-highlight="3,5"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="3"></span><span class="line highlight-line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Painting"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="5"></span><span class="line highlight-line">  <c- f>"creator"</c-><c- p>:</c-> <c- u>"https://data.rkd.nl/artists/66219"</c-></span><span class="line-no" data-line="6"></span><span class="line"><c- p>}</c-></span></pre>
    </div>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-VocabReference">Data on the Web Best Practices Use Cases &amp; Requirements §R-VocabReference</a>.</p>
    <h3 class="heading settled" data-level="4.4" id="developer-docs"><span class="secno">4.4. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h3>
