@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="eebe8823ce10bd6a25f52282041a72829e9d6d5d" name="document-revision">
+  <meta content="01f3c2fe27e73825b72e9fa9394995fc9e6094da" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -2030,7 +2030,7 @@ even if it is a query endpoint.</p>
      <tr>
       <th scope="row"><a href="https://schema.org/encodingFormat">schema:encodingFormat</a>
       <td>The distribution’s MIME format, for example <code>application/sparql-query</code> for a SPARL endpoint
- or <code>application/ld+json</code> for a data dump serialized as JSON-LD. See <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">IANA-site</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types">MDN-reference</a> for more information. 
+ or <code>application/ld+json</code> for a data dump serialized as JSON-LD. See <a data-link-type="biblio" href="#biblio-iana-media-types">[IANA-MEDIA-TYPES]</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types">MDN-reference</a> for more information.
       <td>1..n
       <td>Required
      <tr>
@@ -2050,7 +2050,7 @@ even if it is a query endpoint.</p>
       <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/inLanguage">schema:inLanguage</a>
-      <td>Language or languages in which the dataset is available. Use one of the language codes from the <a href="https://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>, such as "nl-NL".
+      <td>Language or languages in which the dataset is available. Use one of the language codes from the <a data-link-type="biblio" href="#biblio-bcp47">[BCP47]</a>, such as "nl-NL".
       <td>0..1
       <td>Recommended
      <tr>
@@ -2064,6 +2064,10 @@ even if it is a query endpoint.</p>
       <td>0..1
       <td>Recommended
    </table>
+   <dl>
+    <dd data-md>
+     <p class="issue" id="issue-1c1ad482"><a class="self-link" href="#issue-1c1ad482"></a> TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).</p>
+   </dl>
    <div class="example" id="example-53ea2b53">
     <a class="self-link" href="#example-53ea2b53"></a> A dataset with two distributions: a SPARQL endpoint and a JSON-LD data dump download: 
 <pre class="highlight"><c- p>{</c->
@@ -2133,6 +2137,10 @@ even if it is a query endpoint.</p>
 <c- p>}</c->
 </pre>
    </div>
+   <dl>
+    <dd data-md>
+     <p class="issue" id="issue-371b3745"><a class="self-link" href="#issue-371b3745"></a> TODO Expand example based on required (and recommended) properties.</p>
+   </dl>
    <h4 class="heading settled" data-level="4.2.7" id="dataset-overview"><span class="secno">4.2.7. </span><span class="content">Overview</span><a class="self-link" href="#dataset-overview"></a></h4>
    <p>Required and recommended attributes:</p>
    <table>
@@ -2201,6 +2209,10 @@ even if it is a query endpoint.</p>
       <td>Recommended
    </table>
    <h4 class="heading settled" data-level="4.2.8" id="dataset-extended"><span class="secno">4.2.8. </span><span class="content">Extended information</span><a class="self-link" href="#dataset-extended"></a></h4>
+   <dl>
+    <dd data-md>
+     <p class="issue" id="issue-28bb91d6"><a class="self-link" href="#issue-28bb91d6"></a> TODO Right location? Why separate?</p>
+   </dl>
    <p>The following dataset attributes provided extra information, which improves the richness of the description and helps <a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">Consumers</a> in finding and selecting datasets.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> provide extended information.</p>
@@ -2221,7 +2233,7 @@ even if it is a query endpoint.</p>
       <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/inLanguage">schema:inLanguage</a>
-      <td>Language or languages in which the dataset is available. Use one of the language codes from the <a href="https://tools.ietf.org/html/bcp47">IETF BCP 47 standard</a>, such as "nl-NL".
+      <td>Language or languages in which the dataset is available. Use one of the language codes from the <a data-link-type="biblio" href="#biblio-bcp47">[BCP47]</a>, such as "nl-NL".
       <td>0..n
       <td>Recommended
      <tr>
@@ -2374,7 +2386,7 @@ it must be described in <a data-link-type="dfn" href="#term" id="ref-for-term①
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-VocabReference">Data on the Web Best Practices Use Cases &amp; Requirements §R-VocabReference</a>.</p>
    <h3 class="heading settled" data-level="4.4" id="developer-docs"><span class="secno">4.4. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h3>
    <p>Publishers <em>MUST</em> publish documentation for their data access <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>.</p>
-   <p class="issue" id="issue-b7b1e314③"><a class="self-link" href="#issue-b7b1e314③"></a> TODO</p>
+   <p class="issue" id="issue-99a3d5ce"><a class="self-link" href="#issue-99a3d5ce"></a> TODO plus mention SHACL (here or elsewhere)?</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements §R-APIDocumented</a></p>
    <h3 class="heading settled" data-level="4.5" id="identifiers"><span class="secno">4.5. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h3>
    <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑥">Consumers</a> want to refer to data in datasets. Preferably they do so by linking to it.</p>
@@ -2591,10 +2603,14 @@ so they can be consulted in the future.</p>
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
+   <dt id="biblio-bcp47">[BCP47]
+   <dd>A. Phillips; M. Davis. <a href="https://tools.ietf.org/html/bcp47">Tags for Identifying Languages</a>. September 2009. IETF Best Current Practice. URL: <a href="https://tools.ietf.org/html/bcp47">https://tools.ietf.org/html/bcp47</a>
    <dt id="biblio-dwbp">[DWBP]
    <dd>Bernadette Farias Loscio; Caroline Burle; Newton Calegari. <a href="https://www.w3.org/TR/dwbp/">Data on the Web Best Practices</a>. 31 January 2017. REC. URL: <a href="https://www.w3.org/TR/dwbp/">https://www.w3.org/TR/dwbp/</a>
    <dt id="biblio-dwbp-ucr">[DWBP-UCR]
    <dd>Deirdre Lee; Bernadette Farias Loscio; Phil Archer. <a href="https://www.w3.org/TR/dwbp-ucr/">Data on the Web Best Practices Use Cases &amp; Requirements</a>. 24 February 2015. NOTE. URL: <a href="https://www.w3.org/TR/dwbp-ucr/">https://www.w3.org/TR/dwbp-ucr/</a>
+   <dt id="biblio-iana-media-types">[IANA-MEDIA-TYPES]
+   <dd><a href="https://www.iana.org/assignments/media-types/">Media Types</a>. URL: <a href="https://www.iana.org/assignments/media-types/">https://www.iana.org/assignments/media-types/</a>
    <dt id="biblio-iri">[IRI]
    <dd>M. Duerst; M. Suignard. <a href="https://tools.ietf.org/html/rfc3987">Internationalized Resource Identifiers (IRIs)</a>. January 2005. Proposed Standard. URL: <a href="https://tools.ietf.org/html/rfc3987">https://tools.ietf.org/html/rfc3987</a>
    <dt id="biblio-json-ld">[JSON-LD]
@@ -2620,7 +2636,10 @@ so they can be consulted in the future.</p>
    <div class="issue"> is this a good translation for ‘bronhouder’? And add examples.
 This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>.<a href="#issue-6f3bbb3f"> ↵ </a></div>
    <div class="issue"> add examples<a href="#issue-a71b8ddb"> ↵ </a></div>
-   <div class="issue"> TODO<a href="#issue-b7b1e314③"> ↵ </a></div>
+   <div class="issue"> TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).<a href="#issue-1c1ad482"> ↵ </a></div>
+   <div class="issue"> TODO Expand example based on required (and recommended) properties.<a href="#issue-371b3745"> ↵ </a></div>
+   <div class="issue"> TODO Right location? Why separate?<a href="#issue-28bb91d6"> ↵ </a></div>
+   <div class="issue"> TODO plus mention SHACL (here or elsewhere)?<a href="#issue-99a3d5ce"> ↵ </a></div>
   </div>
   <aside class="dfn-panel" data-for="dataset">
    <b><a href="#dataset">#dataset</a></b><b>Referenced in:</b>
