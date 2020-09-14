@@ -1221,9 +1221,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 40de15f9, updated Thu Jun 11 17:47:04 2020 -0700" name="generator">
+  <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="2c07963f34702b8ac568215c243c2918f233925f" name="document-revision">
+  <meta content="5c57b9d67ba971976a2c58fbf9264fc785ccb107" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1537,7 +1537,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2020-09-10">10 September 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2020-09-14">14 September 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1554,7 +1554,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 10 September 2020,
+In addition, as of 14 September 2020,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -1592,7 +1592,7 @@ Parts of this work may be from another specification document.  If so, those par
        <ol class="toc">
         <li><a href="#dataset-basic"><span class="secno">4.2.1</span> <span class="content">Basic information</span></a>
         <li><a href="#dataset-license"><span class="secno">4.2.2</span> <span class="content">License</span></a>
-        <li><a href="#dataset-date"><span class="secno">4.2.3</span> <span class="content">Publication date</span></a>
+        <li><a href="#dataset-date"><span class="secno">4.2.3</span> <span class="content">Dataset description dates</span></a>
         <li><a href="#dataset-versions"><span class="secno">4.2.4</span> <span class="content">Version</span></a>
         <li><a href="#dataset-distributions"><span class="secno">4.2.5</span> <span class="content">Distributions</span></a>
         <li><a href="#dataset-example"><span class="secno">4.2.6</span> <span class="content">Full example</span></a>
@@ -1972,13 +1972,14 @@ for example one of the <a href="https://creativecommons.org/choose/">Creative Co
 </pre>
    </div>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-LicenseAvailable">Data on the Web Best Practices Use Cases &amp; Requirements §R-LicenseAvailable</a>.</p>
-   <h4 class="heading settled" data-level="4.2.3" id="dataset-date"><span class="secno">4.2.3. </span><span class="content">Publication date</span><a class="self-link" href="#dataset-date"></a></h4>
-   <p>Publishers <em>SHOULD</em> make known when the dataset was originally published and when it was last updated.</p>
-   <div class="example" id="example-f6c0505a">
-    <a class="self-link" href="#example-f6c0505a"></a> Specify publication dates: 
+   <h4 class="heading settled" data-level="4.2.3" id="dataset-date"><span class="secno">4.2.3. </span><span class="content">Dataset description dates</span><a class="self-link" href="#dataset-date"></a></h4>
+   <p>Publishers <em>SHOULD</em> make known when the dataset description was originally created, published and when it was last updated.</p>
+   <div class="example" id="example-bb0355e3">
+    <a class="self-link" href="#example-bb0355e3"></a> Specify dataset description dates: 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
+  <c- f>"dateCreated"</c-><c- p>:</c-> <c- u>"2019-04-14"</c-><c- p>,</c->
   <c- f>"datePublished"</c-><c- p>:</c-> <c- u>"2019-05-21"</c-><c- p>,</c->
   <c- f>"dateModified"</c-><c- p>:</c-> <c- u>"2019-08-15"</c->
 <c- p>}</c->
@@ -2047,7 +2048,7 @@ even if it is a query endpoint.</p>
    <div class="example" id="example-3c9f1e16">
     <a class="self-link" href="#example-3c9f1e16"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 4.2.1 Basic information</a>), 
     a license (<a href="#dataset-license">§ 4.2.2 License</a>)
-    and publication dates (<a href="#dataset-date">§ 4.2.3 Publication date</a>): 
+    and publication dates (<a href="#dataset-date">§ 4.2.3 Dataset description dates</a>): 
 <pre class="include-code highlight" path="examples/dataset.jsonld"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -2132,11 +2133,11 @@ even if it is a query endpoint.</p>
      <tr>
       <th scope="row"><a href="https://schema.org/datePublished">schema:datePublished</a>
       <td>1
-      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Publication date</a>.
+      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
      <tr>
       <th scope="row"><a href="https://schema.org/dateModified">schema:dateModified</a>
       <td>1
-      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Publication date</a>.
+      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
    </table>
    <table>
     <caption>This is a caption</caption>
