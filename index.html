@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="5c57b9d67ba971976a2c58fbf9264fc785ccb107" name="document-revision">
+  <meta content="fd14465c9ee9a1357b28cf37f07a2cb6596ee949" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1597,6 +1597,7 @@ Parts of this work may be from another specification document.  If so, those par
         <li><a href="#dataset-distributions"><span class="secno">4.2.5</span> <span class="content">Distributions</span></a>
         <li><a href="#dataset-example"><span class="secno">4.2.6</span> <span class="content">Full example</span></a>
         <li><a href="#dataset-overview"><span class="secno">4.2.7</span> <span class="content">Overview</span></a>
+        <li><a href="#data-catalog"><span class="secno">4.2.8</span> <span class="content">Data catalog</span></a>
        </ol>
       <li>
        <a href="#data"><span class="secno">4.3</span> <span class="content">Data information</span></a>
@@ -1986,9 +1987,9 @@ for example one of the <a href="https://creativecommons.org/choose/">Creative Co
 </pre>
    </div>
    <h4 class="heading settled" data-level="4.2.4" id="dataset-versions"><span class="secno">4.2.4. </span><span class="content">Version</span><a class="self-link" href="#dataset-versions"></a></h4>
-   <p>Data may change over time. <a data-link-type="dfn" href="#consumer" id="ref-for-consumer②">Consumers</a>, such as researchers, may want to determine which information was valid at a certain moment.</p>
+   <p>A dataset description may change over time. <a data-link-type="dfn" href="#consumer" id="ref-for-consumer②">Consumers</a>, such as researchers, may want to determine which information was valid at a certain moment.</p>
    <blockquote>
-    <p>Therefore, publishers <em>should</em> not only publish the current version of the dataset,
+    <p>Therefore, publishers <em>should</em> not only publish the current version of the dataset description,
 but keep historical versions accessible to users.</p>
    </blockquote>
    <p>It is up to the publisher to determine when to publish new versions.</p>
@@ -2095,7 +2096,7 @@ even if it is a query endpoint.</p>
    <h4 class="heading settled" data-level="4.2.7" id="dataset-overview"><span class="secno">4.2.7. </span><span class="content">Overview</span><a class="self-link" href="#dataset-overview"></a></h4>
    <p>Required attributes:</p>
    <table>
-    <caption><a href="https://schema.org/Dataset">schema:Dataset</a></caption>
+    <caption><a href="https://schema.org/Dataset">schema:Dataset</a> properties</caption>
     <thead>
      <tr>
       <th>Property
@@ -2131,6 +2132,10 @@ even if it is a query endpoint.</p>
       <td>1..n
       <td><strong>REQUIRED</strong> 
      <tr>
+      <th scope="row"><a href="https://schema.org/dateCreated">schema:dateCreated</a>
+      <td>1
+      <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
+     <tr>
       <th scope="row"><a href="https://schema.org/datePublished">schema:datePublished</a>
       <td>1
       <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
@@ -2139,8 +2144,17 @@ even if it is a query endpoint.</p>
       <td>1
       <td><strong>RECOMMENDED.</strong> See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
    </table>
+   <h4 class="heading settled" data-level="4.2.8" id="data-catalog"><span class="secno">4.2.8. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog"></a></h4>
+   <p>A collection of datasets is a data catalog. A catalog provides the <a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">Consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
+   <blockquote>
+    <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
+   </blockquote>
+   <div class="example" id="example-9b89d49c">
+    <a class="self-link" href="#example-9b89d49c"></a> A catalog of available datasets: 
+<pre class="highlight line-numbered" line-highlight="3,5"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="3"></span><span class="line highlight-line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataCatalog"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"Linked Data KB"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="5"></span><span class="line highlight-line">  <c- f>"description"</c-><c- p>:</c-> <c- u>"Alle linked data zoals beschikbaar gesteld door de Koninklijke Bibliotheek."</c-><c- p>,</c-></span><span class="line-no" data-line="6"></span><span class="line">  <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no" data-line="7"></span><span class="line">            <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c-></span><span class="line-no" data-line="8"></span><span class="line">            <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="9"></span><span class="line">            <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-></span><span class="line-no" data-line="10"></span><span class="line">       <c- p>},</c-></span><span class="line-no" data-line="11"></span><span class="line">       <c- f>"dataset"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no" data-line="12"></span><span class="line">         <c- p>{</c-></span><span class="line-no" data-line="13"></span><span class="line">           <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="14"></span><span class="line">           <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c-></span><span class="line-no" data-line="15"></span><span class="line">           ...</span><span class="line-no" data-line="16"></span><span class="line">         <c- p>},</c-> <c- p>{</c-> </span><span class="line-no" data-line="17"></span><span class="line">           ...</span><span class="line-no" data-line="18"></span><span class="line">         <c- p>}</c-></span><span class="line-no" data-line="19"></span><span class="line">  <c- p>]</c-></span><span class="line-no" data-line="20"></span><span class="line"><c- p>}</c-></span></pre>
+   </div>
    <table>
-    <caption>This is a caption</caption>
+    <caption><a href="http://schema.org/DataCatalog">schema:DataCatalog</a> properties</caption>
     <thead>
      <tr>
       <th>Property
@@ -2185,7 +2199,7 @@ it must be described in <a data-link-type="dfn" href="#term" id="ref-for-term①
    <p class="issue" id="issue-b7b1e314③"><a class="self-link" href="#issue-b7b1e314③"></a> TODO</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements §R-APIDocumented</a></p>
    <h3 class="heading settled" data-level="4.5" id="identifiers"><span class="secno">4.5. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h3>
-   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">Consumers</a> want to refer to data in datasets. Preferably they do so by linking to it.</p>
+   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">Consumers</a> want to refer to data in datasets. Preferably they do so by linking to it.</p>
    <blockquote>
     <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a href="#data">data</a> resource,
 as well as their <a href="#organization-information">organization</a> and <a href="#dataset-information">dataset</a> information.
@@ -2225,7 +2239,7 @@ Publishers <em>should</em> also make the <a href="#data">data</a> itself availab
 can help with testing RDF metadata.</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-FormatMachineRead">Data on the Web Best Practices Use Cases &amp; Requirements §R-FormatMachineRead</a>.</p>
    <h3 class="heading settled" data-level="4.7" id="available"><span class="secno">4.7. </span><span class="content">Information remains available</span><a class="self-link" href="#available"></a></h3>
-   <p>Datasets will be used by all kinds of <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">consumers</a> and their systems.
+   <p>Datasets will be used by all kinds of <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑥">consumers</a> and their systems.
 For stability, users must be able to trust that the datasets will remain available
 so they can be consulted in the future.</p>
    <blockquote>
@@ -2480,8 +2494,9 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
     <li><a href="#ref-for-consumer①">4.2.2. License</a>
     <li><a href="#ref-for-consumer②">4.2.4. Version</a>
     <li><a href="#ref-for-consumer③">4.2.5. Distributions</a>
-    <li><a href="#ref-for-consumer④">4.5. Durable identifiers</a>
-    <li><a href="#ref-for-consumer⑤">4.7. Information remains available</a>
+    <li><a href="#ref-for-consumer④">4.2.8. Data catalog</a>
+    <li><a href="#ref-for-consumer⑤">4.5. Durable identifiers</a>
+    <li><a href="#ref-for-consumer⑥">4.7. Information remains available</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term">
