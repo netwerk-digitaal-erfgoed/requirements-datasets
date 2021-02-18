@@ -210,12 +210,12 @@ Publishers *MUST* include basic information about the dataset, at the very minim
     </pre>
 </div>
 
-If more information is available, publishers *SHOULD* add it.
+If more information is available, publishers *SHOULD* add it:
 
 <div class="example">
-    More information about the dataset.
+    Optional information about the dataset.
     
-    <pre highlight=json-ld line-numbers line-highlight="11-15">
+    <pre highlight=json-ld line-numbers line-highlight="11-16">
         {
           "@context": "https://schema.org/",
           "@type": "Dataset",
@@ -226,6 +226,7 @@ If more information is available, publishers *SHOULD* add it.
             "name": "Koninklijke Bibliotheek",
             "sameAs": "https://ror.org/02w4jbg70"
           },
+          "description": "Alba amicorum of the National Library of the Netherlands, a dataset defined for the Europeana Rise of Literacy project." 
           "url": "https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum",
           "identifier": "http://data.bibliotheken.nl/id/dataset/rise-alba",
           "keywords": [
@@ -442,12 +443,6 @@ Required and recommended attributes:
             <td>Required</td>
         </tr>
         <tr>
-            <th scope="row">[schema:description](https://schema.org/description)</th>
-            <td>See [[#dataset-basic]].</td>
-			<td>1</td>
-            <td>Required</td>
-        </tr>
-        <tr>
             <th scope="row">[schema:creator](https://schema.org/creator)</th>
             <td>The owner of the dataset.</td>
 			<td>1</td>
@@ -464,6 +459,12 @@ Required and recommended attributes:
             <td>See [[#dataset-distributions]].</td>
 			<td>1..n</td>
             <td>Required</td>
+        </tr>
+        <tr>
+            <th scope="row">[schema:description](https://schema.org/description)</th>
+            <td>See [[#dataset-basic]].</td>
+			<td>0..1</td>
+            <td>Recommended</td>
         </tr>
         <tr>
             <th scope="row">[schema:publisher](https://schema.org/publisher)</th>
