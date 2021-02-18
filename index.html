@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="e7802bd6de9add6a1f3f389582168e4f550451c4" name="document-revision">
+  <meta content="832576e9469c8915862f6fce94d61b13bceee90d" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1537,7 +1537,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2020-10-20">20 October 2020</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-02-18">18 February 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1554,7 +1554,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 20 October 2020,
+In addition, as of 18 February 2021,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -1882,13 +1882,14 @@ Providing information about the organization behind the dataset (the <a data-lin
     <p>Therefore, publishers <em>must</em> publish basic information about the organization.
 They <em>should</em> do so in the <a data-link-type="biblio" href="#biblio-schema-org">[SCHEMA-ORG]</a> vocabulary.</p>
    </blockquote>
-   <div class="example" id="example-f71ae93b">
-    <a class="self-link" href="#example-f71ae93b"></a> An organization description in <a data-link-type="biblio" href="#biblio-schema-org">[SCHEMA-ORG]</a>: 
+   <div class="example" id="example-50adaba5">
+    <a class="self-link" href="#example-50adaba5"></a> An organization description in <a data-link-type="biblio" href="#biblio-schema-org">[SCHEMA-ORG]</a>: 
 <pre class="include-code highlight" path="examples/organization.jsonld"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
   <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c->
   <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
+  <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
   <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
 <c- p>}</c->
 </pre>
@@ -1915,6 +1916,14 @@ They <em>should</em> do so in the <a data-link-type="biblio" href="#biblio-schem
       <td>1
       <td>Required
      <tr>
+      <th scope="row"><a href="https://schema.org/alternateName">schema:alternateName</a>
+      <td>Alternative names such as an abbreviation that the organization is known under.
+      <td>0..n
+      <td>Recommended
+     <tr>
+      <th scope="row">Identifications
+      <td>0..n
+      <td><strong>OPTIONAL.</strong> Links to the organization in other databases.
       <th scope="row"><a href="https://schema.org/sameAs">schema:sameAs</a>
       <td>Links to the organization in other databases.
       <td>0..n
@@ -2068,12 +2077,12 @@ even if it is a query endpoint.</p>
     <dd data-md>
      <p class="issue" id="issue-1c1ad482"><a class="self-link" href="#issue-1c1ad482"></a> TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).</p>
    </dl>
-   <div class="example" id="example-53ea2b53">
-    <a class="self-link" href="#example-53ea2b53"></a> A dataset with two distributions: a SPARQL endpoint and a JSON-LD data dump download: 
+   <div class="example" id="example-01c2628e">
+    <a class="self-link" href="#example-01c2628e"></a> A dataset with two distributions: a SPARQL endpoint and a JSON-LD data dump download: 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
-  <c- f>"distributions"</c-><c- p>:</c-> <c- p>[</c->
+  <c- f>"distribution"</c-><c- p>:</c-> <c- p>[</c->
     <c- p>{</c->
       <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://vocab.getty.edu/aat/sparql"</c-><c- p>,</c->
       <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
