@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="e91bf08eb79a79395b65dbb398a8be9e61ee877e" name="document-revision">
+  <meta content="f3a2e5db6bfe0d6df0649a30686516dd57a5504d" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1537,7 +1537,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-02-18">18 February 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-02-25">25 February 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1554,7 +1554,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 18 February 2021,
+In addition, as of 25 February 2021,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -1946,11 +1946,13 @@ This information answers user questions such as:</p>
     <p>Therefore, publishers <em>MUST</em> publish basic information about the dataset.</p>
    </blockquote>
    <h4 class="heading settled" data-level="4.2.1" id="dataset-basic"><span class="secno">4.2.1. </span><span class="content">Basic information</span><a class="self-link" href="#dataset-basic"></a></h4>
-   <p>Publishers <em>MUST</em> include basic information about the dataset, at the very minimum its title and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">publisher</a>.</p>
-   <div class="example" id="example-0afbfdef">
-    <a class="self-link" href="#example-0afbfdef"></a> Basic dataset information: 
+   <p>Publishers <em>MUST</em> include basic information about the dataset,
+at the very minimum its <a data-link-type="biblio" href="#biblio-iri">[IRI]</a>, title and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">publisher</a>.</p>
+   <div class="example" id="example-4d04da67">
+    <a class="self-link" href="#example-4d04da67"></a> Basic dataset information: 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
   <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c->
   <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c->
@@ -1963,9 +1965,9 @@ This information answers user questions such as:</p>
 </pre>
    </div>
    <p>If more information is available, publishers <em>SHOULD</em> add it.</p>
-   <div class="example" id="example-6402610a">
-    <a class="self-link" href="#example-6402610a"></a> More information about the dataset. 
-<pre class="highlight line-numbered" line-highlight="11-15"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="5"></span><span class="line">  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no" data-line="6"></span><span class="line">    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c-></span><span class="line-no" data-line="7"></span><span class="line">    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c-></span><span class="line-no" data-line="8"></span><span class="line">    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="9"></span><span class="line">    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c-></span><span class="line-no" data-line="10"></span><span class="line">  <c- p>},</c-></span><span class="line-no highlight-line" data-line="11"></span><span class="line highlight-line">  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="12"></span><span class="line highlight-line">  <c- f>"identifier"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="13"></span><span class="line highlight-line">  <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no highlight-line" data-line="14"></span><span class="line highlight-line">    <c- u>"alba amicorum"</c-></span><span class="line-no highlight-line" data-line="15"></span><span class="line highlight-line">  <c- p>]</c-></span><span class="line-no" data-line="16"></span><span class="line"><c- p>}</c-></span></pre>
+   <div class="example" id="example-8d73cc27">
+    <a class="self-link" href="#example-8d73cc27"></a> More information about the dataset. 
+<pre class="highlight line-numbered" line-highlight="11-15"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="5"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="6"></span><span class="line">  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no" data-line="7"></span><span class="line">    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c-></span><span class="line-no" data-line="8"></span><span class="line">    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c-></span><span class="line-no" data-line="9"></span><span class="line">    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="10"></span><span class="line">    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c-></span><span class="line-no highlight-line" data-line="11"></span><span class="line highlight-line">  <c- p>},</c-></span><span class="line-no highlight-line" data-line="12"></span><span class="line highlight-line">  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="13"></span><span class="line highlight-line">  <c- f>"identifier"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="14"></span><span class="line highlight-line">  <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no highlight-line" data-line="15"></span><span class="line highlight-line">    <c- u>"alba amicorum"</c-></span><span class="line-no" data-line="16"></span><span class="line">  <c- p>]</c-></span><span class="line-no" data-line="17"></span><span class="line"><c- p>}</c-></span></pre>
    </div>
    <h4 class="heading settled" data-level="4.2.2" id="dataset-license"><span class="secno">4.2.2. </span><span class="content">License</span><a class="self-link" href="#dataset-license"></a></h4>
    <p>Publishers <em>MUST</em> make known under which <a href="https://www.w3.org/TR/dwbp/#licenses">license</a> the dataset can be used.
@@ -2020,7 +2022,7 @@ even if it is a query endpoint.</p>
     <tbody>
      <tr>
       <th scope="row">@id
-      <td>The IRI where the distribution is available in a browser.
+      <td>The <a data-link-type="biblio" href="#biblio-iri">[IRI]</a> where the distribution is available in a browser.
       <td>1
       <td>Required
      <tr>
