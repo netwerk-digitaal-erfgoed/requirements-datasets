@@ -72,7 +72,7 @@ Definitions {#definitions}
 ==========================
 
 : <dfn>Dataset</dfn>
-:: A collection of data.
+:: The description of a collection of data.
     A set of metadata that includes the dataset’s name and [=publisher=].
     The data objects themselves are not part of the dataset proper but provided in its [=distributions=].
     
