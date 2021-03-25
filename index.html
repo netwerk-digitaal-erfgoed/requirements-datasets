@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="b8357208e71f4efc0b8b5efcfeb0372e91e7b79e" name="document-revision">
+  <meta content="797b341e3139b433e9153a507e8b43d51b4825c4" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1351,42 +1351,6 @@ figcaption:not(.no-marker)::before {
 }
 
 .dfn-paneled { cursor: pointer; }
-</style>
-<style>/* style-line-highlighting */
-
-.line-numbered {
-    display: grid !important;
-    grid-template-columns: min-content 1fr;
-    grid-auto-flow: rows;
-}
-.line-numbered > *,
-.line-numbered::before,
-.line-numbered::after {
-    grid-column: 1/-1;
-}
-.line-no {
-    grid-column: 1;
-    color: gray;
-}
-.line {
-    grid-column: 2;
-}
-.line.highlight-line {
-    background: rgba(0,0,0,.05);
-}
-.line-no.highlight-line {
-    background: rgba(0,0,0,.05);
-    color: #444;
-    font-weight: bold;
-}
-.line-no.highlight-line[data-line]::before {
-    padding: 0 .5em 0 .1em;
-    content: attr(data-line);
-}
-.line-no.highlight-line[data-line-end]::after {
-    padding: 0 .5em 0 .1em;
-    content: attr(data-line-end);
-}
 </style>
 <style>/* style-line-numbers */
 
@@ -1583,33 +1547,42 @@ Parts of this work may be from another specification document.  If so, those par
      <a href="#requirements#"><span class="secno">4</span> <span class="content">Requirements</span></a>
      <ol class="toc">
       <li>
-       <a href="#organization-information"><span class="secno">4.1</span> <span class="content">Organization information</span></a>
+       <a href="#rdf"><span class="secno">4.1</span> <span class="content">Available in RDF</span></a>
        <ol class="toc">
-        <li><a href="#organization-overview"><span class="secno">4.1.1</span> <span class="content">Overview</span></a>
+        <li><a href="#identifiers"><span class="secno">4.1.1</span> <span class="content">Durable identifiers</span></a>
+        <li><a href="#available"><span class="secno">4.1.2</span> <span class="content">Information remains available</span></a>
        </ol>
       <li>
        <a href="#dataset-information"><span class="secno">4.2</span> <span class="content">Dataset information</span></a>
        <ol class="toc">
         <li><a href="#dataset-basic"><span class="secno">4.2.1</span> <span class="content">Basic information</span></a>
         <li><a href="#dataset-license"><span class="secno">4.2.2</span> <span class="content">License</span></a>
-        <li><a href="#dataset-date"><span class="secno">4.2.3</span> <span class="content">Dataset description dates</span></a>
+        <li><a href="#dataset-date"><span class="secno">4.2.3</span> <span class="content">Creation, publication and modification dates</span></a>
         <li><a href="#dataset-versions"><span class="secno">4.2.4</span> <span class="content">Version</span></a>
-        <li><a href="#dataset-distributions"><span class="secno">4.2.5</span> <span class="content">Distributions</span></a>
-        <li><a href="#dataset-example"><span class="secno">4.2.6</span> <span class="content">Full example</span></a>
-        <li><a href="#dataset-overview"><span class="secno">4.2.7</span> <span class="content">Overview</span></a>
-        <li><a href="#dataset-extended"><span class="secno">4.2.8</span> <span class="content">Extended information</span></a>
-        <li><a href="#data-catalog"><span class="secno">4.2.9</span> <span class="content">Data catalog</span></a>
+        <li><a href="#more-information"><span class="secno">4.2.5</span> <span class="content">More information</span></a>
        </ol>
       <li>
-       <a href="#data"><span class="secno">4.3</span> <span class="content">Data information</span></a>
+       <a href="#organization-information"><span class="secno">4.3</span> <span class="content">Organization information</span></a>
        <ol class="toc">
-        <li><a href="#relations"><span class="secno">4.3.1</span> <span class="content">Relations to terms</span></a>
+        <li><a href="#dataset-creator"><span class="secno">4.3.1</span> <span class="content">Dataset creator</span></a>
        </ol>
-      <li><a href="#developer-docs"><span class="secno">4.4</span> <span class="content">Developer documentation</span></a>
-      <li><a href="#identifiers"><span class="secno">4.5</span> <span class="content">Durable identifiers</span></a>
-      <li><a href="#rdf"><span class="secno">4.6</span> <span class="content">Information in RDF</span></a>
-      <li><a href="#available"><span class="secno">4.7</span> <span class="content">Information remains available</span></a>
+      <li>
+       <a href="#dataset-distributions"><span class="secno">4.4</span> <span class="content">Distributions</span></a>
+       <ol class="toc">
+        <li><a href="#developer-docs"><span class="secno">4.4.1</span> <span class="content">Developer documentation</span></a>
+       </ol>
+      <li><a href="#data-catalog"><span class="secno">4.5</span> <span class="content">Data catalog</span></a>
+      <li>
+       <a href="#overview"><span class="secno">4.6</span> <span class="content">Overview of attributes</span></a>
+       <ol class="toc">
+        <li><a href="#dataset-overview"><span class="secno">4.6.1</span> <span class="content">Dataset attributes</span></a>
+        <li><a href="#organization-overview"><span class="secno">4.6.2</span> <span class="content">Organization attributes</span></a>
+        <li><a href="#distribution-attributes"><span class="secno">4.6.3</span> <span class="content">Distribution attributes</span></a>
+        <li><a href="#datacatalog-attributes"><span class="secno">4.6.4</span> <span class="content">DataCatalog attributes</span></a>
+        <li><a href="#dataset-example"><span class="secno">4.6.5</span> <span class="content">Full example</span></a>
+       </ol>
      </ol>
+    <li><a href="#tools"><span class="secno">5</span> <span class="content">Tools</span></a>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1636,16 +1609,14 @@ shared and <a data-link-type="dfn" href="#machine-readability" id="ref-for-machi
 When <a data-link-type="dfn" href="#publisher" id="ref-for-publisher">publishers</a> make their datasets adhere to these rules,
 they enable consumers – both humans and machines – to use the published data in new and better ways.</p>
    <p>The requirements prescribe the metadata that publishers should provide with their data.
-They do so on four levels: that of the organization, the dataset, the data itself and a global level:</p>
+This metadata tells <a data-link-type="dfn" href="#consumer" id="ref-for-consumer">consumers</a>:</p>
    <ul>
     <li data-md>
-     <p>organization metadata tells <a data-link-type="dfn" href="#consumer" id="ref-for-consumer">consumers</a> who is behind the data publication (<a href="#organization-information">§ 4.1 Organization information</a>)</p>
+     <p>what the dataset is called and under what license it is published (<a href="#dataset-information">§ 4.2 Dataset information</a>);</p>
     <li data-md>
-     <p>dataset metadata lets consumers know how they can use the dataset (<a href="#dataset-information">§ 4.2 Dataset information</a>)</p>
+     <p>which organization has published the dataset (<a href="#organization-information">§ 4.3 Organization information</a>);</p>
     <li data-md>
-     <p>the data contained in the dataset must itself be described in a way that it can be understood, connected and re-used (<a href="#data">§ 4.3 Data information</a>)</p>
-    <li data-md>
-     <p>global requirements apply to all of the above levels (<a href="#rdf">§ 4.6 Information in RDF</a>, <a href="#available">§ 4.7 Information remains available</a>).</p>
+     <p>where the data can be found (<a href="#dataset-distributions">§ 4.4 Distributions</a>).</p>
    </ul>
    <h3 class="heading settled" data-level="1.1" id="audience"><span class="secno">1.1. </span><span class="content">Audience</span><a class="self-link" href="#audience"></a></h3>
    <p>This document is mainly geared towards two groups of readers.</p>
@@ -1669,7 +1640,16 @@ improving findability, one of the main goals of publishing datasets on the web.<
    <dl>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="dataset">Dataset</dfn>
     <dd data-md>
-     <p>A collection of data. A dataset is identified with at least its name and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publisher</a>.</p>
+     <p>The description of a collection of data.
+A set of metadata that includes the dataset’s name and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publisher</a>.
+The data objects themselves are not part of the dataset proper but provided in its <a data-link-type="dfn" href="#distribution" id="ref-for-distribution">distributions</a>.</p>
+     <p>For example: imagine a dataset of Van Gogh paintings called ‘Sunflowers’,
+which is published by the Van Gogh Museum under a specific license.
+These are all part of the dataset.
+The dataset also tells us the URLs of distributions where we can download or query the data.
+If we consult the data provided by one of these distributions, we’ve left the sphere of the dataset proper.
+That is to say, the data itself, which may include descriptions of paintings, persons and places,
+are <em>not</em> properties of the dataset.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="distribution">Distribution</dfn>
     <dd data-md>
      <p>A channel through which a <a data-link-type="dfn" href="#dataset" id="ref-for-dataset①">dataset</a> is available,
@@ -1869,9 +1849,124 @@ See also <a href="https://www.w3.org/TR/ld-glossary/#term">Linked Data Glossary<
     </switch>
    </svg>
    <h2 class="heading settled" data-level="4" id="requirements#"><span class="secno">4. </span><span class="content">Requirements</span><a class="self-link" href="#requirements%23"></a></h2>
-   <h3 class="heading settled" data-level="4.1" id="organization-information"><span class="secno">4.1. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
-   <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset④">dataset</a> came from (<a href="https://www.w3.org/TR/dwbp/#provenance">provenance</a>).
-Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">publisher</a>) answers user questions such as:</p>
+   <h3 class="heading settled" data-level="4.1" id="rdf"><span class="secno">4.1. </span><span class="content">Available in RDF</span><a class="self-link" href="#rdf"></a></h3>
+   <p>For <a data-link-type="dfn" href="#machine-readability" id="ref-for-machine-readability①">machine-readable</a> access to data,
+it needs to be published in an <a href="https://www.w3.org/TR/rdf11-primer/#section-graph-syntax">RDF format</a>.
+RDF formats include <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]</a>, <a data-link-type="biblio" href="#biblio-n3">[N3]</a> and <a data-link-type="biblio" href="#biblio-turtle">[Turtle]</a>.</p>
+   <blockquote>
+    <p><a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">Publishers</a> <em>MUST</em> make their <a data-link-type="dfn" href="#dataset" id="ref-for-dataset④">dataset</a> description available in RDF.</p>
+   </blockquote>
+   <p>Both the Schema.org and DCAT vocabularies <em>MAY</em> be used;
+Schema.org is <a href="#examples">recommended</a>.</p>
+   <div class="example" id="example-7733a969">
+    <a class="self-link" href="#example-7733a969"></a> <a href="https://developers.google.com/search/docs/guides/intro-structured-data#structured-data">Google recommends</a> including the JSON-LD directly in the HTML source of web pages. 
+    <p>So, on your organization’s web page, for instance <a href="https://www.kb.nl">www.kb.nl</a>, include:</p>
+<pre class="highlight"><c- p>&lt;</c-><c- f>html</c-><c- p>></c->
+  <c- p>&lt;</c-><c- f>head</c-><c- p>></c->
+    <c- p>&lt;</c-><c- f>title</c-><c- p>></c->Koninklijke Bibliotheek<c- p>&lt;/</c-><c- f>title</c-><c- p>></c->
+    <c- p>&lt;</c-><c- f>script</c-> <c- e>type</c-><c- o>=</c-><c- s>"application/ld+json"</c-><c- p>></c->
+      <c- p>{</c->
+        <c- u>"@context"</c-><c- o>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+        <c- u>"@type"</c-><c- o>:</c-> <c- u>"Organization"</c-><c- p>,</c->
+        <c- u>"name"</c-><c- o>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
+        <c- u>"url"</c-><c- o>:</c-> <c- u>"https://www.kb.nl/"</c->
+      <c- p>}</c->
+    <c- p>&lt;/</c-><c- f>script</c-><c- p>></c->
+  <c- p>&lt;/</c-><c- f>head</c-><c- p>></c->
+  <c- p>&lt;</c-><c- f>body</c-><c- p>></c->
+    Here continues the web page of the organization...
+  <c- p>&lt;/</c-><c- f>body</c-><c- p>></c->
+<c- p>&lt;/</c-><c- f>html</c-><c- p>></c->    
+</pre>
+   </div>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-FormatMachineRead">Data on the Web Best Practices Use Cases &amp; Requirements §R-FormatMachineRead</a>.</p>
+   <h4 class="heading settled" data-level="4.1.1" id="identifiers"><span class="secno">4.1.1. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h4>
+   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer①">Consumers</a> want to refer to datasets. They prefer to do so by linking to them.</p>
+   <blockquote>
+    <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">dataset</a>,
+as well as their <a href="#organization-information">organization</a> and <a href="#dataset-information">dataset</a> information.
+Publishers <em>should</em> use <a data-link-type="biblio" href="#biblio-iri">IRIs</a> as identifiers.</p>
+   </blockquote>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-UniqueIdentifier">Data on the Web Best Practices Use Cases &amp; Requirements §R-UniqueIdentifier</a> and <a href="https://www.w3.org/TR/dwbp-ucr/#R-PersistentIdentification">Data on the Web Best Practices Use Cases &amp; Requirements §R-PersistentIdentification</a>.</p>
+   <h4 class="heading settled" data-level="4.1.2" id="available"><span class="secno">4.1.2. </span><span class="content">Information remains available</span><a class="self-link" href="#available"></a></h4>
+   <p>Datasets will be used by all kinds of <a data-link-type="dfn" href="#consumer" id="ref-for-consumer②">consumers</a> and their systems.
+For stability, users must be able to trust that the datasets will remain available
+so they can be consulted in the future.</p>
+   <blockquote>
+    <p>Therefore, publishers <em>must</em> ensure information remains available in the future.</p>
+   </blockquote>
+   <h3 class="heading settled" data-level="4.2" id="dataset-information"><span class="secno">4.2. </span><span class="content">Dataset information</span><a class="self-link" href="#dataset-information"></a></h3>
+   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> want to consult information about the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑥">dataset</a> to decide whether and how they want to use its data.
+This information answers user questions such as:</p>
+   <ul>
+    <li data-md>
+     <p>What is the name of the dataset?</p>
+    <li data-md>
+     <p>What is the dataset about? What kind of data does the dataset contain?</p>
+    <li data-md>
+     <p>How recent is the data? When was the dataset last published?</p>
+    <li data-md>
+     <p>How can I use the data? Are there any restrictions? Under which license is the data published?</p>
+    <li data-md>
+     <p>Where can I get the data? In what formats?</p>
+   </ul>
+   <h4 class="heading settled" data-level="4.2.1" id="dataset-basic"><span class="secno">4.2.1. </span><span class="content">Basic information</span><a class="self-link" href="#dataset-basic"></a></h4>
+   <p>Publishers <em>MUST</em> include basic information about the dataset, at the very minimum its <a data-link-type="biblio" href="#biblio-iri">[IRI]</a> and name.</p>
+   <div class="example" id="example-5c7bb2e2">
+    <a class="self-link" href="#example-5c7bb2e2"></a> Basic dataset information: 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
+  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/doc/dataset/rise-alba"</c-><c- p>,</c->
+  <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <h4 class="heading settled" data-level="4.2.2" id="dataset-license"><span class="secno">4.2.2. </span><span class="content">License</span><a class="self-link" href="#dataset-license"></a></h4>
+   <p>Publishers <em>MUST</em> make known under which <a href="https://www.w3.org/TR/dwbp/#licenses">license</a> the dataset can be used.
+This <em>SHOULD</em> be an open license that allows the data to used by <a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">consumers</a>,
+for example one of the <a href="https://creativecommons.org/choose/">Creative Commons</a> licenses.</p>
+   <div class="example" id="example-60105a31">
+    <a class="self-link" href="#example-60105a31"></a> Specify a license for the dataset: 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
+  <c- f>"license"</c-><c- p>:</c-> <c- u>"http://creativecommons.org/publicdomain/zero/1.0/"</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-LicenseAvailable">Data on the Web Best Practices Use Cases &amp; Requirements §R-LicenseAvailable</a>.</p>
+   <h4 class="heading settled" data-level="4.2.3" id="dataset-date"><span class="secno">4.2.3. </span><span class="content">Creation, publication and modification dates</span><a class="self-link" href="#dataset-date"></a></h4>
+   <p>Publishers <em>SHOULD</em> make known when the dataset description was originally created, published and when it was last updated.</p>
+   <div class="example" id="example-bb0355e3">
+    <a class="self-link" href="#example-bb0355e3"></a> Specify dataset description dates: 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
+  <c- f>"dateCreated"</c-><c- p>:</c-> <c- u>"2019-04-14"</c-><c- p>,</c->
+  <c- f>"datePublished"</c-><c- p>:</c-> <c- u>"2019-05-21"</c-><c- p>,</c->
+  <c- f>"dateModified"</c-><c- p>:</c-> <c- u>"2019-08-15"</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <h4 class="heading settled" data-level="4.2.4" id="dataset-versions"><span class="secno">4.2.4. </span><span class="content">Version</span><a class="self-link" href="#dataset-versions"></a></h4>
+   <p>A dataset description may change over time. <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">Consumers</a>, such as researchers, may want to determine which information was valid at a certain moment.</p>
+   <blockquote>
+    <p>Therefore, publishers <em>SHOULD</em> not only publish the current version of the dataset description,
+but keep historical versions accessible to users.</p>
+   </blockquote>
+   <p>It is up to the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">publisher</a> to determine when to publish new versions.</p>
+   <p>See also <a href="https://www.w3.org/TR/dwbp/#dataVersioning">Data on the Web Best Practices §dataVersioning</a>.</p>
+   <h4 class="heading settled" data-level="4.2.5" id="more-information"><span class="secno">4.2.5. </span><span class="content">More information</span><a class="self-link" href="#more-information"></a></h4>
+   <p>If more information is available, publishers <em>SHOULD</em> add it.</p>
+   <div class="example" id="example-5b37bb31">
+    <a class="self-link" href="#example-5b37bb31"></a> More information about the dataset. 
+<pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"description"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek, een dataset gedefinieerd voor het Europeana Rise of Literacy project."</c-><c- p>,</c-></span><span class="line-no" data-line="5"></span><span class="line">  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c-></span><span class="line-no" data-line="6"></span><span class="line">  <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no" data-line="7"></span><span class="line">    <c- u>"alba amicorum"</c-></span><span class="line-no" data-line="8"></span><span class="line">  <c- p>]</c-></span><span class="line-no" data-line="9"></span><span class="line"><c- p>}</c-></span></pre>
+   </div>
+   <p>See <a href="#dataset-overview">§ 4.6.1 Dataset attributes</a> for an overview of attributes.</p>
+   <h3 class="heading settled" data-level="4.3" id="organization-information"><span class="secno">4.3. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
+   <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑦">dataset</a> came from (<a href="https://www.w3.org/TR/dwbp/#provenance">provenance</a>).
+Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑤">publisher</a>) answers user questions such as:</p>
    <ul>
     <li data-md>
      <p>Which organization has published this dataset? How reliable and credible does that make the dataset?</p>
@@ -1880,22 +1975,263 @@ Providing information about the organization behind the dataset (the <a data-lin
    </ul>
    <blockquote>
     <p>Therefore, publishers <em>must</em> publish basic information about the organization.
-They <em>should</em> do so in the <a data-link-type="biblio" href="#biblio-schema-org">[SCHEMA-ORG]</a> vocabulary.</p>
+At the least, the organization’s name and URL must be provided.</p>
    </blockquote>
-   <div class="example" id="example-50adaba5">
-    <a class="self-link" href="#example-50adaba5"></a> An organization description in <a data-link-type="biblio" href="#biblio-schema-org">[SCHEMA-ORG]</a>: 
-<pre class="include-code highlight" path="examples/organization.jsonld"><c- p>{</c->
+   <div class="example" id="example-e31bb80a">
+    <a class="self-link" href="#example-e31bb80a"></a> An organization description: 
+<pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
-  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c->
   <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-  <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
-  <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
+  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c->
 <c- p>}</c->
 </pre>
    </div>
-   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-ProvAvailable">Data on the Web Best Practices Use Cases &amp; Requirements §R-ProvAvailable</a>.</p>
-   <h4 class="heading settled" data-level="4.1.1" id="organization-overview"><span class="secno">4.1.1. </span><span class="content">Overview</span><a class="self-link" href="#organization-overview"></a></h4>
+   <p>See <a href="#organization-overview">§ 4.6.2 Organization attributes</a> for a full overview of organization attributes.</p>
+   <h4 class="heading settled" data-level="4.3.1" id="dataset-creator"><span class="secno">4.3.1. </span><span class="content">Dataset creator</span><a class="self-link" href="#dataset-creator"></a></h4>
+   <p>The organization data is then included as the dataset’s creator:</p>
+   <div class="example" id="example-c39106db">
+    <a class="self-link" href="#example-c39106db"></a> A dataset with a creator. The creator has some optional attributes. 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
+  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c->
+    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
+    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
+    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c->
+    <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
+    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
+  <c- p>}</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <h3 class="heading settled" data-level="4.4" id="dataset-distributions"><span class="secno">4.4. </span><span class="content">Distributions</span><a class="self-link" href="#dataset-distributions"></a></h3>
+   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑥">Consumers</a> that are interested in a dataset should be able to access the data in it. <a data-link-type="dfn" href="#distribution" id="ref-for-distribution①">Distributions</a> tell consumers where and how they can get the data.</p>
+   <blockquote>
+    <p>Therefore, publishers <em>SHOULD</em> add at least one distribution.
+Each distribution <em>MUST</em> have at least a MIME format and the URL where the distribution can be accessed.</p>
+   </blockquote>
+   <p>Distributions can be data dumps in RDF or some other format such as CSV, SPARQL endpoints, OAI-PMH endpoints and more.</p>
+   <div class="example" id="example-0da1fc0d">
+    <a class="self-link" href="#example-0da1fc0d"></a> A minimal definition of a SPARQL endpoint distribution.
+    In the Schema.org vocabulary, each type of distribution is called a <a href="https://schema.org/DataDownload">DataDownload</a>,
+    even if it is a query endpoint. 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
+  <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/sparql-query"</c-><c- p>,</c->
+  <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://vocab.getty.edu/sparql"</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <p>The distributions are then included under the <code>distribution</code> attribute with the dataset.</p>
+   <div class="example" id="example-e18931b4">
+    <a class="self-link" href="#example-e18931b4"></a> A dataset with two distributions. 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
+  <c- f>"distribution"</c-><c- p>:</c-> <c- p>[</c->
+    <c- p>{</c->
+      <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://vocab.getty.edu/aat/sparql"</c-><c- p>,</c->
+      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
+      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/sparql-query"</c-><c- p>,</c->
+      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://vocab.getty.edu/sparql"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
+      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/ld+json"</c-><c- p>,</c->
+      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba.json"</c->
+    <c- p>}</c->            
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <p>See <a href="#distribution-attributes">§ 4.6.3 Distribution attributes</a> for a full overview.</p>
+   <p class="issue" id="issue-1c1ad482"><a class="self-link" href="#issue-1c1ad482"></a> TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).</p>
+   <h4 class="heading settled" data-level="4.4.1" id="developer-docs"><span class="secno">4.4.1. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h4>
+   <p>If the distribution is non-standard <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>, publishers <em>MUST</em> publish documentation on how to use that API.</p>
+   <p class="issue" id="issue-d1bd290f"><a class="self-link" href="#issue-d1bd290f"></a> Can we specify a Distribution property for this?</p>
+   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements §R-APIDocumented</a>.</p>
+   <h3 class="heading settled" data-level="4.5" id="data-catalog"><span class="secno">4.5. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog"></a></h3>
+   <p>A collection of datasets is a data catalog. A catalog provides the <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑦">Consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
+   <blockquote>
+    <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
+   </blockquote>
+   <svg height="600" overflow="hidden" style="zoom:0.6" width="1280" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+     <clipPath id="clip0">
+      <path clip-rule="evenodd" d="M0 0 1280 0 1280 600 0 720Z" fill-rule="evenodd"></path>
+     </clipPath>
+    </defs>
+    <g clip-path="url(#clip0)">
+     <rect fill="#dae8fc" height="164" stroke="#dae8fc" stroke-linejoin="round" stroke-miterlimit="10" width="380" x="48.5001" y="39.5001"></rect>
+     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(188.549 73)">
+      Catalog
+      <tspan font-size="24" font-weight="400" x="-124.253" y="60">A catalog is a compiled collection of</tspan>
+      <tspan font-size="24" font-weight="400" x="-75.1067" y="88">metadata about datasets.</tspan>
+     </text>
+     <rect fill="#dae8fc" height="165" stroke="#dae8fc" stroke-linejoin="round" stroke-miterlimit="10" width="380" x="428.5" y="237.5"></rect>
+     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(566.668 272)">
+      Dataset
+      <tspan font-size="24" font-weight="400" x="-122.613" y="60">A dataset is a general description of</tspan>
+      <tspan font-size="24" font-weight="400" x="-108.56" y="88">a collection of data, published or</tspan>
+      <tspan font-size="24" font-weight="400" x="-118.28" y="117">compiled by a single administrator.</tspan>
+     </text>
+     <rect fill="#dae8fc" height="165" stroke="#A9D18E" stroke-linejoin="round" stroke-miterlimit="10" width="379" x="808.5" y="435.5"></rect>
+     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(918.194 470)">
+      Distribution
+      <tspan font-size="24" font-weight="400" x="-100.88" y="60">A distribution describes the channels</tspan>
+      <tspan font-size="24" font-weight="400" x="-79.58" y="88">through which a dataset is made</tspan>
+      <tspan font-size="24" font-weight="400" x="33.3666" y="117">available.</tspan>
+     </text>
+     <path d="M428 118 620.798 118 620.798 221.865 614.798 221.865 614.798 121 617.798 124 428 124ZM626.798 218.865 617.798 236.865 608.798 218.865Z" fill="#111111"></path>
+     <path d="M808 316 1000.8 316 1000.8 419.865 994.798 419.865 994.798 319 997.798 322 808 322ZM1006.8 416.865 997.798 434.865 988.798 416.865Z" fill="#111111"></path>
+     <text fill="#111111" font-family="Calibri,sans-serif" font-size="24" font-weight="400" transform="translate(868.653 307)">
+      available via
+      <tspan x="-342.303" y="-198">contains</tspan>
+      <tspan x="-297.35" y="-157">1..n</tspan>
+      <tspan x="82.2466" y="44">1..n</tspan>
+     </text>
+    </g>
+   </svg>
+   <div class="example" id="example-87105cf5">
+    <a class="self-link" href="#example-87105cf5"></a> A catalog of available datasets: 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-><c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataCatalog"</c-><c- p>,</c->
+  <c- f>"name"</c-><c- p>:</c-> <c- u>"Linked Data KB"</c-><c- p>,</c->
+  <c- f>"description"</c-><c- p>:</c-> <c- u>"Alle linked data zoals beschikbaar gesteld door de Koninklijke Bibliotheek."</c-><c- p>,</c->
+  <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
+    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
+    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
+    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c->
+  <c- p>},</c->
+  <c- f>"dataset"</c-><c- p>:</c-> <c- p>[</c->
+    <c- p>{</c->
+      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
+      <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c->
+      ...
+    <c- p>},</c-> 
+    <c- p>{</c-> 
+      ...
+    <c- p>}</c->
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <h3 class="heading settled" data-level="4.6" id="overview"><span class="secno">4.6. </span><span class="content">Overview of attributes</span><a class="self-link" href="#overview"></a></h3>
+   <p>This is an overview of required and recommended attributes.</p>
+   <h4 class="heading settled" data-level="4.6.1" id="dataset-overview"><span class="secno">4.6.1. </span><span class="content">Dataset attributes</span><a class="self-link" href="#dataset-overview"></a></h4>
+   <table>
+    <caption><a href="https://schema.org/Dataset">schema:Dataset</a> properties</caption>
+    <thead>
+     <tr>
+      <th>Property
+      <th>Description
+      <th>Cardinality
+      <th>Usage
+    <tbody>
+     <tr>
+      <th scope="row"><a href="https://schema.org/identifier">schema:identifier</a>
+      <td>See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
+      <td>1
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/name">schema:name</a>
+      <td>See <a href="#dataset-basic">§ 4.2.1 Basic information</a>
+      <td>1
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/description">schema:description</a>
+      <td>See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/creator">schema:creator</a>
+      <td>The owner of the dataset.
+      <td>1
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/license">schema:license</a>
+      <td>See <a href="#dataset-license">§ 4.2.2 License</a>.
+      <td>1
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/distribution">schema:distribution</a>
+      <td>See <a href="#dataset-distributions">§ 4.4 Distributions</a>.
+      <td>1..n
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
+      <td>The publisher of the dataset.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/dateCreated">schema:dateCreated</a>
+      <td>See <a href="#dataset-date">§ 4.2.3 Creation, publication and modification dates</a>.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/datePublished">schema:datePublished</a>
+      <td>See <a href="#dataset-date">§ 4.2.3 Creation, publication and modification dates</a>.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/dateModified">schema:dateModified</a>
+      <td>See <a href="#dataset-date">§ 4.2.3 Creation, publication and modification dates</a>.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/version">schema:version</a>
+      <td>See <a href="#dataset-versions">§ 4.2.4 Version</a>.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/mainEntityOfPage">schema:mainEntityOfPage</a>
+      <td>URL of a webpage where the dataset is described.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/inLanguage">schema:inLanguage</a>
+      <td>Language or languages in which the dataset is available. Use one of the language codes from the <a data-link-type="biblio" href="#biblio-bcp47">[BCP47]</a>, such as "nl-NL".
+      <td>0..n
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/isBasedOnUrl">schema:isBasedOnUrl</a>
+      <td>The URL of dataset this dataset is based on.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/citation">schema:citation</a>
+      <td>A citation or reference for the dataset.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/genre">schema:genre</a>
+      <td>The genre or genres which describe the dataset.
+      <td>0..n
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/keywords">schema:keywords</a>
+      <td>One or more keyword which describe the dataset.
+      <td>0..n
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/spatialCoverage">schema:spatialCoverage</a>
+      <td>Indicates the place(s) which are the focus of the dataset.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/temporalCoverage">schema:temporalCoverage</a>
+      <td>Indicates the period that the dataset applies to.
+      <td>0..1
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/includedInDataCatalog">schema:includedInDataCatalog</a>
+      <td>The URI of the data catalog in which the dataset is.
+      <td>0..1
+      <td>Recommended
+   </table>
+   <h4 class="heading settled" data-level="4.6.2" id="organization-overview"><span class="secno">4.6.2. </span><span class="content">Organization attributes</span><a class="self-link" href="#organization-overview"></a></h4>
    <table>
     <caption><a href="https://schema.org/Organization">schema:Organization</a> properties</caption>
     <thead>
@@ -1926,91 +2262,7 @@ They <em>should</em> do so in the <a data-link-type="biblio" href="#biblio-schem
       <td>0..n
       <td>Recommended
    </table>
-   <h3 class="heading settled" data-level="4.2" id="dataset-information"><span class="secno">4.2. </span><span class="content">Dataset information</span><a class="self-link" href="#dataset-information"></a></h3>
-   <p>For users, having access to the data contained in the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">dataset</a> is not enough.
-Users want to consult information about the dataset to decide whether and how they want to use its data.
-This information answers user questions such as:</p>
-   <ul>
-    <li data-md>
-     <p>What is the name of the dataset?</p>
-    <li data-md>
-     <p>What is the dataset about? What kind of data does the dataset contain?</p>
-    <li data-md>
-     <p>How recent is the data? When was the dataset last published?</p>
-    <li data-md>
-     <p>How can I use the data? Are there any restrictions? Under which license is the data published?</p>
-    <li data-md>
-     <p>Where can I get the data? In what formats?</p>
-   </ul>
-   <blockquote>
-    <p>Therefore, publishers <em>MUST</em> publish basic information about the dataset.</p>
-   </blockquote>
-   <h4 class="heading settled" data-level="4.2.1" id="dataset-basic"><span class="secno">4.2.1. </span><span class="content">Basic information</span><a class="self-link" href="#dataset-basic"></a></h4>
-   <p>Publishers <em>MUST</em> include basic information about the dataset,
-at the very minimum its <a data-link-type="biblio" href="#biblio-iri">[IRI]</a>, title and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">publisher</a>.</p>
-   <div class="example" id="example-4d04da67">
-    <a class="self-link" href="#example-4d04da67"></a> Basic dataset information: 
-<pre class="highlight"><c- p>{</c->
-  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
-  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c->
-  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
-  <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c->
-  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c->
-    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
-    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c->
-    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
-  <c- p>}</c->
-<c- p>}</c->
-</pre>
-   </div>
-   <p>If more information is available, publishers <em>SHOULD</em> add it:</p>
-   <div class="example" id="example-fda7d159">
-    <a class="self-link" href="#example-fda7d159"></a> Optional information about the dataset. 
-<pre class="highlight line-numbered" line-highlight="11-16"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="5"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="6"></span><span class="line">  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no" data-line="7"></span><span class="line">    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c-></span><span class="line-no" data-line="8"></span><span class="line">    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c-></span><span class="line-no" data-line="9"></span><span class="line">    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="10"></span><span class="line">    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c-></span><span class="line-no highlight-line" data-line="11"></span><span class="line highlight-line">  <c- p>},</c-></span><span class="line-no highlight-line" data-line="12"></span><span class="line highlight-line">  <c- f>"description"</c-><c- p>:</c-> <c- u>"Alba amicorum of the National Library of the Netherlands, a dataset defined for the Europeana Rise of Literacy project."</c-> </span><span class="line-no highlight-line" data-line="13"></span><span class="line highlight-line">  <c- u>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="14"></span><span class="line highlight-line">  <c- f>"identifier"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="15"></span><span class="line highlight-line">  <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no highlight-line" data-line="16"></span><span class="line highlight-line">    <c- u>"alba amicorum"</c-></span><span class="line-no" data-line="17"></span><span class="line">  <c- p>]</c-></span><span class="line-no" data-line="18"></span><span class="line"><c- p>}</c-></span></pre>
-   </div>
-   <h4 class="heading settled" data-level="4.2.2" id="dataset-license"><span class="secno">4.2.2. </span><span class="content">License</span><a class="self-link" href="#dataset-license"></a></h4>
-   <p>Publishers <em>MUST</em> make known under which <a href="https://www.w3.org/TR/dwbp/#licenses">license</a> the dataset can be used.
-This <em>SHOULD</em> be an open license that allows the data to used by <a data-link-type="dfn" href="#consumer" id="ref-for-consumer①">consumers</a>,
-for example one of the <a href="https://creativecommons.org/choose/">Creative Commons</a> licenses.</p>
-   <div class="example" id="example-b52cfb83">
-    <a class="self-link" href="#example-b52cfb83"></a> Specify an open license for the dataset: 
-<pre class="highlight"><c- p>{</c->
-  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
-  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
-  <c- f>"license"</c-><c- p>:</c-> <c- u>"http://creativecommons.org/publicdomain/zero/1.0/"</c->
-<c- p>}</c->
-</pre>
-   </div>
-   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-LicenseAvailable">Data on the Web Best Practices Use Cases &amp; Requirements §R-LicenseAvailable</a>.</p>
-   <h4 class="heading settled" data-level="4.2.3" id="dataset-date"><span class="secno">4.2.3. </span><span class="content">Dataset description dates</span><a class="self-link" href="#dataset-date"></a></h4>
-   <p>Publishers <em>SHOULD</em> make known when the dataset description was originally created, published and when it was last updated.</p>
-   <div class="example" id="example-bb0355e3">
-    <a class="self-link" href="#example-bb0355e3"></a> Specify dataset description dates: 
-<pre class="highlight"><c- p>{</c->
-  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
-  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
-  <c- f>"dateCreated"</c-><c- p>:</c-> <c- u>"2019-04-14"</c-><c- p>,</c->
-  <c- f>"datePublished"</c-><c- p>:</c-> <c- u>"2019-05-21"</c-><c- p>,</c->
-  <c- f>"dateModified"</c-><c- p>:</c-> <c- u>"2019-08-15"</c->
-<c- p>}</c->
-</pre>
-   </div>
-   <h4 class="heading settled" data-level="4.2.4" id="dataset-versions"><span class="secno">4.2.4. </span><span class="content">Version</span><a class="self-link" href="#dataset-versions"></a></h4>
-   <p>A dataset description may change over time. <a data-link-type="dfn" href="#consumer" id="ref-for-consumer②">Consumers</a>, such as researchers, may want to determine which information was valid at a certain moment.</p>
-   <blockquote>
-    <p>Therefore, publishers <em>should</em> not only publish the current version of the dataset description,
-but keep historical versions accessible to users.</p>
-   </blockquote>
-   <p>It is up to the publisher to determine when to publish new versions.</p>
-   <p>See also <a href="https://www.w3.org/TR/dwbp/#dataVersioning">Data on the Web Best Practices §dataVersioning</a>.</p>
-   <h4 class="heading settled" data-level="4.2.5" id="dataset-distributions"><span class="secno">4.2.5. </span><span class="content">Distributions</span><a class="self-link" href="#dataset-distributions"></a></h4>
-   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> that are interested in a dataset should be able to access the data in it. <a data-link-type="dfn" href="#distribution" id="ref-for-distribution">Distributions</a> tell consumers where and how they can get the data.</p>
-   <blockquote>
-    <p>Therefore, publishers <em>SHOULD</em> add at least one distribution.</p>
-   </blockquote>
-   <p>In Schema.org, each type of Distribution is called a <a href="https://schema.org/DataDownload">DataDownload</a>,
-even if it is a query endpoint.</p>
+   <h4 class="heading settled" data-level="4.6.3" id="distribution-attributes"><span class="secno">4.6.3. </span><span class="content">Distribution attributes</span><a class="self-link" href="#distribution-attributes"></a></h4>
    <table>
     <caption><a href="https://schema.org/DataDownload">schema:DataDownload</a> properties</caption>
     <thead>
@@ -2022,7 +2274,7 @@ even if it is a query endpoint.</p>
     <tbody>
      <tr>
       <th scope="row">@id
-      <td>The <a data-link-type="biblio" href="#biblio-iri">[IRI]</a> where the distribution is available in a browser.
+      <td>The IRI where the distribution is available in a browser.
       <td>1
       <td>Required
      <tr>
@@ -2072,36 +2324,42 @@ even if it is a query endpoint.</p>
       <td>0..1
       <td>Recommended
    </table>
-   <dl>
-    <dd data-md>
-     <p class="issue" id="issue-1c1ad482"><a class="self-link" href="#issue-1c1ad482"></a> TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).</p>
-   </dl>
-   <div class="example" id="example-01c2628e">
-    <a class="self-link" href="#example-01c2628e"></a> A dataset with two distributions: a SPARQL endpoint and a JSON-LD data dump download: 
-<pre class="highlight"><c- p>{</c->
-  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
-  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
-  <c- f>"distribution"</c-><c- p>:</c-> <c- p>[</c->
-    <c- p>{</c->
-      <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://vocab.getty.edu/aat/sparql"</c-><c- p>,</c->
-      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
-      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/sparql-query"</c-><c- p>,</c->
-      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://vocab.getty.edu/sparql"</c->
-    <c- p>},</c->
-    <c- p>{</c->
-      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
-      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/ld+json"</c-><c- p>,</c->
-      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba.json"</c->
-    <c- p>}</c->            
-  <c- p>]</c->
-<c- p>}</c->
-</pre>
-   </div>
-   <h4 class="heading settled" data-level="4.2.6" id="dataset-example"><span class="secno">4.2.6. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
+   <h4 class="heading settled" data-level="4.6.4" id="datacatalog-attributes"><span class="secno">4.6.4. </span><span class="content">DataCatalog attributes</span><a class="self-link" href="#datacatalog-attributes"></a></h4>
+   <table>
+    <caption><a href="http://schema.org/DataCatalog">schema:DataCatalog</a> properties</caption>
+    <thead>
+     <tr>
+      <th>Property
+      <th>Description
+      <th>Cardinality
+      <th>Usage
+    <tbody>
+     <tr>
+      <th scope="row"><a href="https://schema.org/name">schema:name</a>
+      <td>The name of the datacatalog.
+      <td>1
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/description">schema:description</a>
+      <td>A description of the data catalog.
+      <td>1
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
+      <td>The publisher of the data catalog.
+      <td>1
+      <td>Required
+     <tr>
+      <th scope="row"><a href="https://schema.org/dataset">schema:dataset</a>
+      <td>The datasets containing all dataset information.
+      <td>1..n
+      <td>Required
+   </table>
+   <h4 class="heading settled" data-level="4.6.5" id="dataset-example"><span class="secno">4.6.5. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
    <div class="example" id="example-3c9f1e16">
     <a class="self-link" href="#example-3c9f1e16"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 4.2.1 Basic information</a>), 
     a license (<a href="#dataset-license">§ 4.2.2 License</a>)
-    and publication dates (<a href="#dataset-date">§ 4.2.3 Dataset description dates</a>): 
+    and publication dates (<a href="#dataset-date">§ 4.2.3 Creation, publication and modification dates</a>): 
 <pre class="include-code highlight" path="examples/dataset.jsonld"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -2145,304 +2403,13 @@ even if it is a query endpoint.</p>
 <c- p>}</c->
 </pre>
    </div>
-   <dl>
-    <dd data-md>
-     <p class="issue" id="issue-371b3745"><a class="self-link" href="#issue-371b3745"></a> TODO Expand example based on required (and recommended) properties.</p>
-   </dl>
-   <h4 class="heading settled" data-level="4.2.7" id="dataset-overview"><span class="secno">4.2.7. </span><span class="content">Overview</span><a class="self-link" href="#dataset-overview"></a></h4>
-   <p>Required and recommended attributes:</p>
-   <table>
-    <caption><a href="https://schema.org/Dataset">schema:Dataset</a> properties</caption>
-    <thead>
-     <tr>
-      <th>Property
-      <th>Description
-      <th>Cardinality
-      <th>Usage
-    <tbody>
-     <tr>
-      <th scope="row"><a href="https://schema.org/identifier">schema:identifier</a>
-      <td>See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
-      <td>1
-      <td>Required
-     <tr>
-      <th scope="row"><a href="https://schema.org/name">schema:name</a>
-      <td>See [[#dataset-basic]
-      <td>1
-      <td>Required
-     <tr>
-      <th scope="row"><a href="https://schema.org/creator">schema:creator</a>
-      <td>The owner of the dataset.
-      <td>1
-      <td>Required
-     <tr>
-      <th scope="row"><a href="https://schema.org/license">schema:license</a>
-      <td>See <a href="#dataset-license">§ 4.2.2 License</a>.
-      <td>1
-      <td>Required
-     <tr>
-      <th scope="row"><a href="https://schema.org/distribution">schema:distribution</a>
-      <td>See <a href="#dataset-distributions">§ 4.2.5 Distributions</a>.
-      <td>1..n
-      <td>Required
-     <tr>
-      <th scope="row"><a href="https://schema.org/description">schema:description</a>
-      <td>See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
-      <td>The publisher of the dataset.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/dateCreated">schema:dateCreated</a>
-      <td>See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/datePublished">schema:datePublished</a>
-      <td>See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/dateModified">schema:dateModified</a>
-      <td>See <a href="#dataset-date">§ 4.2.3 Dataset description dates</a>.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/version">schema:version</a>
-      <td>See <a href="#dataset-versions">§ 4.2.4 Version</a>.
-      <td>0..1
-      <td>Recommended
-   </table>
-   <h4 class="heading settled" data-level="4.2.8" id="dataset-extended"><span class="secno">4.2.8. </span><span class="content">Extended information</span><a class="self-link" href="#dataset-extended"></a></h4>
-   <dl>
-    <dd data-md>
-     <p class="issue" id="issue-28bb91d6"><a class="self-link" href="#issue-28bb91d6"></a> TODO Right location? Why separate?</p>
-   </dl>
-   <p>The following dataset attributes provided extra information, which improves the richness of the description and helps <a data-link-type="dfn" href="#consumer" id="ref-for-consumer④">Consumers</a> in finding and selecting datasets.</p>
-   <blockquote>
-    <p>Therefore, publishers <em>SHOULD</em> provide extended information.</p>
-   </blockquote>
-   <table>
-    <caption><a href="https://schema.org/Dataset">schema:Dataset</a> properties</caption>
-    <thead>
-     <tr>
-      <th>Property
-      <th>Description
-      <th>Cardinality
-      <th>Usage
-    <tbody>
-     <tr>
-      <th scope="row"><a href="https://schema.org/mainEntityOfPage">schema:mainEntityOfPage</a>
-      <td>URL of a webpage where the dataset is described.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/inLanguage">schema:inLanguage</a>
-      <td>Language or languages in which the dataset is available. Use one of the language codes from the <a data-link-type="biblio" href="#biblio-bcp47">[BCP47]</a>, such as "nl-NL".
-      <td>0..n
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/isBasedOnUrl">schema:isBasedOnUrl</a>
-      <td>The URL of dataset this dataset is based on.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/citation">schema:citation</a>
-      <td>A citation or reference for the dataset.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/genre">schema:genre</a>
-      <td>The genre or genres which describe the dataset.
-      <td>0..n
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/keywords">schema:keywords</a>
-      <td>One or more keyword which describe the dataset.
-      <td>0..n
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/spatialCoverage">schema:spatialCoverage</a>
-      <td>Indicates the place(s) which are the focus of the dataset.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/temporalCoverage">schema:temporalCoverage</a>
-      <td>Indicates the period that the dataset applies to.
-      <td>0..1
-      <td>Recommended
-     <tr>
-      <th scope="row"><a href="https://schema.org/includedInDataCatalog">schema:includedInDataCatalog</a>
-      <td>The URI of the data catalog in which the dataset is.
-      <td>0..1
-      <td>Recommended
-   </table>
-   <h4 class="heading settled" data-level="4.2.9" id="data-catalog"><span class="secno">4.2.9. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog"></a></h4>
-   <p>A collection of datasets is a data catalog. A catalog provides the <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">Consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
-   <blockquote>
-    <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
-   </blockquote>
-   <svg height="600" overflow="hidden" style="zoom:0.6" width="1280" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-     <clipPath id="clip0">
-      <path clip-rule="evenodd" d="M0 0 1280 0 1280 600 0 720Z" fill-rule="evenodd"></path>
-     </clipPath>
-    </defs>
-    <g clip-path="url(#clip0)">
-     <rect fill="#dae8fc" height="164" stroke="#dae8fc" stroke-linejoin="round" stroke-miterlimit="10" width="380" x="48.5001" y="39.5001"></rect>
-     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(188.549 73)">
-      Catalog
-      <tspan font-size="24" font-weight="400" x="-124.253" y="60">A catalog is a compiled collection of</tspan>
-      <tspan font-size="24" font-weight="400" x="-75.1067" y="88">metadata about datasets.</tspan>
-     </text>
-     <rect fill="#dae8fc" height="165" stroke="#dae8fc" stroke-linejoin="round" stroke-miterlimit="10" width="380" x="428.5" y="237.5"></rect>
-     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(566.668 272)">
-      Dataset
-      <tspan font-size="24" font-weight="400" x="-122.613" y="60">A dataset is a general description of</tspan>
-      <tspan font-size="24" font-weight="400" x="-108.56" y="88">a collection of data, published or</tspan>
-      <tspan font-size="24" font-weight="400" x="-118.28" y="117">compiled by a single administrator.</tspan>
-     </text>
-     <rect fill="#dae8fc" height="165" stroke="#A9D18E" stroke-linejoin="round" stroke-miterlimit="10" width="379" x="808.5" y="435.5"></rect>
-     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(918.194 470)">
-      Distribution
-      <tspan font-size="24" font-weight="400" x="-100.88" y="60">A distribution describes the channels</tspan>
-      <tspan font-size="24" font-weight="400" x="-79.58" y="88">through which a dataset is made</tspan>
-      <tspan font-size="24" font-weight="400" x="33.3666" y="117">available.</tspan>
-     </text>
-     <path d="M428 118 620.798 118 620.798 221.865 614.798 221.865 614.798 121 617.798 124 428 124ZM626.798 218.865 617.798 236.865 608.798 218.865Z" fill="#111111"></path>
-     <path d="M808 316 1000.8 316 1000.8 419.865 994.798 419.865 994.798 319 997.798 322 808 322ZM1006.8 416.865 997.798 434.865 988.798 416.865Z" fill="#111111"></path>
-     <text fill="#111111" font-family="Calibri,sans-serif" font-size="24" font-weight="400" transform="translate(868.653 307)">
-      available via
-      <tspan x="-342.303" y="-198">contains</tspan>
-      <tspan x="-297.35" y="-157">1..n</tspan>
-      <tspan x="82.2466" y="44">1..n</tspan>
-     </text>
-    </g>
-   </svg>
-   <div class="example" id="example-9b89d49c">
-    <a class="self-link" href="#example-9b89d49c"></a> A catalog of available datasets: 
-<pre class="highlight"><c- p>{</c->
-  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
-  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataCatalog"</c-><c- p>,</c->
-  <c- f>"name"</c-><c- p>:</c-> <c- u>"Linked Data KB"</c-><c- p>,</c->
-  <c- f>"description"</c-><c- p>:</c-> <c- u>"Alle linked data zoals beschikbaar gesteld door de Koninklijke Bibliotheek."</c-><c- p>,</c->
-  <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
-            <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
-            <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-            <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c->
-       <c- p>},</c->
-       <c- f>"dataset"</c-><c- p>:</c-> <c- p>[</c->
-         <c- p>{</c->
-           <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
-           <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c->
-           ...
-         <c- p>},</c-> <c- p>{</c-> 
-           ...
-         <c- p>}</c->
-  <c- p>]</c->
-<c- p>}</c->
-</pre>
-   </div>
-   <table>
-    <caption><a href="http://schema.org/DataCatalog">schema:DataCatalog</a> properties</caption>
-    <thead>
-     <tr>
-      <th>Property
-      <th>Description
-      <th>Cardinality
-      <th>Usage
-    <tbody>
-     <tr>
-      <th scope="row"><a href="https://schema.org/name">schema:name</a>
-      <td>The name of the datacatalog.
-      <td>1
-      <td>Required
-     <tr>
-      <th scope="row"><a href="https://schema.org/description">schema:description</a>
-      <td>A description of the data catalog.
-      <td>1
-      <td>Required
-     <tr>
-      <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
-      <td>The publisher of the data catalog.
-      <td>1
-      <td>Required
-     <tr>
-      <th scope="row"><a href="https://schema.org/dataset">schema:dataset</a>
-      <td>The datasets containing all dataset information.
-      <td>1..n
-      <td>Required
-   </table>
-   <h3 class="heading settled" data-level="4.3" id="data"><span class="secno">4.3. </span><span class="content">Data information</span><a class="self-link" href="#data"></a></h3>
-   <h4 class="heading settled" data-level="4.3.1" id="relations"><span class="secno">4.3.1. </span><span class="content">Relations to terms</span><a class="self-link" href="#relations"></a></h4>
-   <p>To understand and connect data,
-it must be described in <a data-link-type="dfn" href="#term" id="ref-for-term①">terms</a> that provide meaning to the data for humans as well as machines.</p>
-   <blockquote>
-    <p>Therefore, data publishers <em>SHOULD</em> describe their data with <a data-link-type="dfn" href="#term" id="ref-for-term②">terms</a>.</p>
-   </blockquote>
-   <div class="example" id="example-592f0be1">
-    <a class="self-link" href="#example-592f0be1"></a> A painting in plain JSON, where all values are <a href="https://www.w3.org/TR/rdf11-concepts/#section-literals">string literals</a>: 
-<pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- f>"type"</c-><c- p>:</c-> <c- u>"Artwork"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"creator"</c-><c- p>:</c-> <c- u>"Rembrandt"</c-></span><span class="line-no" data-line="5"></span><span class="line"><c- p>}</c-></span></pre>
-    <p>Now, with relations to <a data-link-type="dfn" href="#term" id="ref-for-term③">terms</a>.
-    We <a href="https://www.w3.org/TR/json-ld/#specifying-the-type">specify the item’s type</a> in the <a data-link-type="biblio" href="#biblio-schema-org">[SCHEMA-ORG]</a> vocabulary
-    and refer to the painter by his RKDArtists <a data-link-type="biblio" href="#biblio-iri">[IRI]</a>.</p>
-<pre class="highlight line-numbered" line-highlight="3,5"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="3"></span><span class="line highlight-line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Painting"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"The Night Watch"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="5"></span><span class="line highlight-line">  <c- f>"creator"</c-><c- p>:</c-> <c- u>"https://data.rkd.nl/artists/66219"</c-></span><span class="line-no" data-line="6"></span><span class="line"><c- p>}</c-></span></pre>
-   </div>
-   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-VocabReference">Data on the Web Best Practices Use Cases &amp; Requirements §R-VocabReference</a>.</p>
-   <h3 class="heading settled" data-level="4.4" id="developer-docs"><span class="secno">4.4. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h3>
-   <p>Publishers <em>MUST</em> publish documentation for their data access <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>.</p>
-   <p class="issue" id="issue-99a3d5ce"><a class="self-link" href="#issue-99a3d5ce"></a> TODO plus mention SHACL (here or elsewhere)?</p>
-   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements §R-APIDocumented</a></p>
-   <h3 class="heading settled" data-level="4.5" id="identifiers"><span class="secno">4.5. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h3>
-   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑥">Consumers</a> want to refer to data in datasets. Preferably they do so by linking to it.</p>
-   <blockquote>
-    <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a href="#data">data</a> resource,
-as well as their <a href="#organization-information">organization</a> and <a href="#dataset-information">dataset</a> information.
-Publishers <em>should</em> use <a data-link-type="biblio" href="#biblio-iri">IRIs</a> as identifiers.</p>
-   </blockquote>
-   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-UniqueIdentifier">Data on the Web Best Practices Use Cases &amp; Requirements §R-UniqueIdentifier</a> and <a href="https://www.w3.org/TR/dwbp-ucr/#R-PersistentIdentification">Data on the Web Best Practices Use Cases &amp; Requirements §R-PersistentIdentification</a>.</p>
-   <h3 class="heading settled" data-level="4.6" id="rdf"><span class="secno">4.6. </span><span class="content">Information in RDF</span><a class="self-link" href="#rdf"></a></h3>
-   <p>For <a data-link-type="dfn" href="#machine-readability" id="ref-for-machine-readability①">machine-readable</a> access to data,
-it needs to be published in an <a href="https://www.w3.org/TR/rdf11-primer/#section-graph-syntax">RDF format</a>.
-RDF formats include <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]</a>, <a data-link-type="biblio" href="#biblio-n3">[N3]</a> and <a data-link-type="biblio" href="#biblio-turtle">[Turtle]</a>.</p>
-   <blockquote>
-    <p>Therefore, publishers <em>must</em> make their <a href="#organization-information">organization information</a> and <a href="#dataset-information">dataset information</a> available in RDF.
-Publishers <em>should</em> also make the <a href="#data">data</a> itself available in RDF.</p>
-   </blockquote>
-   <div class="example" id="example-7733a969">
-    <a class="self-link" href="#example-7733a969"></a> <a href="https://developers.google.com/search/docs/guides/intro-structured-data#structured-data">Google recommends</a> including the JSON-LD directly in the HTML source of web pages. 
-    <p>So, on your organization’s web page, for instance <a href="https://www.kb.nl">www.kb.nl</a>, include:</p>
-<pre class="highlight"><c- p>&lt;</c-><c- f>html</c-><c- p>></c->
-  <c- p>&lt;</c-><c- f>head</c-><c- p>></c->
-    <c- p>&lt;</c-><c- f>title</c-><c- p>></c->Koninklijke Bibliotheek<c- p>&lt;/</c-><c- f>title</c-><c- p>></c->
-    <c- p>&lt;</c-><c- f>script</c-> <c- e>type</c-><c- o>=</c-><c- s>"application/ld+json"</c-><c- p>></c->
-      <c- p>{</c->
-        <c- u>"@context"</c-><c- o>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
-        <c- u>"@type"</c-><c- o>:</c-> <c- u>"Organization"</c-><c- p>,</c->
-        <c- u>"name"</c-><c- o>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-        <c- u>"url"</c-><c- o>:</c-> <c- u>"https://www.kb.nl/"</c->
-      <c- p>}</c->
-    <c- p>&lt;/</c-><c- f>script</c-><c- p>></c->
-  <c- p>&lt;/</c-><c- f>head</c-><c- p>></c->
-  <c- p>&lt;</c-><c- f>body</c-><c- p>></c->
-    Here continues the web page of the organization...
-  <c- p>&lt;/</c-><c- f>body</c-><c- p>></c->
-<c- p>&lt;/</c-><c- f>html</c-><c- p>></c->    
-</pre>
-   </div>
+   <p class="issue" id="issue-371b3745"><a class="self-link" href="#issue-371b3745"></a> TODO Expand example based on required (and recommended) properties.</p>
+   <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Tools</span><a class="self-link" href="#tools"></a></h2>
+   <p><em>This section is non-normative.</em></p>
    <p>Google’s <a href="https://search.google.com/test/rich-results">Rich Results Test</a> (previously Structured Data Testing Tool)
 can help with testing RDF metadata.</p>
-   <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-FormatMachineRead">Data on the Web Best Practices Use Cases &amp; Requirements §R-FormatMachineRead</a>.</p>
-   <h3 class="heading settled" data-level="4.7" id="available"><span class="secno">4.7. </span><span class="content">Information remains available</span><a class="self-link" href="#available"></a></h3>
-   <p>Datasets will be used by all kinds of <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑦">consumers</a> and their systems.
-For stability, users must be able to trust that the datasets will remain available
-so they can be consulted in the future.</p>
-   <blockquote>
-    <p>Therefore, publishers <em>must</em> ensure information remains available in the future.</p>
-   </blockquote>
+   <p class="issue" id="issue-40580f0b"><a class="self-link" href="#issue-40580f0b"></a> Reference SHACL.</p>
+   <p class="issue" id="issue-b8bd19b0"><a class="self-link" href="#issue-b8bd19b0"></a> Validation with NDE Register.</p>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -2645,23 +2612,27 @@ so they can be consulted in the future.</p>
 This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>.<a href="#issue-6f3bbb3f"> ↵ </a></div>
    <div class="issue"> add examples<a href="#issue-a71b8ddb"> ↵ </a></div>
    <div class="issue"> TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).<a href="#issue-1c1ad482"> ↵ </a></div>
+   <div class="issue"> Can we specify a Distribution property for this?<a href="#issue-d1bd290f"> ↵ </a></div>
    <div class="issue"> TODO Expand example based on required (and recommended) properties.<a href="#issue-371b3745"> ↵ </a></div>
-   <div class="issue"> TODO Right location? Why separate?<a href="#issue-28bb91d6"> ↵ </a></div>
-   <div class="issue"> TODO plus mention SHACL (here or elsewhere)?<a href="#issue-99a3d5ce"> ↵ </a></div>
+   <div class="issue"> Reference SHACL.<a href="#issue-40580f0b"> ↵ </a></div>
+   <div class="issue"> Validation with NDE Register.<a href="#issue-b8bd19b0"> ↵ </a></div>
   </div>
   <aside class="dfn-panel" data-for="dataset">
    <b><a href="#dataset">#dataset</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dataset">1. Introduction</a>
     <li><a href="#ref-for-dataset①">2. Definitions</a> <a href="#ref-for-dataset②">(2)</a> <a href="#ref-for-dataset③">(3)</a>
-    <li><a href="#ref-for-dataset④">4.1. Organization information</a>
-    <li><a href="#ref-for-dataset⑤">4.2. Dataset information</a>
+    <li><a href="#ref-for-dataset④">4.1. Available in RDF</a>
+    <li><a href="#ref-for-dataset⑤">4.1.1. Durable identifiers</a>
+    <li><a href="#ref-for-dataset⑥">4.2. Dataset information</a>
+    <li><a href="#ref-for-dataset⑦">4.3. Organization information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="distribution">
    <b><a href="#distribution">#distribution</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-distribution">4.2.5. Distributions</a>
+    <li><a href="#ref-for-distribution">2. Definitions</a>
+    <li><a href="#ref-for-distribution①">4.4. Distributions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-source">
@@ -2673,14 +2644,14 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
   <aside class="dfn-panel" data-for="api">
    <b><a href="#api">#api</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-api">4.4. Developer documentation</a>
+    <li><a href="#ref-for-api">4.4.1. Developer documentation</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="machine-readability">
    <b><a href="#machine-readability">#machine-readability</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-machine-readability">1. Introduction</a>
-    <li><a href="#ref-for-machine-readability①">4.6. Information in RDF</a>
+    <li><a href="#ref-for-machine-readability①">4.1. Available in RDF</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="publisher">
@@ -2688,28 +2659,28 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    <ul>
     <li><a href="#ref-for-publisher">1. Introduction</a>
     <li><a href="#ref-for-publisher①">2. Definitions</a> <a href="#ref-for-publisher②">(2)</a>
-    <li><a href="#ref-for-publisher③">4.1. Organization information</a>
-    <li><a href="#ref-for-publisher④">4.2.1. Basic information</a>
+    <li><a href="#ref-for-publisher③">4.1. Available in RDF</a>
+    <li><a href="#ref-for-publisher④">4.2.4. Version</a>
+    <li><a href="#ref-for-publisher⑤">4.3. Organization information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="consumer">
    <b><a href="#consumer">#consumer</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-consumer">1. Introduction</a>
-    <li><a href="#ref-for-consumer①">4.2.2. License</a>
-    <li><a href="#ref-for-consumer②">4.2.4. Version</a>
-    <li><a href="#ref-for-consumer③">4.2.5. Distributions</a>
-    <li><a href="#ref-for-consumer④">4.2.8. Extended information</a>
-    <li><a href="#ref-for-consumer⑤">4.2.9. Data catalog</a>
-    <li><a href="#ref-for-consumer⑥">4.5. Durable identifiers</a>
-    <li><a href="#ref-for-consumer⑦">4.7. Information remains available</a>
+    <li><a href="#ref-for-consumer①">4.1.1. Durable identifiers</a>
+    <li><a href="#ref-for-consumer②">4.1.2. Information remains available</a>
+    <li><a href="#ref-for-consumer③">4.2. Dataset information</a>
+    <li><a href="#ref-for-consumer④">4.2.2. License</a>
+    <li><a href="#ref-for-consumer⑤">4.2.4. Version</a>
+    <li><a href="#ref-for-consumer⑥">4.4. Distributions</a>
+    <li><a href="#ref-for-consumer⑦">4.5. Data catalog</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term">
    <b><a href="#term">#term</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-term">2. Definitions</a>
-    <li><a href="#ref-for-term①">4.3.1. Relations to terms</a> <a href="#ref-for-term②">(2)</a> <a href="#ref-for-term③">(3)</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
