@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="78fbc8daa32625683e4e1f13221589d9d3f509e1" name="document-revision">
+  <meta content="4e9978827b80f6ce4f04ccc86cdc979a9f497859" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1998,7 +1998,8 @@ At the least, the organization’s name and URL must be provided.</p>
     <p>Therefore, publishers <em>SHOULD</em> add at least one distribution.
 Each distribution <em>MUST</em> have at least a MIME format and the URL where the distribution can be accessed.</p>
    </blockquote>
-   <p>Distributions can be data dumps in RDF or some other format such as CSV, SPARQL endpoints, OAI-PMH endpoints and more.</p>
+   <p>Distributions can be data dumps in RDF or some other format such as CSV, live SPARQL endpoints,
+OAI-PMH endpoints or other APIs.</p>
    <div class="example" id="example-0da1fc0d">
     <a class="self-link" href="#example-0da1fc0d"></a> A minimal definition of a SPARQL endpoint distribution.
     In the Schema.org vocabulary, each type of distribution is called a <a href="https://schema.org/DataDownload">DataDownload</a>,
@@ -2012,8 +2013,8 @@ Each distribution <em>MUST</em> have at least a MIME format and the URL where th
 </pre>
    </div>
    <p>The distributions are then included under the <code>distribution</code> attribute with the dataset.</p>
-   <div class="example" id="example-e18931b4">
-    <a class="self-link" href="#example-e18931b4"></a> A dataset with two distributions. 
+   <div class="example" id="example-3293a1d6">
+    <a class="self-link" href="#example-3293a1d6"></a> A dataset with two distributions. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -2028,7 +2029,12 @@ Each distribution <em>MUST</em> have at least a MIME format and the URL where th
       <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
       <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/ld+json"</c-><c- p>,</c->
       <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba.json"</c->
-    <c- p>}</c->            
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
+      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"text/csv"</c-><c- p>,</c->
+      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"https://example.com/data.csv"</c->
+    <c- p>}</c->
   <c- p>]</c->
 <c- p>}</c->
 </pre>
