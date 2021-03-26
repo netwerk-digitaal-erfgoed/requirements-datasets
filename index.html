@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="de13d55615471a5dff83a575222a5a9c0b7c520b" name="document-revision">
+  <meta content="3cba53bebcc93179a8d32dccf72ec4914e7c0025" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1501,7 +1501,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-03-25">25 March 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-03-26">26 March 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1518,7 +1518,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 25 March 2021,
+In addition, as of 26 March 2021,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2131,8 +2131,8 @@ Each distribution <em>MUST</em> have at least a MIME format and the URL where th
       <th>Usage
     <tbody>
      <tr>
-      <th scope="row"><a href="https://schema.org/identifier">schema:identifier</a>
-      <td>See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
+      <th scope="row">@id
+      <td>The <a data-link-type="biblio" href="#biblio-iri">[IRI]</a> of the dataset.
       <td>1
       <td>Required
      <tr>
@@ -2356,8 +2356,8 @@ Each distribution <em>MUST</em> have at least a MIME format and the URL where th
       <td>Required
    </table>
    <h4 class="heading settled" data-level="4.6.5" id="dataset-example"><span class="secno">4.6.5. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
-   <div class="example" id="example-3c9f1e16">
-    <a class="self-link" href="#example-3c9f1e16"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 4.2.1 Basic information</a>), 
+   <div class="example" id="example-9babd0f2">
+    <a class="self-link" href="#example-9babd0f2"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 4.2.1 Basic information</a>), 
     a license (<a href="#dataset-license">§ 4.2.2 License</a>)
     and publication dates (<a href="#dataset-date">§ 4.2.3 Creation, publication and modification dates</a>): 
 <pre class="include-code highlight" path="examples/dataset.jsonld"><c- p>{</c->
@@ -2367,7 +2367,6 @@ Each distribution <em>MUST</em> have at least a MIME format and the URL where th
   <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c->
   <c- f>"description"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek, een dataset gedefinieerd voor het Europeana Rise of Literacy project."</c-><c- p>,</c->
   <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c->
-  <c- f>"identifier"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c->
   <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c->
     <c- u>"alba amicorum"</c->
   <c- p>],</c->
