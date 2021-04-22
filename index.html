@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="4e9978827b80f6ce4f04ccc86cdc979a9f497859" name="document-revision">
+  <meta content="e1fabdda5f8b564ac5bdb34e0a41a162774189a3" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1501,7 +1501,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-03-26">26 March 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-04-22">22 April 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1518,7 +1518,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 26 March 2021,
+In addition, as of 22 April 2021,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -1564,7 +1564,7 @@ Parts of this work may be from another specification document.  If so, those par
       <li>
        <a href="#organization-information"><span class="secno">4.3</span> <span class="content">Organization information</span></a>
        <ol class="toc">
-        <li><a href="#dataset-creator"><span class="secno">4.3.1</span> <span class="content">Dataset creator</span></a>
+        <li><a href="#dataset-publisher"><span class="secno">4.3.1</span> <span class="content">Dataset publisher</span></a>
        </ol>
       <li>
        <a href="#dataset-distributions"><span class="secno">4.4</span> <span class="content">Distributions</span></a>
@@ -1975,14 +1975,14 @@ At the least, the organization’s name and URL must be provided.</p>
 </pre>
    </div>
    <p>See <a href="#organization-overview">§ 4.6.2 Organization attributes</a> for a full overview of organization attributes.</p>
-   <h4 class="heading settled" data-level="4.3.1" id="dataset-creator"><span class="secno">4.3.1. </span><span class="content">Dataset creator</span><a class="self-link" href="#dataset-creator"></a></h4>
-   <p>The organization data is then included as the dataset’s creator:</p>
-   <div class="example" id="example-c39106db">
-    <a class="self-link" href="#example-c39106db"></a> A dataset with a creator. The creator has some optional attributes. 
+   <h4 class="heading settled" data-level="4.3.1" id="dataset-publisher"><span class="secno">4.3.1. </span><span class="content">Dataset publisher</span><a class="self-link" href="#dataset-publisher"></a></h4>
+   <p>The organization data is then included as the dataset’s publisher:</p>
+   <div class="example" id="example-31328609">
+    <a class="self-link" href="#example-31328609"></a> A dataset with a publisher. The publisher has some optional attributes. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
-  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c->
+  <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
     <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c->
@@ -2139,8 +2139,8 @@ OAI-PMH endpoints or other APIs.</p>
       <td>0..1
       <td>Recommended
      <tr>
-      <th scope="row"><a href="https://schema.org/creator">schema:creator</a>
-      <td>The owner of the dataset.
+      <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
+      <td>The publisher of the dataset.
       <td>1
       <td>Required
      <tr>
@@ -2154,8 +2154,8 @@ OAI-PMH endpoints or other APIs.</p>
       <td>0..n
       <td>Recommended
      <tr>
-      <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
-      <td>The publisher of the dataset.
+      <th scope="row"><a href="https://schema.org/creator">schema:creator</a>
+      <td>The owner of the dataset.
       <td>0..1
       <td>Recommended
      <tr>
