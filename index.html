@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="d28d4829ff0f0ea51d871437eb4a56897a743c27" name="document-revision">
+  <meta content="8539337952a0620dc1a2ce1b6cfb8bcc203a5102" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -2393,10 +2393,10 @@ OAI-PMH endpoints or other APIs.</p>
    <p class="issue" id="issue-371b3745"><a class="self-link" href="#issue-371b3745"></a> TODO Expand example based on required (and recommended) properties.</p>
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Tools</span><a class="self-link" href="#tools"></a></h2>
    <p><em>This section is non-normative.</em></p>
+   <p>Developers can use the <a href="https://demo.netwerkdigitaalerfgoed.nl/register-api/">NDE Register API</a> to validate datasets and catalogs against the requirements described in this document.
+The <a data-link-type="biblio" href="#biblio-shacl">[SHACL]</a> shape graph used to validate datasets and catalogs is available at <a href="https://demo.netwerkdigitaalerfgoed.nl/register-api/shacl">/shacl</a>.</p>
    <p>Google’s <a href="https://search.google.com/test/rich-results">Rich Results Test</a> (previously Structured Data Testing Tool)
-can help with testing RDF metadata.</p>
-   <p class="issue" id="issue-40580f0b"><a class="self-link" href="#issue-40580f0b"></a> Reference SHACL.</p>
-   <p class="issue" id="issue-b8bd19b0"><a class="self-link" href="#issue-b8bd19b0"></a> Validation with NDE Register.</p>
+can help with testing RDF metadata in general.</p>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -2581,6 +2581,8 @@ can help with testing RDF metadata.</p>
    <dd>Tim Berners-Lee; Dan Connolly. <a href="https://www.w3.org/TeamSubmission/2008/SUBM-n3-20080114/">Notation3 (N3): A readable RDF syntax</a>. 14 January 2008. W3C Team Submission. URL: <a href="https://www.w3.org/TeamSubmission/2008/SUBM-n3-20080114/">https://www.w3.org/TeamSubmission/2008/SUBM-n3-20080114/</a>
    <dt id="biblio-schema-org">[SCHEMA-ORG]
    <dd>W3C Schema.org Community Group. <a href="https://schema.org/">Schema.org</a>. 6.0. URL: <a href="https://schema.org/">https://schema.org/</a>
+   <dt id="biblio-shacl">[SHACL]
+   <dd>Holger Knublauch; Dimitris Kontokostas. <a href="https://www.w3.org/TR/shacl/">Shapes Constraint Language (SHACL)</a>. 20 July 2017. REC. URL: <a href="https://www.w3.org/TR/shacl/">https://www.w3.org/TR/shacl/</a>
    <dt id="biblio-sparql11-overview">[SPARQL11-OVERVIEW]
    <dd>The W3C SPARQL Working Group. <a href="https://www.w3.org/TR/sparql11-overview/">SPARQL 1.1 Overview</a>. 21 March 2013. REC. URL: <a href="https://www.w3.org/TR/sparql11-overview/">https://www.w3.org/TR/sparql11-overview/</a>
    <dt id="biblio-turtle">[Turtle]
@@ -2598,8 +2600,6 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    <div class="issue"> TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).<a href="#issue-1c1ad482"> ↵ </a></div>
    <div class="issue"> Can we specify a Distribution property for this?<a href="#issue-d1bd290f"> ↵ </a></div>
    <div class="issue"> TODO Expand example based on required (and recommended) properties.<a href="#issue-371b3745"> ↵ </a></div>
-   <div class="issue"> Reference SHACL.<a href="#issue-40580f0b"> ↵ </a></div>
-   <div class="issue"> Validation with NDE Register.<a href="#issue-b8bd19b0"> ↵ </a></div>
   </div>
   <aside class="dfn-panel" data-for="dataset">
    <b><a href="#dataset">#dataset</a></b><b>Referenced in:</b>
