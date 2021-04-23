@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="661550198c80b1ecd684983d5adb346a381e65b7" name="document-revision">
+  <meta content="678f7bde4d7e17f1412ba3f4f8c82a13f113b539" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1571,7 +1571,7 @@ Parts of this work may be from another specification document.  If so, those par
        <ol class="toc">
         <li><a href="#developer-docs"><span class="secno">4.4.1</span> <span class="content">Developer documentation</span></a>
        </ol>
-      <li><a href="#data-catalog"><span class="secno">4.5</span> <span class="content">Data catalog</span></a>
+      <li><a href="#data-catalog①"><span class="secno">4.5</span> <span class="content">Data catalog</span></a>
       <li>
        <a href="#overview"><span class="secno">4.6</span> <span class="content">Overview of attributes</span></a>
        <ol class="toc">
@@ -1650,9 +1650,12 @@ The dataset also tells us the URLs of distributions where we can download or que
 If we consult the data provided by one of these distributions, we’ve left the sphere of the dataset proper.
 That is to say, the data itself, which may include descriptions of paintings, persons and places,
 are <em>not</em> properties of the dataset.</p>
+    <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="data-catalog">Data catalog</dfn>
+    <dd data-md>
+     <p>A collection of <a data-link-type="dfn" href="#dataset" id="ref-for-dataset①">datasets</a>.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="distribution">Distribution</dfn>
     <dd data-md>
-     <p>A channel through which a <a data-link-type="dfn" href="#dataset" id="ref-for-dataset①">dataset</a> is available,
+     <p>A channel through which a <a data-link-type="dfn" href="#dataset" id="ref-for-dataset②">dataset</a> is available,
 for example a CSV file download or a <a data-link-type="biblio" href="#biblio-sparql11-overview">SPARQL</a> endpoint.</p>
     <dt data-md><dfn data-dfn-type="dfn" data-export id="application-programming-interface">Application Programming Interface<a class="self-link" href="#application-programming-interface"></a></dfn> (<dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="api">API</dfn>)
     <dd data-md>
@@ -1662,105 +1665,92 @@ for example a CSV file download or a <a data-link-type="biblio" href="#biblio-sp
      <p class="issue" id="issue-b7b1e314①"><a class="self-link" href="#issue-b7b1e314①"></a> TODO</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="publisher">Publisher</dfn>
     <dd data-md>
-     <p>An individual or organization that provides one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset②">datasets</a>.</p>
+     <p>An individual or organization that provides one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset③">datasets</a>.</p>
      <p class="issue" id="issue-6f3bbb3f"><a class="self-link" href="#issue-6f3bbb3f"></a> is this a good translation for ‘bronhouder’? And add examples.
 This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="consumer">Consumer</dfn>
     <dd data-md>
-     <p>On organization or an individual that uses one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset③">datasets</a> that are provided by a <a data-link-type="dfn" href="#publisher" id="ref-for-publisher②">publisher</a>.</p>
+     <p>On organization or an individual that uses one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset④">datasets</a> that are provided by a <a data-link-type="dfn" href="#publisher" id="ref-for-publisher②">publisher</a>.</p>
      <p class="issue" id="issue-a71b8ddb"><a class="self-link" href="#issue-a71b8ddb"></a> add examples</p>
    </dl>
    <h2 class="heading settled" data-level="3" id="conceptual-model"><span class="secno">3. </span><span class="content">Conceptual model</span><a class="self-link" href="#conceptual-model"></a></h2>
    <p></p>
-   <svg content="<mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2020-09-09T14:13:10.819Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.2 Safari/605.1.15&quot; etag=&quot;mj5HFoxAj4LKTICbj5fG&quot; version=&quot;13.6.6&quot; type=&quot;github&quot; pages=&quot;2&quot;><diagram id=&quot;urrUrFw95YwCIsGvFkr1&quot; name=&quot;Overview&quot;>7VjZcpswFP0aHu1hN36MlyxTZ5kkbdOnjgwC1MiICHkhX1/JCAMGu3Zix5lM/ZBwry5azjm6ukIx+pPFBQVxeE08iBVd9RaKMVB0vWvZ/K9wpJlDUztG5gko8qSvcDygV5gHSu8UeTCpBDJCMENx1emSKIIuq/gApWReDfMJro4agwDWHA8uwHXvT+SxMPM6eqfwX0IUhPnImt3NWiYgD5YrSULgkXnJZQwVo08JYdnTZNGHWICX45K9d76hdTUxCiO2ywvEC7/1Lm4T6sad506/N7r/PWuZWS8zgKdywQPAwIDMI0yAJyfO0hwNH2HcJ5jQpWl4ADq+qxi9hFHyDEsttuvAsc9bMBhD3APuc0DJNPLykIhEvMteyCaYWxp/9EnEJP2aye368uSKZ5AyuCi55HIvIJlARlMeIltz5KX2dFva84JIzZC+sERiHgekdoJVzwW8/EEivAfaxldGW1tD2/pAtF9M/8luXXX165uRjcYxHC7GLfH+Gtwe4tih8ZQhEtXghh7f+dIklIUkIBHAw8LbW4IKxZgqt4qYESGxBPYPZCyVyIIpI1XYt/MDMAoibmLos304SsiUunALElJ3DNAAsm2IyQ4FElsplxxbWTiFGDA0q2bMJjplR3cE8RUUIcT3Ez6vdb5X4719w1nvIlkw5pIJct9OOKeKpk/y/aXxSxhtKzcHi3LjIJXWdqHAyDsTZxv3uBgkiZihcJ4jvGmD59py+TiQfoiaNGNHNe2nH75ykJYCYqGmpEFeeV5yqolJU9fOyX/FyxO9kGY2g4MK1a6lKpdCwDjpTQIeCXVUhVbjVyRuxOuYM9kwQZ6X6Rsm6BWMl/0JqUn8eOdWT7EGDdpJYuCiKHhcal5t1M623Vc7QlbVmpxFpSBqOlr4frGtzvuSjezKaWu6WvppVa71tml3y79q/8fLVJ2aADDiXCbwfwY7XQZz7B0z2Eqntm3oVUUZb5HtR+c4Q1U2prgjndfbiFkrkPPByrugXMvuXSYfsvqVCHZOXe1qdewU3cZ5IVlBz36ZkryhlSyBOOMBmhkvikb+FIj/tzQAET8xspo565HPMOs0CzkuOyCJs5u9jxYiqx3kamitbRhzR/6sblvtHolCp14FfL8ffV7pr2N5upueVgPuK1ys85v0rto8BL438biTPjr0Fd66P656l27rMW3V4T1MarmDNPlcSaWhVq1xt3EjmNppk0ojd/WPIIfhTlxNduONA8qOd1kRFWsiiT0MjcZ6McXpscwak01E6vvvQG4W34CzOqr4km4M/wI=</diagram><diagram id=&quot;a6mHWFwkpfAQTan6lGMU&quot; name=&quot;Classes&quot;>ldHJDsIgEADQr+FoYouperWucYv24BnLWEig0yDG6tdbQxeJFz0Bj2FgBkJjXS4MK8QWOSgS9nlJ6JSEYTCIomp4y6MRGjjJjOS1dZDIJ9TYr/UmOVy9QIuorCx8TDHPIbWeMWPw7oddUPm3FiyDL0hSpr71JLkVTkfhsPMlyEw0NwfR2O1o1gTXlVwF43j/IDojNDaI1s10GYN6d6/tizju10xPVnLztLvbBg9n6Llk83+OtCUYyO2vqatJ97Rq4f0wnb0A</diagram></mxfile>" height="322px" resource="https://app.diagrams.net/?src=about#Hnetwerk-digitaal-erfgoed%2Frequirements-datasets%2Fmaster%2Fmodel.svg" version="1.1" viewBox="-0.5 -0.5 542 322" width="542px" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+   <svg content="<mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2021-04-23T07:26:51.898Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15&quot; etag=&quot;RsepxiNWiidT35q414NZ&quot; version=&quot;14.5.10&quot; type=&quot;device&quot; pages=&quot;2&quot;><diagram id=&quot;urrUrFw95YwCIsGvFkr1&quot; name=&quot;Overview&quot;>7Vltc5s4EP41/miPQYDhY2ynaaZpk2lzTe++3AgQoIuMqJATk19fYYR5ESF24pc2c55JjFbLIj377GoXD8BssbpgMIk+Ux+RgT72VwMwH+i6Y4/F/1yQFQJtPHEKSciwL2WV4Bt+QqWilC6xj9KGIqeUcJw0hR6NY+TxhgwyRh+bagElzacmMESK4JsHiSq9wz6PCqmtTyr5R4TDqHyyZsn9LWCpLHeSRtCnjzUROB+AGaOUF1eL1QyRHLwSl+K+D8/MbhbGUMy3uYH60afpxXXKvGRyP5lNr77++zA0CisPkCzlhueQwzl9jAmFvlw4z0o0AkzIjBLK1kPgQ2QH3gBMU87oParNWJ6N3EDMEOgiMoXefcjoMvZLlZjGwuQ04gsiRpq4DGjMpfs1Q4zV7ckdPyDG0aomktu9QHSBOMuEipwtkZfcA6YcP1aO1ICURTUnWlIGJXfCjeUKXnEhEd4BbfCe0dZaaBtHRPunEfywhpeO/vnLlYXdBJ2v3GF+fwtuHwvssLvkmMYK3MgXkS+HlPGIhjSG5LySTtegovyZYzGqdK4oTSSw/yHOM4ksXHLahL3fP5DgMBZDggK+i49SumQe6kFC8o5DFiLeh5g0mCPR63LpY7NQZ4hAjh+aGbPLndLQDcViB5UKDYJUrKvt783zXh9w5pucnHvMowvsvd7hwlUs+yHvXw/+zgcjsxzOV/XJeSZH/URBsX+Wn21C4hGYpvkKc+EHTJ4L8JJbnngOYkdhkwa2ZNNu/BE7h1lNIcnZlHbQq8xLdjMxaU7rnHxBXzedFjWLFeyVqJaSqpKlS3AaCV91Ufgq50eTaoqH89SNRSVzJicW2PcLhqMUP0F3bS8nm0RQGDenA3PewZ40gR6Ow9s168ed7OmLP+UQ2dRrchWNkqjrcBERY5mTt6Ubacoeafq49tGa7NBHhuXUP037h8tVE4UCBAtfpuj/HHa6HGZbW+awDU8tC+hNRoHX0PbYWU5rdg/NLHegI7v31KjFwUC3SFkQNSLB+rmk5cQwXTPlTChoRrKqJsVVmH9fsxDGIu8VtV9hUaywMFqoKJFWr5h3LsYV+qZJ0aEGeJXH5l5aHLN1WIEtq27TGY2d5zn4psLbVk+zy6+XhwX3AFg6J29gNAXH99Avlg3itlTdB75fEneS3drsCV173y+nH73hbTZU4d1PprlBLH1HOcbQTptjOn2n9vb78Z1AeEu/CfT44SrwvAxLpWP340bQ7msMZ2SCWqFrKV7tcqq+h2gEyL376yy8Gf7z/f7p7pPpwgveEY2/V7LraGIUf2z7KnJTfR0j93Wi3RU/fzTCrSSlTU59ene/7C2r5t+yECqxs07NTrMTu5n4IzQ8Bn6vo+LJ8LIVvPxnuPZnvORutdsv9vh9JHqxxwe9wXCwd9xKS24ZI7ORw9p0KXYs79rF0CYZlpYKTBRLL/fwYlj9YlmoV7/7gvNf</diagram><diagram id=&quot;a6mHWFwkpfAQTan6lGMU&quot; name=&quot;Classes&quot;>ldHJDsIgEADQr+FoYouperWucYv24BnLWEig0yDG6tdbQxeJFz0Bj2FgBkJjXS4MK8QWOSgS9nlJ6JSEYTCIomp4y6MRGjjJjOS1dZDIJ9TYr/UmOVy9QIuorCx8TDHPIbWeMWPw7oddUPm3FiyDL0hSpr71JLkVTkfhsPMlyEw0NwfR2O1o1gTXlVwF43j/IDojNDaI1s10GYN6d6/tizju10xPVnLztLvbBg9n6Llk83+OtCUYyO2vqatJ97Rq4f0wnb0A</diagram></mxfile>" height="411px" version="1.1" viewBox="-0.5 -0.5 541 411" width="541px" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
     <defs></defs>
     <g>
-     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="20" y="260"></rect>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="20" y="350"></rect>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 290px; margin-left: 85px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 380px; margin-left: 85px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
           <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">DataDownload</div>
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="85" y="294">DataDownload</text>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="85" y="384">DataDownload</text>
       </switch>
      </g>
-     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="10" y="250"></rect>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="10" y="340"></rect>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 280px; margin-left: 75px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 370px; margin-left: 75px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
           <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">DataDownload</div>
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="75" y="284">DataDownload</text>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="75" y="374">DataDownload</text>
       </switch>
      </g>
-     <path d="M 65 130 L 65 233.63" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
-     <path d="M 65 238.88 L 61.5 231.88 L 65 233.63 L 68.5 231.88 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 65 220 L 65 323.63" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 65 328.88 L 61.5 321.88 L 65 323.63 L 68.5 321.88 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 185px; margin-left: 72px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 275px; margin-left: 72px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: left; ">
           <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">distribution</div>
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" x="72" y="189">distribution</text>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" x="72" y="279">distribution</text>
       </switch>
      </g>
-     <path d="M 130 100 L 170 100 Q 180 100 180 110 L 180 159.5 Q 180 169.5 190 169.51 L 243.63 169.54" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
-     <path d="M 248.88 169.54 L 241.88 173.04 L 243.63 169.54 L 241.88 166.04 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 130 190 L 170 190 Q 180 190 180 200 L 180 249.5 Q 180 259.5 190 259.51 L 243.63 259.54" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 248.88 259.54 L 241.88 263.04 L 243.63 259.54 L 241.88 256.04 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 182px; margin-left: 217px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 272px; margin-left: 217px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
-          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; background-color: #ffffff; white-space: nowrap; ">creator</div>
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; background-color: #ffffff; white-space: nowrap; ">publisher</div>
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="217" y="187">creator</text>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="217" y="277">publisher</text>
       </switch>
      </g>
-     <path d="M 130 100 L 170 100 Q 180 100 180 90 L 180 40 Q 180 30 190 30 L 243.63 30" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
-     <path d="M 248.88 30 L 241.88 33.5 L 243.63 30 L 241.88 26.5 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 130 190 L 170 190 Q 180 190 180 180 L 180 130 Q 180 120 190 120 L 243.63 120" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 248.88 120 L 241.88 123.5 L 243.63 120 L 241.88 116.5 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 17px; margin-left: 218px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 107px; margin-left: 218px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
           <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">license</div>
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="218" y="21">license</text>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="218" y="111">license</text>
       </switch>
      </g>
-     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="0" y="70"></rect>
+     <rect fill="#dae8fc" height="59.09" pointer-events="all" stroke="#6c8ebf" width="130" x="250" y="230"></rect>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 100px; margin-left: 65px;" xmlns="http://www.w3.org/1999/xhtml">
-         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
-          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Dataset</div>
-         </div>
-        </div>
-       </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="65" y="104">Dataset</text>
-      </switch>
-     </g>
-     <rect fill="#dae8fc" height="59.09" pointer-events="all" stroke="#6c8ebf" width="130" x="250" y="140"></rect>
-     <g transform="translate(-0.5 -0.5)">
-      <switch>
-       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 170px; margin-left: 315px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 260px; margin-left: 315px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
           <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">
            <font style="font-size: 14px">Organization</font>
@@ -1768,40 +1758,40 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="315" y="174">Organization</text>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="315" y="264">Organization</text>
       </switch>
      </g>
-     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="250" y="0"></rect>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="250" y="90"></rect>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 30px; margin-left: 315px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 120px; margin-left: 315px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
-          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">URL</div>
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">IRI</div>
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="315" y="34">URL</text>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="315" y="124">IRI</text>
       </switch>
      </g>
-     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="0" y="240"></rect>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="0" y="330"></rect>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 270px; margin-left: 65px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 360px; margin-left: 65px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
           <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">DataDownload</div>
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="65" y="274">DataDownload</text>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="65" y="364">DataDownload</text>
       </switch>
      </g>
-     <rect fill="#dae8fc" height="59.09" pointer-events="all" stroke="#6c8ebf" width="130" x="410" y="140"></rect>
+     <rect fill="#dae8fc" height="59.09" pointer-events="all" stroke="#6c8ebf" width="130" x="410" y="230"></rect>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 170px; margin-left: 475px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 260px; margin-left: 475px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
           <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">
            <font style="font-size: 14px">Person</font>
@@ -1809,14 +1799,14 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="475" y="174">Person</text>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="475" y="264">Person</text>
       </switch>
      </g>
-     <rect fill="none" height="20" pointer-events="all" stroke="none" width="30" x="380" y="159.54"></rect>
+     <rect fill="none" height="20" pointer-events="all" stroke="none" width="30" x="380" y="249.54"></rect>
      <g transform="translate(-0.5 -0.5)">
       <switch>
        <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
-        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 170px; margin-left: 395px;" xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 260px; margin-left: 395px;" xmlns="http://www.w3.org/1999/xhtml">
          <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
           <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">
            <font style="font-size: 14px">or</font>
@@ -1824,13 +1814,67 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
          </div>
         </div>
        </foreignObject>
-       <text fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle" x="395" y="173">or</text>
+       <text fill="#000000" font-family="Helvetica" font-size="12px" text-anchor="middle" x="395" y="263">or</text>
+      </switch>
+     </g>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="20" y="180"></rect>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 210px; margin-left: 85px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">DataDownload</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="85" y="214">DataDownload</text>
+      </switch>
+     </g>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="10" y="170"></rect>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="0" y="160"></rect>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 190px; margin-left: 65px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Dataset</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="65" y="194">Dataset</text>
+      </switch>
+     </g>
+     <rect fill="#dae8fc" height="60" pointer-events="all" stroke="#6c8ebf" width="130" x="0" y="0"></rect>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 30px; margin-left: 65px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: center; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">DataCatalog</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" text-anchor="middle" x="65" y="34">DataCatalog</text>
+      </switch>
+     </g>
+     <path d="M 65 60 L 65 153.63" fill="none" pointer-events="stroke" stroke="#000000" stroke-miterlimit="10"></path>
+     <path d="M 65 158.88 L 61.5 151.88 L 65 153.63 L 68.5 151.88 Z" fill="#000000" pointer-events="all" stroke="#000000" stroke-miterlimit="10"></path>
+     <g transform="translate(-0.5 -0.5)">
+      <switch>
+       <foreignObject height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;" width="100%">
+        <div style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 110px; margin-left: 72px;" xmlns="http://www.w3.org/1999/xhtml">
+         <div style="box-sizing: border-box; font-size: 0; text-align: left; ">
+          <div style="display: inline-block; font-size: 14px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">dataset</div>
+         </div>
+        </div>
+       </foreignObject>
+       <text fill="#000000" font-family="Helvetica" font-size="14px" x="72" y="114">dataset</text>
       </switch>
      </g>
     </g>
     <switch>
      <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"></g>
-     <a target="_blank" transform="translate(0,-5)" href="https://desk.draw.io/support/solutions/articles/16000042487">
+     <a target="_blank" transform="translate(0,-5)" href="https://www.diagrams.net/doc/faq/svg-export-text-problems">
       <text font-size="10px" text-anchor="middle" x="50%" y="100%">Viewer does not support full SVG 1.1</text>
      </a>
     </switch>
@@ -1841,7 +1885,7 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
 it needs to be published in an <a href="https://www.w3.org/TR/rdf11-primer/#section-graph-syntax">RDF format</a>.
 RDF formats include <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]</a>, <a data-link-type="biblio" href="#biblio-n3">[N3]</a> and <a data-link-type="biblio" href="#biblio-turtle">[Turtle]</a>.</p>
    <blockquote>
-    <p><a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">Publishers</a> <em>MUST</em> make their <a data-link-type="dfn" href="#dataset" id="ref-for-dataset④">dataset</a> description available in RDF.</p>
+    <p><a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">Publishers</a> <em>MUST</em> make their <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">dataset</a> description available in RDF.</p>
    </blockquote>
    <p>Both the Schema.org and DCAT vocabularies <em>MAY</em> be used;
 Schema.org is <a href="#examples">recommended</a>.</p>
@@ -1870,7 +1914,7 @@ Schema.org is <a href="#examples">recommended</a>.</p>
    <h4 class="heading settled" data-level="4.1.1" id="identifiers"><span class="secno">4.1.1. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h4>
    <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer①">Consumers</a> want to refer to datasets. They prefer to do so by linking to them.</p>
    <blockquote>
-    <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">dataset</a>,
+    <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑥">dataset</a>,
 as well as their <a href="#organization-information">organization</a> and <a href="#dataset-information">dataset</a> information.
 Publishers <em>should</em> use <a data-link-type="biblio" href="#biblio-iri">IRIs</a> as identifiers.</p>
    </blockquote>
@@ -1883,7 +1927,7 @@ so they can be consulted in the future.</p>
     <p>Therefore, publishers <em>must</em> ensure information remains available in the future.</p>
    </blockquote>
    <h3 class="heading settled" data-level="4.2" id="dataset-information"><span class="secno">4.2. </span><span class="content">Dataset information</span><a class="self-link" href="#dataset-information"></a></h3>
-   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> want to consult information about the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑥">dataset</a> to decide whether and how they want to use its data.
+   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> want to consult information about the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑦">dataset</a> to decide whether and how they want to use its data.
 This information answers user questions such as:</p>
    <ul>
     <li data-md>
@@ -1952,7 +1996,7 @@ but keep historical versions accessible to users.</p>
    </div>
    <p>See <a href="#dataset-overview">§ 4.6.1 Dataset attributes</a> for an overview of attributes.</p>
    <h3 class="heading settled" data-level="4.3" id="organization-information"><span class="secno">4.3. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
-   <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑦">dataset</a> came from (<a href="https://www.w3.org/TR/dwbp/#provenance">provenance</a>).
+   <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑧">dataset</a> came from (<a href="https://www.w3.org/TR/dwbp/#provenance">provenance</a>).
 Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑤">publisher</a>) answers user questions such as:</p>
    <ul>
     <li data-md>
@@ -2045,52 +2089,16 @@ OAI-PMH endpoints or other APIs.</p>
    <p>If the distribution is non-standard <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>, publishers <em>MUST</em> publish documentation on how to use that API.</p>
    <p class="issue" id="issue-d1bd290f"><a class="self-link" href="#issue-d1bd290f"></a> Can we specify a Distribution property for this?</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements §R-APIDocumented</a>.</p>
-   <h3 class="heading settled" data-level="4.5" id="data-catalog"><span class="secno">4.5. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog"></a></h3>
-   <p>A collection of datasets is a data catalog. A catalog provides the <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑦">Consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
+   <h3 class="heading settled" data-level="4.5" id="data-catalog①"><span class="secno">4.5. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog①"></a></h3>
+   <p>A <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog">data catalog</a> provides <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑦">consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
    </blockquote>
-   <svg height="600" overflow="hidden" style="zoom:0.6" width="1280" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-     <clipPath id="clip0">
-      <path clip-rule="evenodd" d="M0 0 1280 0 1280 600 0 720Z" fill-rule="evenodd"></path>
-     </clipPath>
-    </defs>
-    <g clip-path="url(#clip0)">
-     <rect fill="#dae8fc" height="164" stroke="#dae8fc" stroke-linejoin="round" stroke-miterlimit="10" width="380" x="48.5001" y="39.5001"></rect>
-     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(188.549 73)">
-      Catalog
-      <tspan font-size="24" font-weight="400" x="-124.253" y="60">A catalog is a compiled collection of</tspan>
-      <tspan font-size="24" font-weight="400" x="-75.1067" y="88">metadata about datasets.</tspan>
-     </text>
-     <rect fill="#dae8fc" height="165" stroke="#dae8fc" stroke-linejoin="round" stroke-miterlimit="10" width="380" x="428.5" y="237.5"></rect>
-     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(566.668 272)">
-      Dataset
-      <tspan font-size="24" font-weight="400" x="-122.613" y="60">A dataset is a general description of</tspan>
-      <tspan font-size="24" font-weight="400" x="-108.56" y="88">a collection of data, published or</tspan>
-      <tspan font-size="24" font-weight="400" x="-118.28" y="117">compiled by a single administrator.</tspan>
-     </text>
-     <rect fill="#dae8fc" height="165" stroke="#A9D18E" stroke-linejoin="round" stroke-miterlimit="10" width="379" x="808.5" y="435.5"></rect>
-     <text font-family="Calibri,sans-serif" font-size="32" font-weight="700" transform="translate(918.194 470)">
-      Distribution
-      <tspan font-size="24" font-weight="400" x="-100.88" y="60">A distribution describes the channels</tspan>
-      <tspan font-size="24" font-weight="400" x="-79.58" y="88">through which a dataset is made</tspan>
-      <tspan font-size="24" font-weight="400" x="33.3666" y="117">available.</tspan>
-     </text>
-     <path d="M428 118 620.798 118 620.798 221.865 614.798 221.865 614.798 121 617.798 124 428 124ZM626.798 218.865 617.798 236.865 608.798 218.865Z" fill="#111111"></path>
-     <path d="M808 316 1000.8 316 1000.8 419.865 994.798 419.865 994.798 319 997.798 322 808 322ZM1006.8 416.865 997.798 434.865 988.798 416.865Z" fill="#111111"></path>
-     <text fill="#111111" font-family="Calibri,sans-serif" font-size="24" font-weight="400" transform="translate(868.653 307)">
-      available via
-      <tspan x="-342.303" y="-198">contains</tspan>
-      <tspan x="-297.35" y="-157">1..n</tspan>
-      <tspan x="82.2466" y="44">1..n</tspan>
-     </text>
-    </g>
-   </svg>
-   <div class="example" id="example-bee44563">
-    <a class="self-link" href="#example-bee44563"></a> A catalog of available datasets: 
+   <div class="example" id="example-07de9e49">
+    <a class="self-link" href="#example-07de9e49"></a> A catalog of available datasets: 
 <pre class="highlight"><c- p>{</c->
-  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-><c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataCatalog"</c-><c- p>,</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataCatalog"</c-><c- p>,</c->
   <c- f>"name"</c-><c- p>:</c-> <c- u>"Linked Data KB"</c-><c- p>,</c->
   <c- f>"description"</c-><c- p>:</c-> <c- u>"Alle linked data zoals beschikbaar gesteld door de Koninklijke Bibliotheek."</c-><c- p>,</c->
   <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
@@ -2111,6 +2119,7 @@ OAI-PMH endpoints or other APIs.</p>
 <c- p>}</c->
 </pre>
    </div>
+   <p>See <a href="#datacatalog-attributes">§ 4.6.4 DataCatalog attributes</a> for a full overview of catalog attributes.</p>
    <h3 class="heading settled" data-level="4.6" id="overview"><span class="secno">4.6. </span><span class="content">Overview of attributes</span><a class="self-link" href="#overview"></a></h3>
    <p>This is an overview of required and recommended attributes.</p>
    <h4 class="heading settled" data-level="4.6.1" id="dataset-overview"><span class="secno">4.6.1. </span><span class="content">Dataset attributes</span><a class="self-link" href="#dataset-overview"></a></h4>
@@ -2555,6 +2564,7 @@ can help with testing RDF metadata in general.</p>
    <li><a href="#api">API</a><span>, in §2</span>
    <li><a href="#application-programming-interface">Application Programming Interface</a><span>, in §2</span>
    <li><a href="#consumer">Consumer</a><span>, in §2</span>
+   <li><a href="#data-catalog">Data catalog</a><span>, in §2</span>
    <li><a href="#dataset">Dataset</a><span>, in §2</span>
    <li><a href="#distribution">Distribution</a><span>, in §2</span>
    <li><a href="#machine-readability">Machine-readability</a><span>, in §2</span>
@@ -2610,11 +2620,17 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    <b><a href="#dataset">#dataset</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dataset">1. Introduction</a>
-    <li><a href="#ref-for-dataset①">2. Definitions</a> <a href="#ref-for-dataset②">(2)</a> <a href="#ref-for-dataset③">(3)</a>
-    <li><a href="#ref-for-dataset④">4.1. Available in RDF</a>
-    <li><a href="#ref-for-dataset⑤">4.1.1. Durable identifiers</a>
-    <li><a href="#ref-for-dataset⑥">4.2. Dataset information</a>
-    <li><a href="#ref-for-dataset⑦">4.3. Organization information</a>
+    <li><a href="#ref-for-dataset①">2. Definitions</a> <a href="#ref-for-dataset②">(2)</a> <a href="#ref-for-dataset③">(3)</a> <a href="#ref-for-dataset④">(4)</a>
+    <li><a href="#ref-for-dataset⑤">4.1. Available in RDF</a>
+    <li><a href="#ref-for-dataset⑥">4.1.1. Durable identifiers</a>
+    <li><a href="#ref-for-dataset⑦">4.2. Dataset information</a>
+    <li><a href="#ref-for-dataset⑧">4.3. Organization information</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="data-catalog">
+   <b><a href="#data-catalog">#data-catalog</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-data-catalog">4.5. Data catalog</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="distribution">
