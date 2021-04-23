@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="8539337952a0620dc1a2ce1b6cfb8bcc203a5102" name="document-revision">
+  <meta content="661550198c80b1ecd684983d5adb346a381e65b7" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1845,8 +1845,8 @@ RDF formats include <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]<
    </blockquote>
    <p>Both the Schema.org and DCAT vocabularies <em>MAY</em> be used;
 Schema.org is <a href="#examples">recommended</a>.</p>
-   <div class="example" id="example-7733a969">
-    <a class="self-link" href="#example-7733a969"></a> <a href="https://developers.google.com/search/docs/guides/intro-structured-data#structured-data">Google recommends</a> including the JSON-LD directly in the HTML source of web pages. 
+   <div class="example" id="example-43af1c79">
+    <a class="self-link" href="#example-43af1c79"></a> <a href="https://developers.google.com/search/docs/guides/intro-structured-data#structured-data">Google recommends</a> including the JSON-LD directly in the HTML source of web pages. 
     <p>So, on your organization’s web page, for instance <a href="https://www.kb.nl">www.kb.nl</a>, include:</p>
 <pre class="highlight"><c- p>&lt;</c-><c- f>html</c-><c- p>></c->
   <c- p>&lt;</c-><c- f>head</c-><c- p>></c->
@@ -1855,8 +1855,8 @@ Schema.org is <a href="#examples">recommended</a>.</p>
       <c- p>{</c->
         <c- u>"@context"</c-><c- o>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
         <c- u>"@type"</c-><c- o>:</c-> <c- u>"Organization"</c-><c- p>,</c->
-        <c- u>"name"</c-><c- o>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-        <c- u>"url"</c-><c- o>:</c-> <c- u>"https://www.kb.nl/"</c->
+        <c- u>"@id"</c-><c- o>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
+        <c- u>"name"</c-><c- o>:</c-> <c- u>"Koninklijke Bibliotheek"</c->
       <c- p>}</c->
     <c- p>&lt;/</c-><c- f>script</c-><c- p>></c->
   <c- p>&lt;/</c-><c- f>head</c-><c- p>></c->
@@ -1962,32 +1962,32 @@ Providing information about the organization behind the dataset (the <a data-lin
    </ul>
    <blockquote>
     <p>Therefore, publishers <em>must</em> publish basic information about the organization.
-At the least, the organization’s name and URL must be provided.</p>
+At the least, the organization’s name and IRI must be provided.</p>
    </blockquote>
-   <div class="example" id="example-e31bb80a">
-    <a class="self-link" href="#example-e31bb80a"></a> An organization description: 
+   <div class="example" id="example-8bd53437">
+    <a class="self-link" href="#example-8bd53437"></a> An organization description: 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
+  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
   <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c->
+  <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c->
 <c- p>}</c->
 </pre>
    </div>
    <p>See <a href="#organization-overview">§ 4.6.2 Organization attributes</a> for a full overview of organization attributes.</p>
    <h4 class="heading settled" data-level="4.3.1" id="dataset-publisher"><span class="secno">4.3.1. </span><span class="content">Dataset publisher</span><a class="self-link" href="#dataset-publisher"></a></h4>
    <p>The organization data is then included as the dataset’s publisher:</p>
-   <div class="example" id="example-31328609">
-    <a class="self-link" href="#example-31328609"></a> A dataset with a publisher. The publisher has some optional attributes. 
+   <div class="example" id="example-1fdedd24">
+    <a class="self-link" href="#example-1fdedd24"></a> A dataset with a publisher. The publisher has some optional attributes. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
   <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
+    <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c->
-    <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
-    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
+    <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c->
   <c- p>}</c->
 <c- p>}</c->
 </pre>
@@ -2087,16 +2087,16 @@ OAI-PMH endpoints or other APIs.</p>
      </text>
     </g>
    </svg>
-   <div class="example" id="example-87105cf5">
-    <a class="self-link" href="#example-87105cf5"></a> A catalog of available datasets: 
+   <div class="example" id="example-bee44563">
+    <a class="self-link" href="#example-bee44563"></a> A catalog of available datasets: 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-><c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataCatalog"</c-><c- p>,</c->
   <c- f>"name"</c-><c- p>:</c-> <c- u>"Linked Data KB"</c-><c- p>,</c->
   <c- f>"description"</c-><c- p>:</c-> <c- u>"Alle linked data zoals beschikbaar gesteld door de Koninklijke Bibliotheek."</c-><c- p>,</c->
   <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
-    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c->
+    <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c->
+    <c- u>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
   <c- p>},</c->
   <c- f>"dataset"</c-><c- p>:</c-> <c- p>[</c->
     <c- p>{</c->
@@ -2235,6 +2235,11 @@ OAI-PMH endpoints or other APIs.</p>
       <th>Usage
     <tbody>
      <tr>
+      <th scope="row">@id
+      <td>The <a data-link-type="biblio" href="#biblio-iri">[IRI]</a> of the organization.
+      <td>1
+      <td>Required
+     <tr>
       <th scope="row"><a href="https://schema.org/name">schema:name</a>
       <td>The organization’s full name.
       <td>1
@@ -2344,8 +2349,8 @@ OAI-PMH endpoints or other APIs.</p>
       <td>Required
    </table>
    <h4 class="heading settled" data-level="4.6.5" id="dataset-example"><span class="secno">4.6.5. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
-   <div class="example" id="example-9babd0f2">
-    <a class="self-link" href="#example-9babd0f2"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 4.2.1 Basic information</a>), 
+   <div class="example" id="example-cc0f2561">
+    <a class="self-link" href="#example-cc0f2561"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 4.2.1 Basic information</a>), 
     a license (<a href="#dataset-license">§ 4.2.2 License</a>)
     and publication dates (<a href="#dataset-date">§ 4.2.3 Creation, publication and modification dates</a>): 
 <pre class="include-code highlight" path="examples/dataset.jsonld"><c- p>{</c->
@@ -2359,9 +2364,9 @@ OAI-PMH endpoints or other APIs.</p>
     <c- u>"alba amicorum"</c->
   <c- p>],</c->
   <c- f>"license"</c-><c- p>:</c-> <c- u>"http://creativecommons.org/publicdomain/zero/1.0/"</c-><c- p>,</c->
-  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c->
+  <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
-    <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c->
+    <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
     <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
   <c- p>},</c->
