@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="755ec650a2b8938733825a6b7ea981c0f0974167" name="document-revision">
+  <meta content="789116ed1ccefaace9f36edcdb2588464ad0878f" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1501,7 +1501,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-05-06">6 May 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-05-11">11 May 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1518,7 +1518,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 6 May 2021,
+In addition, as of 11 May 2021,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -1674,6 +1674,8 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
      <p class="issue" id="issue-a71b8ddb"><a class="self-link" href="#issue-a71b8ddb"></a> add examples</p>
    </dl>
    <h2 class="heading settled" data-level="3" id="conceptual-model"><span class="secno">3. </span><span class="content">Conceptual model</span><a class="self-link" href="#conceptual-model"></a></h2>
+   <p>The model consists of four resource types: <a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">organizations</a> publish <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">datasets</a>, which are available in <a data-link-type="dfn" href="#distribution" id="ref-for-distribution①">distributions</a>.
+Optionally, the datasets are grouped in <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog">data catalogs</a>.</p>
    <p></p>
    <svg content="<mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2021-04-23T07:26:51.898Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15&quot; etag=&quot;RsepxiNWiidT35q414NZ&quot; version=&quot;14.5.10&quot; type=&quot;device&quot; pages=&quot;2&quot;><diagram id=&quot;urrUrFw95YwCIsGvFkr1&quot; name=&quot;Overview&quot;>7Vltc5s4EP41/miPQYDhY2ynaaZpk2lzTe++3AgQoIuMqJATk19fYYR5ESF24pc2c55JjFbLIj377GoXD8BssbpgMIk+Ux+RgT72VwMwH+i6Y4/F/1yQFQJtPHEKSciwL2WV4Bt+QqWilC6xj9KGIqeUcJw0hR6NY+TxhgwyRh+bagElzacmMESK4JsHiSq9wz6PCqmtTyr5R4TDqHyyZsn9LWCpLHeSRtCnjzUROB+AGaOUF1eL1QyRHLwSl+K+D8/MbhbGUMy3uYH60afpxXXKvGRyP5lNr77++zA0CisPkCzlhueQwzl9jAmFvlw4z0o0AkzIjBLK1kPgQ2QH3gBMU87oParNWJ6N3EDMEOgiMoXefcjoMvZLlZjGwuQ04gsiRpq4DGjMpfs1Q4zV7ckdPyDG0aomktu9QHSBOMuEipwtkZfcA6YcP1aO1ICURTUnWlIGJXfCjeUKXnEhEd4BbfCe0dZaaBtHRPunEfywhpeO/vnLlYXdBJ2v3GF+fwtuHwvssLvkmMYK3MgXkS+HlPGIhjSG5LySTtegovyZYzGqdK4oTSSw/yHOM4ksXHLahL3fP5DgMBZDggK+i49SumQe6kFC8o5DFiLeh5g0mCPR63LpY7NQZ4hAjh+aGbPLndLQDcViB5UKDYJUrKvt783zXh9w5pucnHvMowvsvd7hwlUs+yHvXw/+zgcjsxzOV/XJeSZH/URBsX+Wn21C4hGYpvkKc+EHTJ4L8JJbnngOYkdhkwa2ZNNu/BE7h1lNIcnZlHbQq8xLdjMxaU7rnHxBXzedFjWLFeyVqJaSqpKlS3AaCV91Ufgq50eTaoqH89SNRSVzJicW2PcLhqMUP0F3bS8nm0RQGDenA3PewZ40gR6Ow9s168ed7OmLP+UQ2dRrchWNkqjrcBERY5mTt6Ubacoeafq49tGa7NBHhuXUP037h8tVE4UCBAtfpuj/HHa6HGZbW+awDU8tC+hNRoHX0PbYWU5rdg/NLHegI7v31KjFwUC3SFkQNSLB+rmk5cQwXTPlTChoRrKqJsVVmH9fsxDGIu8VtV9hUaywMFqoKJFWr5h3LsYV+qZJ0aEGeJXH5l5aHLN1WIEtq27TGY2d5zn4psLbVk+zy6+XhwX3AFg6J29gNAXH99Avlg3itlTdB75fEneS3drsCV173y+nH73hbTZU4d1PprlBLH1HOcbQTptjOn2n9vb78Z1AeEu/CfT44SrwvAxLpWP340bQ7msMZ2SCWqFrKV7tcqq+h2gEyL376yy8Gf7z/f7p7pPpwgveEY2/V7LraGIUf2z7KnJTfR0j93Wi3RU/fzTCrSSlTU59ene/7C2r5t+yECqxs07NTrMTu5n4IzQ8Bn6vo+LJ8LIVvPxnuPZnvORutdsv9vh9JHqxxwe9wXCwd9xKS24ZI7ORw9p0KXYs79rF0CYZlpYKTBRLL/fwYlj9YlmoV7/7gvNf</diagram><diagram id=&quot;a6mHWFwkpfAQTan6lGMU&quot; name=&quot;Classes&quot;>ldHJDsIgEADQr+FoYouperWucYv24BnLWEig0yDG6tdbQxeJFz0Bj2FgBkJjXS4MK8QWOSgS9nlJ6JSEYTCIomp4y6MRGjjJjOS1dZDIJ9TYr/UmOVy9QIuorCx8TDHPIbWeMWPw7oddUPm3FiyDL0hSpr71JLkVTkfhsPMlyEw0NwfR2O1o1gTXlVwF43j/IDojNDaI1s10GYN6d6/tizju10xPVnLztLvbBg9n6Llk83+OtCUYyO2vqatJ97Rq4f0wnb0A</diagram></mxfile>" height="411px" version="1.1" viewBox="-0.5 -0.5 541 411" width="541px" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
     <defs></defs>
@@ -1885,7 +1887,7 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
 it needs to be published in an <a href="https://www.w3.org/TR/rdf11-primer/#section-graph-syntax">RDF format</a>.
 RDF formats include <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]</a>, <a data-link-type="biblio" href="#biblio-n3">[N3]</a> and <a data-link-type="biblio" href="#biblio-turtle">[Turtle]</a>.</p>
    <blockquote>
-    <p><a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">Publishers</a> <em>MUST</em> make their <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">dataset</a> description available in RDF.</p>
+    <p><a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">Publishers</a> <em>MUST</em> make their <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑥">dataset</a> description available in RDF.</p>
    </blockquote>
    <p>Both the Schema.org and DCAT vocabularies <em>MAY</em> be used;
 Schema.org is <a href="#examples">recommended</a>.</p>
@@ -1914,7 +1916,7 @@ Schema.org is <a href="#examples">recommended</a>.</p>
    <h4 class="heading settled" data-level="4.1.1" id="identifiers"><span class="secno">4.1.1. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h4>
    <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer①">Consumers</a> want to refer to datasets. They prefer to do so by linking to them.</p>
    <blockquote>
-    <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑥">dataset</a>,
+    <p>Therefore, publishers <em>must</em> maintain a permanent and unique identifier for each <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑦">dataset</a>,
 as well as their <a href="#organization-information">organization</a> and <a href="#dataset-information">dataset</a> information.
 Publishers <em>should</em> use <a data-link-type="biblio" href="#biblio-iri">IRIs</a> as identifiers.</p>
    </blockquote>
@@ -1927,7 +1929,7 @@ so they can be consulted in the future.</p>
     <p>Therefore, publishers <em>must</em> ensure information remains available in the future.</p>
    </blockquote>
    <h3 class="heading settled" data-level="4.2" id="dataset-information"><span class="secno">4.2. </span><span class="content">Dataset information</span><a class="self-link" href="#dataset-information"></a></h3>
-   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> want to consult information about the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑦">dataset</a> to decide whether and how they want to use its data.
+   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> want to consult information about the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑧">dataset</a> to decide whether and how they want to use its data.
 This information answers user questions such as:</p>
    <ul>
     <li data-md>
@@ -1986,7 +1988,7 @@ for example one of the <a href="https://creativecommons.org/choose/">Creative Co
     <p>Therefore, publishers <em>SHOULD</em> not only publish the current version of the dataset description,
 but keep historical versions accessible to users.</p>
    </blockquote>
-   <p>It is up to the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">publisher</a> to determine when to publish new versions.</p>
+   <p>It is up to the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑤">publisher</a> to determine when to publish new versions.</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp/#dataVersioning">Data on the Web Best Practices §dataVersioning</a>.</p>
    <h4 class="heading settled" data-level="4.2.5" id="more-information"><span class="secno">4.2.5. </span><span class="content">More information</span><a class="self-link" href="#more-information"></a></h4>
    <p>If more information is available, publishers <em>SHOULD</em> add it.</p>
@@ -1996,8 +1998,8 @@ but keep historical versions accessible to users.</p>
    </div>
    <p>See <a href="#dataset-overview">§ 4.6.1 Dataset attributes</a> for an overview of attributes.</p>
    <h3 class="heading settled" data-level="4.3" id="organization-information"><span class="secno">4.3. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
-   <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑧">dataset</a> came from (<a href="https://www.w3.org/TR/dwbp/#provenance">provenance</a>).
-Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑤">publisher</a>) answers user questions such as:</p>
+   <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑨">dataset</a> came from (<a href="https://www.w3.org/TR/dwbp/#provenance">provenance</a>).
+Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑥">publisher</a>) answers user questions such as:</p>
    <ul>
     <li data-md>
      <p>Which organization has published this dataset? How reliable and credible does that make the dataset?</p>
@@ -2037,7 +2039,7 @@ At the least, the organization’s name and IRI must be provided.</p>
 </pre>
    </div>
    <h3 class="heading settled" data-level="4.4" id="dataset-distributions"><span class="secno">4.4. </span><span class="content">Distributions</span><a class="self-link" href="#dataset-distributions"></a></h3>
-   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑥">Consumers</a> that are interested in a dataset should be able to access the data in it. <a data-link-type="dfn" href="#distribution" id="ref-for-distribution①">Distributions</a> tell consumers where and how they can get the data.</p>
+   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑥">Consumers</a> that are interested in a dataset should be able to access the data in it. <a data-link-type="dfn" href="#distribution" id="ref-for-distribution②">Distributions</a> tell consumers where and how they can get the data.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> add at least one distribution.
 Each distribution <em>MUST</em> have at least a MIME format and the URL where the distribution can be accessed.</p>
@@ -2090,7 +2092,7 @@ OAI-PMH endpoints or other APIs.</p>
    <p class="issue" id="issue-d1bd290f"><a class="self-link" href="#issue-d1bd290f"></a> Can we specify a Distribution property for this?</p>
    <p>See also <a href="https://www.w3.org/TR/dwbp-ucr/#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements §R-APIDocumented</a>.</p>
    <h3 class="heading settled" data-level="4.5" id="data-catalog①"><span class="secno">4.5. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog①"></a></h3>
-   <p>A <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog">data catalog</a> provides <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑦">consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
+   <p>A <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog①">data catalog</a> provides <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑦">consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
    </blockquote>
@@ -2616,23 +2618,26 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    <ul>
     <li><a href="#ref-for-dataset">1. Introduction</a>
     <li><a href="#ref-for-dataset①">2. Definitions</a> <a href="#ref-for-dataset②">(2)</a> <a href="#ref-for-dataset③">(3)</a> <a href="#ref-for-dataset④">(4)</a>
-    <li><a href="#ref-for-dataset⑤">4.1. Available in RDF</a>
-    <li><a href="#ref-for-dataset⑥">4.1.1. Durable identifiers</a>
-    <li><a href="#ref-for-dataset⑦">4.2. Dataset information</a>
-    <li><a href="#ref-for-dataset⑧">4.3. Organization information</a>
+    <li><a href="#ref-for-dataset⑤">3. Conceptual model</a>
+    <li><a href="#ref-for-dataset⑥">4.1. Available in RDF</a>
+    <li><a href="#ref-for-dataset⑦">4.1.1. Durable identifiers</a>
+    <li><a href="#ref-for-dataset⑧">4.2. Dataset information</a>
+    <li><a href="#ref-for-dataset⑨">4.3. Organization information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="data-catalog">
    <b><a href="#data-catalog">#data-catalog</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-data-catalog">4.5. Data catalog</a>
+    <li><a href="#ref-for-data-catalog">3. Conceptual model</a>
+    <li><a href="#ref-for-data-catalog①">4.5. Data catalog</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="distribution">
    <b><a href="#distribution">#distribution</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-distribution">2. Definitions</a>
-    <li><a href="#ref-for-distribution①">4.4. Distributions</a>
+    <li><a href="#ref-for-distribution①">3. Conceptual model</a>
+    <li><a href="#ref-for-distribution②">4.4. Distributions</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="api">
@@ -2653,9 +2658,10 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    <ul>
     <li><a href="#ref-for-publisher">1. Introduction</a>
     <li><a href="#ref-for-publisher①">2. Definitions</a> <a href="#ref-for-publisher②">(2)</a>
-    <li><a href="#ref-for-publisher③">4.1. Available in RDF</a>
-    <li><a href="#ref-for-publisher④">4.2.4. Version</a>
-    <li><a href="#ref-for-publisher⑤">4.3. Organization information</a>
+    <li><a href="#ref-for-publisher③">3. Conceptual model</a>
+    <li><a href="#ref-for-publisher④">4.1. Available in RDF</a>
+    <li><a href="#ref-for-publisher⑤">4.2.4. Version</a>
+    <li><a href="#ref-for-publisher⑥">4.3. Organization information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="consumer">
