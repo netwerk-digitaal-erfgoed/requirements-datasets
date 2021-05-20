@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="b136b5d9b12ce4bd2f8723a760a1b3119eb8b6d3" name="document-revision">
+  <meta content="aa81c12fffe876e1add1fac075c6bf599535b666" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -2108,11 +2108,12 @@ and link to the documentation URL in the <a href="https://schema.org/usageInfo">
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
    </blockquote>
-   <div class="example" id="example-07de9e49">
-    <a class="self-link" href="#example-07de9e49"></a> A catalog of available datasets: 
+   <div class="example" id="example-706f2fc6">
+    <a class="self-link" href="#example-706f2fc6"></a> A catalog of available datasets: 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataCatalog"</c-><c- p>,</c->
+  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/datacatalog"</c-><c- p>,</c->
   <c- f>"name"</c-><c- p>:</c-> <c- u>"Linked Data KB"</c-><c- p>,</c->
   <c- f>"description"</c-><c- p>:</c-> <c- u>"Alle linked data zoals beschikbaar gesteld door de Koninklijke Bibliotheek."</c-><c- p>,</c->
   <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
@@ -2243,7 +2244,7 @@ and link to the documentation URL in the <a href="https://schema.org/usageInfo">
       <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/includedInDataCatalog">schema:includedInDataCatalog</a>
-      <td>The URI of the data catalog in which the dataset is.
+      <td>The <a data-link-type="biblio" href="#biblio-iri">[IRI]</a> of the data catalog(s) that the dataset belongs to.
       <td>0..1
       <td>Recommended
    </table>
@@ -2351,8 +2352,13 @@ and link to the documentation URL in the <a href="https://schema.org/usageInfo">
       <th>Usage
     <tbody>
      <tr>
+      <th scope="row">@id
+      <td>The <a data-link-type="biblio" href="#biblio-iri">[IRI]</a> of the data catalog.
+      <td>1
+      <td>Required
+     <tr>
       <th scope="row"><a href="https://schema.org/name">schema:name</a>
-      <td>The name of the datacatalog.
+      <td>The name of the data catalog.
       <td>1
       <td>Required
      <tr>
@@ -2367,7 +2373,7 @@ and link to the documentation URL in the <a href="https://schema.org/usageInfo">
       <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/dataset">schema:dataset</a>
-      <td>The datasets containing all dataset information.
+      <td>The datasets that are contained in the data catalog.
       <td>1..n
       <td>Required
    </table>
