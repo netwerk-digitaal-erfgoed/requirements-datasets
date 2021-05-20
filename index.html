@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="e9120f6f2ece2367c8b6d2ba5de7b946db71a482" name="document-revision">
+  <meta content="b136b5d9b12ce4bd2f8723a760a1b3119eb8b6d3" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -2372,53 +2372,60 @@ and link to the documentation URL in the <a href="https://schema.org/usageInfo">
       <td>Required
    </table>
    <h4 class="heading settled" data-level="4.6.5" id="dataset-example"><span class="secno">4.6.5. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
-   <div class="example" id="example-cc0f2561">
-    <a class="self-link" href="#example-cc0f2561"></a> A full dataset description that includes basic information (<a href="#dataset-basic">§ 4.2.1 Basic information</a>), 
-    a license (<a href="#dataset-license">§ 4.2.2 License</a>)
-    and publication dates (<a href="#dataset-date">§ 4.2.3 Creation, publication and modification dates</a>): 
+   <div class="example" id="example-6c1ead1d">
+    <a class="self-link" href="#example-6c1ead1d"></a> A full dataset description that includes <a href="#dataset-overview">required and recommended attributes</a>. 
 <pre class="include-code highlight" path="examples/dataset.jsonld"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
   <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba"</c-><c- p>,</c->
   <c- f>"name"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek"</c-><c- p>,</c->
   <c- f>"description"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek, een dataset gedefinieerd voor het Europeana Rise of Literacy project."</c-><c- p>,</c->
-  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c->
+  <c- f>"license"</c-><c- p>:</c-> <c- u>"http://creativecommons.org/publicdomain/zero/1.0/"</c-><c- p>,</c->
+  <c- f>"dateCreated"</c-><c- p>:</c-> <c- u>"2019-04-14"</c-><c- p>,</c->
+  <c- f>"datePublished"</c-><c- p>:</c-> <c- u>"2019-05-21"</c-><c- p>,</c->
+  <c- f>"dateModified"</c-><c- p>:</c-> <c- u>"2019-08-15"</c-><c- p>,</c->
   <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c->
     <c- u>"alba amicorum"</c->
   <c- p>],</c->
-  <c- f>"license"</c-><c- p>:</c-> <c- u>"http://creativecommons.org/publicdomain/zero/1.0/"</c-><c- p>,</c->
+  <c- f>"includedInDataCatalog"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/datacatalog"</c-><c- p>,</c->
+  <c- f>"inLanguage"</c-><c- p>:</c-> <c- p>[</c->
+    <c- u>"nl-NL"</c-><c- p>,</c->
+    <c- u>"en-US"</c->
+  <c- p>],</c->
+  <c- f>"mainEntityOfPage"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c->
   <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
     <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
+    <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
+    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
+  <c- p>},</c->
+  <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c->
+    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
+    <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
+    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
+    <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
     <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
   <c- p>},</c->
   <c- f>"distribution"</c-><c- p>:</c-> <c- p>[</c->
     <c- p>{</c->
       <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
-      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/rdf+xml"</c-><c- p>,</c->
-      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba.rdf"</c->
+      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/sparql-query"</c-><c- p>,</c->
+      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/sparql"</c->
     <c- p>},</c->
     <c- p>{</c->
       <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
       <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"text/turtle"</c-><c- p>,</c->
-      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba.ttl"</c->
-    <c- p>},</c->
-    <c- p>{</c->
-      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
-      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/n-triples"</c-><c- p>,</c->
-      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba.nt"</c->
-    <c- p>},</c->
-    <c- p>{</c->
-      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
-      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/ld+json"</c-><c- p>,</c->
-      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/id/dataset/rise-alba.json"</c->
+      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/files/alba_20201016.ttl.gz"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"Datadump Alba Amicorum"</c-><c- p>,</c->
+      <c- f>"datePublished"</c-><c- p>:</c-> <c- u>"2019-05-21"</c-><c- p>,</c->
+      <c- f>"dateModified"</c-><c- p>:</c-> <c- u>"2019-08-15"</c-><c- p>,</c->
+      <c- f>"contentSize"</c-><c- p>:</c-> <c- u>"614K"</c->
     <c- p>}</c->
   <c- p>]</c->
 <c- p>}</c->
 </pre>
    </div>
-   <p class="issue" id="issue-371b3745"><a class="self-link" href="#issue-371b3745"></a> TODO Expand example based on required (and recommended) properties.</p>
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Tools</span><a class="self-link" href="#tools"></a></h2>
    <p><em>This section is non-normative.</em></p>
    <p>Developers can use the <a href="https://demo.netwerkdigitaalerfgoed.nl/register-api/">NDE Register API</a> to validate datasets and catalogs against the requirements described in this document.
@@ -2627,7 +2634,6 @@ can help with testing RDF metadata in general.</p>
 This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>.<a href="#issue-6f3bbb3f"> ↵ </a></div>
    <div class="issue"> add examples<a href="#issue-a71b8ddb"> ↵ </a></div>
    <div class="issue"> TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).<a href="#issue-1c1ad482"> ↵ </a></div>
-   <div class="issue"> TODO Expand example based on required (and recommended) properties.<a href="#issue-371b3745"> ↵ </a></div>
   </div>
   <aside class="dfn-panel" data-for="dataset">
    <b><a href="#dataset">#dataset</a></b><b>Referenced in:</b>
