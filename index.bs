@@ -165,7 +165,7 @@ See also [[DWBP-UCR#R-FormatMachineRead]].
 [=Consumers=] want to refer to datasets. They prefer to do so by linking to them.
 
 > Therefore, publishers *must* maintain a permanent and unique identifier for each [=dataset=].
-> Publishers *should* use HTTP [[IRI|IRIs]] as identifiers.
+> Publishers *must* use HTTP [[IRI|IRIs]] as identifiers.
 
 See also [[DWBP-UCR#R-UniqueIdentifier]] and [[DWBP-UCR#R-PersistentIdentification]].
 
