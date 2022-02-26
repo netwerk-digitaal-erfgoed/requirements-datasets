@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="09f7bd48532d99ae46d09e9e825d748c1c2dcd1d" name="document-revision">
+  <meta content="c51c085b11ef52d547b6f66512884fdc94f7c75a" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1501,7 +1501,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-12-16">16 December 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2022-02-26">26 February 2022</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1518,7 +1518,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 16 December 2021,
+In addition, as of 26 February 2022,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2061,11 +2061,10 @@ OAI-PMH endpoints or other APIs.</p>
    <p>See <a href="#distribution-attributes">§ 4.6.3 Distribution attributes</a> for a full overview.</p>
    <p class="issue" id="issue-1c1ad482"><a class="self-link" href="#issue-1c1ad482"></a> TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).</p>
    <h4 class="heading settled" data-level="4.4.1" id="developer-docs"><span class="secno">4.4.1. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h4>
-   <p>If the distribution is non-standard <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>, publishers <em>MUST</em> publish human-readable documentation on how to use that API
-and link to the documentation URL in the <a href="https://schema.org/usageInfo">schema:usageInfo</a> attribute:</p>
-   <div class="example" id="example-0dfffbfe">
-    <a class="self-link" href="#example-0dfffbfe"></a> A custom API with a link to the documentation.
-    A minimal definition of a SPARQL endpoint distribution. 
+   <p>If the distribution is a non-standard <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>, publishers <em>MUST</em> publish human-readable documentation on how to use that
+API and link to the documentation URL in the <a href="https://schema.org/usageInfo">schema:usageInfo</a> attribute:</p>
+   <div class="example" id="example-8d377539">
+    <a class="self-link" href="#example-8d377539"></a> A custom API with a link to the documentation. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
