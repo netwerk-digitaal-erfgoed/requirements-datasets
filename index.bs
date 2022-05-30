@@ -442,6 +442,25 @@ A [=data catalog=] provides [=consumers=] with a complete overview of available 
     </pre>
 </div>
 
+> As data catalogs can become large, publishers *SHOULD* split the data catalog in parts of at most 1,000 datasets and use the [Hydra Core Vocabulary](https://www.w3.org/ns/hydra/spec/latest/core/) to specify the data catalog parts. With this 'pagination', clients can process the complete data catalog.
+
+<div class="example">
+    First part of a data catalog:
+
+    <pre highlight=json-ld>
+    {
+      "@context": "http://www.w3.org/ns/hydra/core#",
+      "@type": "PagedCollection",
+      "@id": "https://www.example.com/catalog.ttl?page=1",
+      "firstPage": "https://www.example.com/catalog.ttl?page=1",
+      "itemsPerPage": 100,
+      "lastPage": "https://www.example.com/catalog.ttl?page=3",
+      "nextPage": "https://www.example.com/catalog.ttl?page=2",
+      "totalItems": 209,
+    }
+    </pre>
+</div>
+
 See [[#datacatalog-attributes]] for a full overview of catalog attributes.
 
 ## Overview of attributes ## {#overview} 
