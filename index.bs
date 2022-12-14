@@ -431,11 +431,11 @@ protocol which also 'types' the distribution such as OAI-PMH, SPARQL and REST.
 
     <pre highlight=json-ld>
         {
-            "@context": "https://schema.org/",
-            "@type": "DataDownload",
-            "encodingFormat": "application/sparql-results+json",
-            "contentUrl": "http://vocab.getty.edu/sparql"
-            "usageInfo": [ "https://www.w3.org/TR/sparql11-query/", "https://vocab.getty.edu/" ]
+          "@context": "https://schema.org/",
+          "@type": "DataDownload",
+          "encodingFormat": "application/sparql-results+json",
+          "contentUrl": "http://vocab.getty.edu/sparql",
+          "usageInfo": [ "https://www.w3.org/TR/sparql11-query/", "https://vocab.getty.edu/" ]
         }
     </pre>
 </div>
