@@ -2656,8 +2656,8 @@ OAI-PMH endpoints or other APIs.</p>
 </pre>
    </div>
    <p>The distributions are then included under the <code>distribution</code> attribute with the dataset.</p>
-   <div class="example" id="example-1145fb9e">
-    <a class="self-link" href="#example-1145fb9e"></a> A dataset with two distributions. 
+   <div class="example" id="example-2eafb62f">
+    <a class="self-link" href="#example-2eafb62f"></a> A dataset with two distributions. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -2675,8 +2675,8 @@ OAI-PMH endpoints or other APIs.</p>
     <c- p>},</c->
     <c- p>{</c->
       <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
-      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"text/csv"</c-><c- p>,</c->
-      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"https://example.com/data.csv"</c->
+      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"text/csv+gzip"</c-><c- p>,</c->
+      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"https://example.com/data.csv.gz"</c->
     <c- p>}</c->
   <c- p>]</c->
 <c- p>}</c->
@@ -2912,6 +2912,7 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
       <td>Recommended
    </table>
    <h4 class="heading settled" data-level="4.6.3" id="distribution-attributes"><span class="secno">4.6.3. </span><span class="content">Distribution attributes</span><a class="self-link" href="#distribution-attributes"></a></h4>
+    When the distribution is compressed, the compression format (e.g. zip, gzip) should be added to the <code>schema:encodingFormat</code> (eq. <code>text/turtle+gzip</code>). 
    <table>
     <caption><a href="https://schema.org/DataDownload">schema:DataDownload</a> properties</caption>
     <thead>
@@ -2930,7 +2931,7 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
       <th scope="row"><a href="https://schema.org/encodingFormat">schema:encodingFormat</a>
       <td>The distribution’s MIME format, for example <code>application/sparql-query</code> for a SPARL endpoint
  or <code>application/ld+json</code> for a data dump serialized as JSON-LD. Use a value from the <a data-link-type="biblio" href="#biblio-iana-media-types">[IANA-MEDIA-TYPES]</a> list. 
- The value should indicate the Media type of the response of the schema:contentUrl when no Accept header is included in the request. 
+The value should indicate the Media type of the response of the schema:contentUrl when no Accept header is included in the request. 
  It is recommended to provide an URL of documentation via the schema:usageInfo property in which the supported encoding formats which can be requested via an Accept HTTP header are listed.
       <td>1..n
       <td>Required
