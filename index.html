@@ -2613,21 +2613,21 @@ Each distribution <em>MUST</em> have at least a MIME format and the URL where th
    </blockquote>
    <p>Distributions can be data dumps in RDF or some other format such as CSV, live SPARQL endpoints,
 OAI-PMH endpoints or other APIs.</p>
-   <div class="example" id="example-0da1fc0d">
-    <a class="self-link" href="#example-0da1fc0d"></a> A minimal definition of a SPARQL endpoint distribution.
+   <div class="example" id="example-f920f92c">
+    <a class="self-link" href="#example-f920f92c"></a> A minimal definition of a SPARQL endpoint distribution.
     In the Schema.org vocabulary, each type of distribution is called a <a href="https://schema.org/DataDownload">DataDownload</a>,
     even if it is a query endpoint. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
-  <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/sparql-query"</c-><c- p>,</c->
+  <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/sparql-results+xml"</c-><c- p>,</c->
   <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://vocab.getty.edu/sparql"</c->
 <c- p>}</c->
 </pre>
    </div>
    <p>The distributions are then included under the <code>distribution</code> attribute with the dataset.</p>
-   <div class="example" id="example-3293a1d6">
-    <a class="self-link" href="#example-3293a1d6"></a> A dataset with two distributions. 
+   <div class="example" id="example-1145fb9e">
+    <a class="self-link" href="#example-1145fb9e"></a> A dataset with two distributions. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -2635,7 +2635,7 @@ OAI-PMH endpoints or other APIs.</p>
     <c- p>{</c->
       <c- nd>"@id"</c-><c- p>:</c-> <c- u>"http://vocab.getty.edu/aat/sparql"</c-><c- p>,</c->
       <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
-      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/sparql-query"</c-><c- p>,</c->
+      <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/sparql-results+json"</c-><c- p>,</c->
       <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://vocab.getty.edu/sparql"</c->
     <c- p>},</c->
     <c- p>{</c->
@@ -2894,7 +2894,9 @@ protocol which also <a class="property css" data-link-type="property">types</a> 
      <tr>
       <th scope="row"><a href="https://schema.org/encodingFormat">schema:encodingFormat</a>
       <td>The distribution’s MIME format, for example <code>application/sparql-query</code> for a SPARL endpoint
- or <code>application/ld+json</code> for a data dump serialized as JSON-LD. Use a value from the <a data-link-type="biblio" href="#biblio-iana-media-types">[IANA-MEDIA-TYPES]</a> list.
+ or <code>application/ld+json</code> for a data dump serialized as JSON-LD. Use a value from the <a data-link-type="biblio" href="#biblio-iana-media-types">[IANA-MEDIA-TYPES]</a> list. 
+ The value should indicate the Media type of the response of the schema:contentUrl when no Accept header is included in the request. 
+ It is recommended to provide an URL of documentation via the schema:usageInfo property in which the supported encoding formats which can be requested via an Accept HTTP header are listed.
       <td>1..n
       <td>Required
      <tr>
