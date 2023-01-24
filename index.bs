@@ -12,10 +12,6 @@ Abstract: This document describes requirements for publishing datasets.
     By following these requirements, publishers enable users to find and use their datasets.
 </pre>
 
-<div class="advisement">
-    This document is a working draft.
-</div> 
-
 Introduction {#introduction}
 ============
 
@@ -33,7 +29,7 @@ The requirements prescribe the metadata that publishers should provide with thei
 This metadata tells [=consumers=]:
 
 - what the dataset is called and under what license it is published ([[#dataset-information]]);
-- which organization has published the dataset ([[#organization-information]]);
+- which person/organization has published the dataset ([[#creator-publisher-information]]);
 - where the data can be found ([[#dataset-distributions]]).
 
 Audience {#audience}
@@ -277,15 +273,16 @@ If more information is available, publishers *SHOULD* add it.
 
 See [[#dataset-overview]] for an overview of attributes.
 
-## Organization information ## {#organization-information}
+## Creator/publisher information ## {#creator-publisher-information}
 
 Users want to know where the [=dataset=] came from ([[DWBP#provenance|provenance]]).
-Providing information about the organization behind the dataset (the [=publisher=]) answers user questions such as:
+The dataset’s creator and/or [=publisher=] is either a person or an organization.
+Providing information about the person/organization behind the dataset (the ) answers user questions such as:
 
-- Which organization has published this dataset? How reliable and credible does that make the dataset?
-- How can I contact the organization for questions or feedback?
+- Which person/organization has published this dataset? How reliable and credible does that make the dataset?
+- How can I contact the person/organization for questions or feedback?
 
-> Therefore, publishers *must* publish basic information about the organization.
+> Therefore, publishers *must* publish basic information about the person/organization.
 > At the least, the organization’s name and HTTP IRI must be provided. 
 
 <div class="example">
@@ -304,12 +301,25 @@ Providing information about the organization behind the dataset (the [=publisher
 
 See [[#organization-overview]] for a full overview of organization attributes.
 
+<div class="example">
+    A person description:
+
+    <pre highlight=json-ld>
+      {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "@id": "https://example.com",
+        "name": "Jan Jansen"
+      }
+    </pre>
+</div>
+
 ### Dataset publisher ### {#dataset-publisher}
 
-The organization data is then included as the dataset’s publisher:
+The person/organization data is then included as the dataset’s publisher:
 
 <div class="example">
-    A dataset with a publisher. The publisher has some optional attributes.
+    A dataset with an organization as publisher. The publisher has some optional attributes.
 
     <pre highlight=json-ld>
         {
@@ -319,11 +329,34 @@ The organization data is then included as the dataset’s publisher:
             "@type": "Organization",
             "@id": "https://www.kb.nl",
             "name": "Koninklijke Bibliotheek",
-            "alternateName": "KB"
+            "alternateName": "KB",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "name": "Dataset manager’s name",
+              "email": "datasets@kb.nl",
+              "telephone": "+31 6 12345678"
+            }
           }
         }
     </pre>
 </div>
+
+<div class="example">
+    A dataset with a person as publisher. The publisher has some optional attributes.
+
+    <pre highlight=json-ld>
+        {
+          "@context": "https://schema.org/",
+          "@type": "Dataset",
+          "publisher": {
+            "@type": "Person",
+            "@id": "https://example.com",
+            "name": "Jan Jansen"
+          }
+        }
+    </pre>
+</div>
+
 
 ## Distributions ## {#dataset-distributions}
 
@@ -345,7 +378,7 @@ OAI-PMH endpoints or other APIs.
         {
           "@context": "https://schema.org/",
           "@type": "DataDownload",
-          "encodingFormat": "application/sparql-query",
+          "encodingFormat": "application/sparql-results+xml",
           "contentUrl": "http://vocab.getty.edu/sparql"
         }
     </pre>
@@ -364,7 +397,7 @@ The distributions are then included under the `distribution` attribute with the 
             {
               "@id": "http://vocab.getty.edu/aat/sparql",
               "@type": "DataDownload",
-              "encodingFormat": "application/sparql-query",
+              "encodingFormat": "application/sparql-results+json",
               "contentUrl": "http://vocab.getty.edu/sparql"
             },
             {
@@ -384,23 +417,58 @@ The distributions are then included under the `distribution` attribute with the 
 
 See [[#distribution-attributes]] for a full overview.
 
-Issue: TODO Elaborate (and give examples of) the types of distribution (in schema:name), like SPARQL-endpoint, OAI-PMH-endpoint, LDF-endpoint, Data dump, Opensearch API. Or introduce proprietary property for the type (might be better the using the free-format name).
-
 ### Developer documentation ### {#developer-docs}
 
-If the distribution is a non-standard [=API=], publishers *MUST* publish human-readable documentation on how to use that
-API and link to the documentation URL in the [schema:usageInfo](https://schema.org/usageInfo) attribute:
+Publishers *SHOULD* link to documentation URLs via the [schema:usageInfo](https://schema.org/usageInfo) attribute. For datadumps this should be documentation about the 
+data model. For [=API=]s this should be documentation about the specific capabilities of the API (like content-type support) *AND* the generic specification of the 
+protocol which also types the distribution such as OAI-PMH, SPARQL and REST.
+
+<table>
+    <caption>Recommended URIs for typing</caption>
+    <thead>
+        <tr>
+            <th>Protocol</th>
+            <th>URL specification</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">OAI-PMH</th>
+            <td>http://www.openarchives.org/pmh/</td>
+        </tr>
+        <tr>
+            <th scope="row">SPARQL</th>
+            <td>https://www.w3.org/TR/sparql11-query/</td>
+        </tr>
+        <tr>
+            <th scope="row">TPF</th>
+            <td>https://linkeddatafragments.org/specification/triple-pattern-fragments/</td>
+        </tr>
+        <tr>
+            <th scope="row">REST</th>
+            <td>https://developers.arcgis.com/rest/</td>
+        </tr>
+        <tr>
+            <th scope="row">WMS</th>
+            <td>http://www.opengeospatial.org/standards/wms</td>
+        </tr>
+        <tr>
+            <th scope="row">GraphQL</th>
+            <td>https://spec.graphql.org/</td>
+        </tr>
+    </tbody>
+</table>
 
 <div class="example">
-    A custom API with a link to the documentation.
+    A distribution with a link to the generic documentation and the protocolo specification (typing the distribution as SPARQL-endpoint).
 
     <pre highlight=json-ld>
         {
           "@context": "https://schema.org/",
           "@type": "DataDownload",
-          "encodingFormat": "application/json",
-          "contentUrl": "https://example.com/custom-json-api",
-          "usageInfo": "https://example.com/custom-json-api/docs"
+          "encodingFormat": "application/sparql-results+json",
+          "contentUrl": "http://vocab.getty.edu/sparql",
+          "usageInfo": [ "https://www.w3.org/TR/sparql11-query/", "https://vocab.getty.edu/" ]
         }
     </pre>
 </div>
@@ -504,6 +572,12 @@ This is an overview of required and recommended attributes.
             <td>Recommended</td>
         </tr>
         <tr>
+            <th scope="row">[schema:funder](https://schema.org/funder)</th>
+            <td>An organization that supports (sponsors) something through some kind of financial contribution.</td>
+            <td>0..n</td>
+            <td>Recommended</td>
+        </tr>
+        <tr>
             <th scope="row">[schema:dateCreated](https://schema.org/dateCreated)</th>
             <td>See [[#dataset-date]].</td>
             <td>0..1</td>
@@ -603,24 +677,30 @@ This is an overview of required and recommended attributes.
             <td>1</td>
             <td>Required</td>
         </tr>
-		<tr>
+        <tr>
             <th scope="row">[schema:name](https://schema.org/name)</th>
             <td>The organization’s full name.</td>
             <td>1</td>
             <td>Required</td>
-		</tr>
+        </tr>
         <tr>
             <th scope="row">[schema:alternateName](https://schema.org/alternateName)</th>
             <td>Alternative names such as an abbreviation that the organization is known under.</td>
             <td>0..n</td>
             <td>Recommended</td>
         </tr>
-		<tr>
+        <tr>
             <th scope="row">[schema:sameAs](https://schema.org/sameAs)</th>
             <td>Links to the organization in other databases.</td>
             <td>0..n</td>
             <td>Recommended</td>
-		</tr>
+        </tr>
+        <tr>
+            <th scope="row">[schema:contactPoint](https://schema.org/contactPoint)</th>
+            <td>Where [=consumers=] can reach the organization for questions and suggestions about the dataset.</td>
+            <td>1</td>
+            <td>Recommended</td>
+        </tr>
     </tbody>
 </table>
 
@@ -647,7 +727,9 @@ This is an overview of required and recommended attributes.
             <th scope="row">[schema:encodingFormat](https://schema.org/encodingFormat)</th>
             <td>The distribution’s MIME format, for example `application/sparql-query` for a SPARL endpoint
  or `application/ld+json` for a data dump serialized as JSON-LD. Use a value from the [[IANA-MEDIA-TYPES]] list. 
- When the distribution is compressed, the compression format (e.g. zip, gzip) should be added to the `schema:encodingFormat` (eq. `text/turtle+gzip`).</td>
+The value should indicate the Media type of the response of the schema:contentUrl when no Accept header is included in the request. 
+ It is recommended to provide an URL of documentation via the schema:usageInfo property in which the supported encoding formats which can be requested via an Accept HTTP header are listed.</td>
+When the distribution is compressed, the compression format (e.g. zip, gzip) should be added to the `schema:encodingFormat` (eq. `text/turtle+gzip`).
             <td>1..n</td>	
             <td>Required</td>
         </tr>
