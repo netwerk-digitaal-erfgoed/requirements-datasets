@@ -2602,8 +2602,8 @@ At the least, the organization’s name and HTTP IRI must be provided.</p>
    </div>
    <h4 class="heading settled" data-level="4.3.1" id="dataset-publisher"><span class="secno">4.3.1. </span><span class="content">Dataset publisher</span><a class="self-link" href="#dataset-publisher"></a></h4>
    <p>The person/organization data is then included as the dataset’s publisher:</p>
-   <div class="example" id="example-dc07285d">
-    <a class="self-link" href="#example-dc07285d"></a> A dataset with an organization as publisher. The publisher has some optional attributes. 
+   <div class="example" id="example-85d8ccd9">
+    <a class="self-link" href="#example-85d8ccd9"></a> A dataset with an organization as publisher. The publisher has some optional attributes. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -2611,7 +2611,13 @@ At the least, the organization’s name and HTTP IRI must be provided.</p>
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
     <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
-    <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c->
+    <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
+    <c- f>"contactPoint"</c-><c- p>:</c-> <c- p>{</c->
+      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"ContactPoint"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"Dataset manager’s name"</c-><c- p>,</c->
+      <c- f>"email"</c-><c- p>:</c-> <c- u>"datasets@kb.nl"</c-><c- p>,</c->
+      <c- f>"telephone"</c-><c- p>:</c-> <c- u>"+31 6 12345678"</c->
+    <c- p>}</c->
   <c- p>}</c->
 <c- p>}</c->
 </pre>
@@ -2899,6 +2905,11 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
       <td>Links to the organization in other databases.
       <td>0..n
       <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/contactPoint">schema:contactPoint</a>
+      <td>Where <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑧">consumers</a> can reach the organization for questions and suggestions about the dataset.
+      <td>1
+      <td>Recommended
    </table>
    <h4 class="heading settled" data-level="4.6.3" id="distribution-attributes"><span class="secno">4.6.3. </span><span class="content">Distribution attributes</span><a class="self-link" href="#distribution-attributes"></a></h4>
    <table>
@@ -3001,8 +3012,8 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
       <td>Required
    </table>
    <h4 class="heading settled" data-level="4.6.5" id="dataset-example"><span class="secno">4.6.5. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
-   <div class="example" id="example-6c1ead1d">
-    <a class="self-link" href="#example-6c1ead1d"></a> A full dataset description that includes <a href="#dataset-overview">required and recommended attributes</a>. 
+   <div class="example" id="example-158a08b8">
+    <a class="self-link" href="#example-158a08b8"></a> A full dataset description that includes <a href="#dataset-overview">required and recommended attributes</a>. 
 <pre class="include-code highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -3034,7 +3045,13 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
     <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
     <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
-    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
+    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c-><c- p>,</c->
+    <c- f>"contactPoint"</c-><c- p>:</c-> <c- p>{</c->
+      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"ContactPoint"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"Dataset manager’s name"</c-><c- p>,</c->
+      <c- f>"email"</c-><c- p>:</c-> <c- u>"datasets@kb.nl"</c-><c- p>,</c->
+      <c- f>"telephone"</c-><c- p>:</c-> <c- u>"+31 6 12345678"</c->
+    <c- p>}</c->
   <c- p>},</c->
   <c- f>"distribution"</c-><c- p>:</c-> <c- p>[</c->
     <c- p>{</c->
@@ -3327,6 +3344,7 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
     <li><a href="#ref-for-consumer⑤">4.2.4. Version</a>
     <li><a href="#ref-for-consumer⑥">4.4. Distributions</a>
     <li><a href="#ref-for-consumer⑦">4.5. Data catalog</a>
+    <li><a href="#ref-for-consumer⑧">4.6.2. Organization attributes</a>
    </ul>
   </aside>
 <script>/* script-dfn-panel */
