@@ -2157,7 +2157,7 @@ Parts of this work may be from another specification document.  If so, those par
         <li><a href="#more-information"><span class="secno">4.2.5</span> <span class="content">More information</span></a>
        </ol>
       <li>
-       <a href="#organization-information"><span class="secno">4.3</span> <span class="content">Organization information</span></a>
+       <a href="#creator-publisher-information"><span class="secno">4.3</span> <span class="content">Creator/publisher information</span></a>
        <ol class="toc">
         <li><a href="#dataset-publisher"><span class="secno">4.3.1</span> <span class="content">Dataset publisher</span></a>
        </ol>
@@ -2208,7 +2208,7 @@ This metadata tells <a data-link-type="dfn" href="#consumer" id="ref-for-consume
     <li data-md>
      <p>what the dataset is called and under what license it is published (<a href="#dataset-information">§ 4.2 Dataset information</a>);</p>
     <li data-md>
-     <p>which organization has published the dataset (<a href="#organization-information">§ 4.3 Organization information</a>);</p>
+     <p>which person/organization has published the dataset (<a href="#creator-publisher-information">§ 4.3 Creator/publisher information</a>);</p>
     <li data-md>
      <p>where the data can be found (<a href="#dataset-distributions">§ 4.4 Distributions</a>).</p>
    </ul>
@@ -2564,17 +2564,18 @@ but keep historical versions accessible to users.</p>
 <pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"description"</c-><c- p>:</c-> <c- u>"Alba amicorum van de Koninklijke Bibliotheek, een dataset gedefinieerd voor het Europeana Rise of Literacy project."</c-><c- p>,</c-></span><span class="line-no" data-line="5"></span><span class="line">  <c- f>"url"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/bronnen-zoekwijzers/kb-collecties/moderne-handschriften-vanaf-ca-1550/alba-amicorum"</c-><c- p>,</c-></span><span class="line-no" data-line="6"></span><span class="line">  <c- f>"keywords"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no" data-line="7"></span><span class="line">    <c- u>"alba amicorum"</c-></span><span class="line-no" data-line="8"></span><span class="line">  <c- p>]</c-></span><span class="line-no" data-line="9"></span><span class="line"><c- p>}</c-></span></pre>
    </div>
    <p>See <a href="#dataset-overview">§ 4.6.1 Dataset attributes</a> for an overview of attributes.</p>
-   <h3 class="heading settled" data-level="4.3" id="organization-information"><span class="secno">4.3. </span><span class="content">Organization information</span><a class="self-link" href="#organization-information"></a></h3>
+   <h3 class="heading settled" data-level="4.3" id="creator-publisher-information"><span class="secno">4.3. </span><span class="content">Creator/publisher information</span><a class="self-link" href="#creator-publisher-information"></a></h3>
    <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑨">dataset</a> came from (<a href="https://w3c.github.io/dwbp/bp.html#provenance">provenance</a>).
-Providing information about the organization behind the dataset (the <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑥">publisher</a>) answers user questions such as:</p>
+The dataset’s creator and/or <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑥">publisher</a> is either a person or an organization.
+Providing information about the person/organization behind the dataset (the ) answers user questions such as:</p>
    <ul>
     <li data-md>
-     <p>Which organization has published this dataset? How reliable and credible does that make the dataset?</p>
+     <p>Which person/organization has published this dataset? How reliable and credible does that make the dataset?</p>
     <li data-md>
-     <p>How can I contact the organization for questions or feedback?</p>
+     <p>How can I contact the person/organization for questions or feedback?</p>
    </ul>
    <blockquote>
-    <p>Therefore, publishers <em>must</em> publish basic information about the organization.
+    <p>Therefore, publishers <em>must</em> publish basic information about the person/organization.
 At the least, the organization’s name and HTTP IRI must be provided.</p>
    </blockquote>
    <div class="example" id="example-8bd53437">
@@ -2589,10 +2590,20 @@ At the least, the organization’s name and HTTP IRI must be provided.</p>
 </pre>
    </div>
    <p>See <a href="#organization-overview">§ 4.6.2 Organization attributes</a> for a full overview of organization attributes.</p>
+   <div class="example" id="example-c0477ca1">
+    <a class="self-link" href="#example-c0477ca1"></a> A person description: 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://example.com"</c-><c- p>,</c->
+  <c- f>"name"</c-><c- p>:</c-> <c- u>"Jan Jansen"</c->
+<c- p>}</c->
+</pre>
+   </div>
    <h4 class="heading settled" data-level="4.3.1" id="dataset-publisher"><span class="secno">4.3.1. </span><span class="content">Dataset publisher</span><a class="self-link" href="#dataset-publisher"></a></h4>
-   <p>The organization data is then included as the dataset’s publisher:</p>
-   <div class="example" id="example-1fdedd24">
-    <a class="self-link" href="#example-1fdedd24"></a> A dataset with a publisher. The publisher has some optional attributes. 
+   <p>The person/organization data is then included as the dataset’s publisher:</p>
+   <div class="example" id="example-dc07285d">
+    <a class="self-link" href="#example-dc07285d"></a> A dataset with an organization as publisher. The publisher has some optional attributes. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -2601,6 +2612,19 @@ At the least, the organization’s name and HTTP IRI must be provided.</p>
     <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
     <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c->
+  <c- p>}</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <div class="example" id="example-ffb48885">
+    <a class="self-link" href="#example-ffb48885"></a> A dataset with a person as publisher. The publisher has some optional attributes. 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
+  <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
+    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+    <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://example.com"</c-><c- p>,</c->
+    <c- f>"name"</c-><c- p>:</c-> <c- u>"Jan Jansen"</c->
   <c- p>}</c->
 <c- p>}</c->
 </pre>
@@ -2655,10 +2679,10 @@ OAI-PMH endpoints or other APIs.</p>
    <p>See <a href="#distribution-attributes">§ 4.6.3 Distribution attributes</a> for a full overview.</p>
    <h4 class="heading settled" data-level="4.4.1" id="developer-docs"><span class="secno">4.4.1. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h4>
    <p>Publishers <em>SHOULD</em> link to documentation URLs via the <a href="https://schema.org/usageInfo">schema:usageInfo</a> attribute. For datadumps this should be documentation about the
-data model.  For <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>'s this should be documentation about the specific capabilities of the API (like content-type support) <em>AND</em> the generic specification of the 
-protocol which also <a class="property css" data-link-type="property">types</a> the distribution such as OAI-PMH, SPARQL and REST.</p>
+data model. For <a data-link-type="dfn" href="#api" id="ref-for-api">API</a>s this should be documentation about the specific capabilities of the API (like content-type support) <em>AND</em> the generic specification of the 
+protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
    <table>
-    <caption>Recommended URI’s for typing</caption>
+    <caption>Recommended URIs for typing</caption>
     <thead>
      <tr>
       <th>Protocol
@@ -3250,7 +3274,7 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
     <li><a href="#ref-for-dataset⑥">4.1. Available in RDF</a>
     <li><a href="#ref-for-dataset⑦">4.1.1. Durable identifiers</a>
     <li><a href="#ref-for-dataset⑧">4.2. Dataset information</a>
-    <li><a href="#ref-for-dataset⑨">4.3. Organization information</a>
+    <li><a href="#ref-for-dataset⑨">4.3. Creator/publisher information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="data-catalog">
@@ -3289,7 +3313,7 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
     <li><a href="#ref-for-publisher③">3. Conceptual model</a>
     <li><a href="#ref-for-publisher④">4.1. Available in RDF</a>
     <li><a href="#ref-for-publisher⑤">4.2.4. Version</a>
-    <li><a href="#ref-for-publisher⑥">4.3. Organization information</a>
+    <li><a href="#ref-for-publisher⑥">4.3. Creator/publisher information</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="consumer">
