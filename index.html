@@ -1740,6 +1740,45 @@ a[href].issue-return {
     text-decoration: none;
 }
 </style>
+<style>/* style-line-highlighting */
+
+:root {
+    --highlight-hover-bg: rgba(0, 0, 0, .05);
+}
+.line-numbered {
+    display: grid !important;
+    grid-template-columns: min-content 1fr;
+    grid-auto-flow: rows;
+}
+.line-numbered > *,
+.line-numbered::before,
+.line-numbered::after {
+    grid-column: 1/-1;
+}
+.line-no {
+    grid-column: 1;
+    color: gray;
+}
+.line {
+    grid-column: 2;
+}
+.line.highlight-line {
+    background: var(--highlight-hover-bg);
+}
+.line-no.highlight-line {
+    background: var(--highlight-hover-bg);
+    color: #444;
+    font-weight: bold;
+}
+.line-no.highlight-line[data-line]::before {
+    padding: 0 .5em 0 .1em;
+    content: attr(data-line);
+}
+.line-no.highlight-line[data-line-end]::after {
+    padding: 0 .5em 0 .1em;
+    content: attr(data-line-end);
+}
+</style>
 <style>/* style-line-numbers */
 
 :root {
@@ -2092,12 +2131,18 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
         --highlight-hover-bg: rgba(255, 255, 255, .05);
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --highlight-hover-bg: rgba(255, 255, 255, .05);
+    }
+}
 </style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2023-02-12">12 February 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2023-03-22">22 March 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2113,7 +2158,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 12 February 2023,
+In addition, as of 22 March 2023,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2166,7 +2211,11 @@ Parts of this work may be from another specification document.  If so, those par
        <ol class="toc">
         <li><a href="#developer-docs"><span class="secno">4.4.1</span> <span class="content">Developer documentation</span></a>
        </ol>
-      <li><a href="#data-catalog①"><span class="secno">4.5</span> <span class="content">Data catalog</span></a>
+      <li>
+       <a href="#data-catalog①"><span class="secno">4.5</span> <span class="content">Data catalog</span></a>
+       <ol class="toc">
+        <li><a href="#pagination"><span class="secno">4.5.1</span> <span class="content">Pagination</span></a>
+       </ol>
       <li>
        <a href="#overview"><span class="secno">4.6</span> <span class="content">Overview of attributes</span></a>
        <ol class="toc">
@@ -2730,8 +2779,8 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
    </blockquote>
-   <div class="example" id="example-706f2fc6">
-    <a class="self-link" href="#example-706f2fc6"></a> A catalog of available datasets: 
+   <div class="example" id="example-5ab198a0">
+    <a class="self-link" href="#example-5ab198a0"></a> A catalog of available datasets: 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataCatalog"</c-><c- p>,</c->
@@ -2740,8 +2789,8 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
   <c- f>"description"</c-><c- p>:</c-> <c- u>"Alle linked data zoals beschikbaar gesteld door de Koninklijke Bibliotheek."</c-><c- p>,</c->
   <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
-    <c- nd>"@id"</c-><c- p>:</c-> <c- f>"https://www.kb.nl/"</c->
-    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
+    <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl/"</c-><c- p>,</c->
+    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c->
   <c- p>},</c->
   <c- f>"dataset"</c-><c- p>:</c-> <c- p>[</c->
     <c- p>{</c->
@@ -2757,6 +2806,18 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
 </pre>
    </div>
    <p>See <a href="#datacatalog-attributes">§ 4.6.4 DataCatalog attributes</a> for a full overview of catalog attributes.</p>
+   <h4 class="heading settled" data-level="4.5.1" id="pagination"><span class="secno">4.5.1. </span><span class="content">Pagination</span><a class="self-link" href="#pagination"></a></h4>
+   <p>Large <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog②">data catalogs</a> may be harder to process for clients.</p>
+   <blockquote>
+    <p>Therefore, <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑦">publishers</a> <em>SHOULD</em> split large data catalogs in parts of at most a 1000 datasets, using the <a href="https://www.markus-lanthaler.com/hydra/spec/latest/core/#example-20-a-hydra-partialcollectionview-splits-a-collection-into-multiple-views">Hydra Core Vocabulary</a>.</p>
+   </blockquote>
+   <p>Each page <em>MUST</em> be a complete RDF document in itself.
+Related resources, such as the publishing organization, must be described on each page,
+even if that resource is the same on all pages.</p>
+   <div class="example" id="example-29ba4e6a">
+    <a class="self-link" href="#example-29ba4e6a"></a> A paginated catalog: 
+<pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no" data-line="3"></span><span class="line">    <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="4"></span><span class="line highlight-line">    <c- p>{</c-><c- f>"hydra"</c-><c- p>:</c-> <c- u>"http://www.w3.org/ns/hydra/core#"</c-><c- p>}</c-></span><span class="line-no" data-line="5"></span><span class="line">  <c- p>],</c-></span><span class="line-no highlight-line" data-line="6"></span><span class="line highlight-line">  <c- nd>"@type"</c-><c- p>:</c-> <c- p>[</c-><c- u>"DataCatalog"</c-><c- p>,</c-> <c- u>"hydra:Collection"</c-><c- p>],</c-></span><span class="line-no" data-line="7"></span><span class="line">  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://example.com/catalog"</c-><c- p>,</c-></span><span class="line-no" data-line="8"></span><span class="line">  <c- f>"name"</c-><c- p>:</c-> <c- u>"Paginated catalog of datasets"</c-><c- p>,</c-></span><span class="line-no" data-line="9"></span><span class="line">  <c- f>"description"</c-><c- p>:</c-> <c- u>"This catalog is paginated using the Hydra Core Vocabulary."</c-><c- p>,</c-></span><span class="line-no" data-line="10"></span><span class="line">  <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no" data-line="11"></span><span class="line">    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c-></span><span class="line-no" data-line="12"></span><span class="line">    <c- nd>"@id"</c-><c- p>:</c-> <c- u>"/publisher"</c-><c- p>,</c-></span><span class="line-no" data-line="13"></span><span class="line">    <c- f>"name"</c-><c- p>:</c-> <c- u>"Example Publisher"</c-></span><span class="line-no" data-line="14"></span><span class="line">  <c- p>},</c-></span><span class="line-no highlight-line" data-line="15"></span><span class="line highlight-line">  <c- f>"hydra:view"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no highlight-line" data-line="16"></span><span class="line highlight-line">    <c- nd>"@id"</c-><c- p>:</c-> <c- u>"/catalog?page=1"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="17"></span><span class="line highlight-line">    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"hydra:PartialCollectionView"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="18"></span><span class="line highlight-line">    <c- f>"hydra:first"</c-><c- p>:</c-> <c- p>{</c-><c- nd>"@id"</c-><c- p>:</c-> <c- u>"/catalog?page=1"</c-><c- p>},</c-></span><span class="line-no highlight-line" data-line="19"></span><span class="line highlight-line">    <c- f>"hydra:next"</c-><c- p>:</c-> <c- p>{</c-><c- nd>"@id"</c-><c- p>:</c-> <c- u>"/catalog?page=2"</c-><c- p>},</c-></span><span class="line-no highlight-line" data-line="20"></span><span class="line highlight-line">    <c- f>"hydra:first"</c-><c- p>:</c-> <c- p>{</c-><c- nd>"@id"</c-><c- p>:</c-> <c- u>"/catalog?page=498"</c-><c- p>}</c-></span><span class="line-no highlight-line" data-line="21"></span><span class="line highlight-line">  <c- p>},</c-></span><span class="line-no" data-line="22"></span><span class="line">  <c- f>"dataset"</c-><c- p>:</c-> <c- p>[</c-></span><span class="line-no" data-line="23"></span><span class="line">    <c- p>{</c-></span><span class="line-no" data-line="24"></span><span class="line">      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="25"></span><span class="line">      <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://example.com/dataset/1"</c-><c- p>,</c-></span><span class="line-no" data-line="26"></span><span class="line">      ...</span><span class="line-no" data-line="27"></span><span class="line">    <c- p>},</c-> </span><span class="line-no" data-line="28"></span><span class="line">    <c- p>{</c-></span><span class="line-no" data-line="29"></span><span class="line">      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="30"></span><span class="line">      <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://example.com/dataset/2"</c-><c- p>,</c-></span><span class="line-no" data-line="31"></span><span class="line">      ...</span><span class="line-no" data-line="32"></span><span class="line">    <c- p>},</c-> </span><span class="line-no" data-line="33"></span><span class="line">    ...</span><span class="line-no" data-line="34"></span><span class="line">  <c- p>]</c-></span><span class="line-no" data-line="35"></span><span class="line"><c- p>}</c-></span></pre>
+   </div>
    <h3 class="heading settled" data-level="4.6" id="overview"><span class="secno">4.6. </span><span class="content">Overview of attributes</span><a class="self-link" href="#overview"></a></h3>
    <p>This is an overview of required and recommended attributes.</p>
    <h4 class="heading settled" data-level="4.6.1" id="dataset-overview"><span class="secno">4.6.1. </span><span class="content">Dataset attributes</span><a class="self-link" href="#dataset-overview"></a></h4>
@@ -3300,6 +3361,7 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    <ul>
     <li><a href="#ref-for-data-catalog">3. Conceptual model</a>
     <li><a href="#ref-for-data-catalog①">4.5. Data catalog</a>
+    <li><a href="#ref-for-data-catalog②">4.5.1. Pagination</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="distribution">
@@ -3332,6 +3394,7 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
     <li><a href="#ref-for-publisher④">4.1. Available in RDF</a>
     <li><a href="#ref-for-publisher⑤">4.2.4. Version</a>
     <li><a href="#ref-for-publisher⑥">4.3. Creator/publisher information</a>
+    <li><a href="#ref-for-publisher⑦">4.5.1. Pagination</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="consumer">
