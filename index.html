@@ -1487,9 +1487,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version d9bd89757, updated Thu Mar 23 10:06:53 2023 -0700" name="generator">
+  <meta content="Bikeshed version bf22245b8, updated Tue Apr 18 15:53:37 2023 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="183fde9149389fec64533237ff8a7cd3acd912fb" name="document-revision">
+  <meta content="a189579a4b03ef60a4fef60ece7f8b58b8002327" name="document-revision">
 <style>/* style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1700,8 +1700,7 @@ figcaption:not(.no-marker)::before {
     position: absolute;
     z-index: 35;
     width: 20em;
-    min-width: min-content;
-    max-width: 300px;
+    width: 300px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -1718,8 +1717,15 @@ figcaption:not(.no-marker)::before {
 .dfn-panel a { color: var(--dfnpanel-text); }
 .dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
 .dfn-panel > b + b { margin-top: 0.25em; }
-.dfn-panel ul { padding: 0; }
-.dfn-panel li { list-style: inside; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dfn-panel.activated {
     display: inline-block;
     position: fixed;
@@ -1730,7 +1736,7 @@ figcaption:not(.no-marker)::before {
     max-height: 30vh;
 }
 
-.dfn-paneled { cursor: pointer; }
+.dfn-paneled[role="button"] { cursor: pointer; }
 </style>
 <style>/* style-issues */
 a[href].issue-return {
@@ -2144,7 +2150,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2023-04-06">6 April 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2023-04-24">24 April 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2161,7 +2167,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 6 April 2023,
+In addition, as of 24 April 2023,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2217,7 +2223,7 @@ Parts of this work may be from another specification document.  If so, those par
       <li>
        <a href="#data-catalog-info"><span class="secno">4.5</span> <span class="content">Data catalog</span></a>
        <ol class="toc">
-        <li><a href="#data-catalog-pagination"><span class="secno">4.5.1</span> <span class="content">Pagination {#data-catalog-pagination}</span></a>
+        <li><a href="#data-catalog-pagination"><span class="secno">4.5.1</span> <span class="content">Pagination</span></a>
        </ol>
       <li>
        <a href="#overview"><span class="secno">4.6</span> <span class="content">Overview of attributes</span></a>
@@ -2809,7 +2815,7 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
 </pre>
    </div>
    <p>See <a href="#datacatalog-attributes">§ 4.6.4 DataCatalog attributes</a> for a full overview of catalog attributes.</p>
-   <h4 class="heading settled" data-level="4.5.1" id="data-catalog-pagination"><span class="secno">4.5.1. </span><span class="content">Pagination {#data-catalog-pagination}</span><a class="self-link" href="#data-catalog-pagination"></a></h4>
+   <h4 class="heading settled" data-level="4.5.1" id="data-catalog-pagination"><span class="secno">4.5.1. </span><span class="content">Pagination</span><a class="self-link" href="#data-catalog-pagination"></a></h4>
    <p>Large <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog②">data catalogs</a> may be harder to process for clients.</p>
    <blockquote>
     <p>Therefore, <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑦">publishers</a> <em>SHOULD</em> split large data catalogs in parts of at most a 1000 datasets, using the <a href="https://www.markus-lanthaler.com/hydra/spec/latest/core/#example-20-a-hydra-partialcollectionview-splits-a-collection-into-multiple-views">Hydra Core Vocabulary</a>.</p>
@@ -3347,88 +3353,68 @@ can help with testing RDF metadata in general.</p>
 This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>. <a class="issue-return" href="#issue-6f3bbb3f" title="Jump to section">↵</a></div>
    <div class="issue"> add examples <a class="issue-return" href="#issue-a71b8ddb" title="Jump to section">↵</a></div>
   </div>
-  <aside aria-labelledby="infopaneltitle-for-dataset" class="dfn-panel" data-for="dataset" id="infopanel-for-dataset">
-   <span id="infopaneltitle-for-dataset" style="display:none">Info about the 'Dataset' definition.</span><b><a href="#dataset">#dataset</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dataset">1. Introduction</a>
-    <li><a href="#ref-for-dataset①">2. Definitions</a> <a href="#ref-for-dataset②">(2)</a> <a href="#ref-for-dataset③">(3)</a> <a href="#ref-for-dataset④">(4)</a>
-    <li><a href="#ref-for-dataset⑤">3. Conceptual model</a>
-    <li><a href="#ref-for-dataset⑥">4.1. Available in RDF</a>
-    <li><a href="#ref-for-dataset⑦">4.1.1. Durable identifiers</a>
-    <li><a href="#ref-for-dataset⑧">4.2. Dataset information</a>
-    <li><a href="#ref-for-dataset⑨">4.3. Creator/publisher information</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-data-catalog" class="dfn-panel" data-for="data-catalog" id="infopanel-for-data-catalog">
-   <span id="infopaneltitle-for-data-catalog" style="display:none">Info about the 'Data catalog' definition.</span><b><a href="#data-catalog">#data-catalog</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-data-catalog">3. Conceptual model</a>
-    <li><a href="#ref-for-data-catalog①">4.5. Data catalog</a>
-    <li><a href="#ref-for-data-catalog②">4.5.1. Pagination {#data-catalog-pagination}</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-distribution" class="dfn-panel" data-for="distribution" id="infopanel-for-distribution">
-   <span id="infopaneltitle-for-distribution" style="display:none">Info about the 'Distribution' definition.</span><b><a href="#distribution">#distribution</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-distribution">2. Definitions</a>
-    <li><a href="#ref-for-distribution①">3. Conceptual model</a>
-    <li><a href="#ref-for-distribution②">4.4. Distributions</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-api" class="dfn-panel" data-for="api" id="infopanel-for-api">
-   <span id="infopaneltitle-for-api" style="display:none">Info about the 'API' definition.</span><b><a href="#api">#api</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-api">4.4.1. Developer documentation</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-machine-readability" class="dfn-panel" data-for="machine-readability" id="infopanel-for-machine-readability">
-   <span id="infopaneltitle-for-machine-readability" style="display:none">Info about the 'Machine-readability' definition.</span><b><a href="#machine-readability">#machine-readability</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-machine-readability">1. Introduction</a>
-    <li><a href="#ref-for-machine-readability①">4.1. Available in RDF</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-publisher" class="dfn-panel" data-for="publisher" id="infopanel-for-publisher">
-   <span id="infopaneltitle-for-publisher" style="display:none">Info about the 'Publisher' definition.</span><b><a href="#publisher">#publisher</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-publisher">1. Introduction</a>
-    <li><a href="#ref-for-publisher①">2. Definitions</a> <a href="#ref-for-publisher②">(2)</a>
-    <li><a href="#ref-for-publisher③">3. Conceptual model</a>
-    <li><a href="#ref-for-publisher④">4.1. Available in RDF</a>
-    <li><a href="#ref-for-publisher⑤">4.2.4. Version</a>
-    <li><a href="#ref-for-publisher⑥">4.3. Creator/publisher information</a>
-    <li><a href="#ref-for-publisher⑦">4.5.1. Pagination {#data-catalog-pagination}</a>
-   </ul>
-  </aside>
-  <aside aria-labelledby="infopaneltitle-for-consumer" class="dfn-panel" data-for="consumer" id="infopanel-for-consumer">
-   <span id="infopaneltitle-for-consumer" style="display:none">Info about the 'Consumer' definition.</span><b><a href="#consumer">#consumer</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-consumer">1. Introduction</a>
-    <li><a href="#ref-for-consumer①">4.1.1. Durable identifiers</a>
-    <li><a href="#ref-for-consumer②">4.1.2. Information remains available</a>
-    <li><a href="#ref-for-consumer③">4.2. Dataset information</a>
-    <li><a href="#ref-for-consumer④">4.2.2. License</a>
-    <li><a href="#ref-for-consumer⑤">4.2.4. Version</a>
-    <li><a href="#ref-for-consumer⑥">4.4. Distributions</a>
-    <li><a href="#ref-for-consumer⑦">4.5. Data catalog</a>
-    <li><a href="#ref-for-consumer⑧">4.6.2. Organization attributes</a>
-   </ul>
-  </aside>
 <script>/* script-dfn-panel */
 "use strict";
 {
-    function queryAll(sel) {
-        return [].slice.call(document.querySelectorAll(sel));
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
     }
 
-    // Add popup behavior to all dfns to show the corresponding dfn-panel.
-    var dfns = document.querySelectorAll('.dfn-paneled');
-    for (let dfn of dfns) { insertDfnPopupAction(dfn); }
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all dfn panels.
-        hideAllDfnPanels();
-    });
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
 
     function hideAllDfnPanels() {
         // Turn off any currently "on" or "activated" panels.
@@ -3478,49 +3464,249 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
         }
     }
 
-    function insertDfnPopupAction(dfn) {
+    function insertDfnPopupAction(dfn, dfnPanel) {
         // Find dfn panel
-        const dfnPanel = document.querySelector(`.dfn-panel[data-for='${dfn.id}']`);
-        if (dfnPanel) {
-            const panelWrapper = document.createElement('span');
-            panelWrapper.appendChild(dfnPanel);
-            panelWrapper.style.position = "relative";
-            panelWrapper.style.height = "0px";
-            dfn.insertAdjacentElement("afterend", panelWrapper);
-            dfn.setAttribute('role', 'button');
-            dfn.setAttribute('aria-expanded', 'false')
-            dfn.tabIndex = 0;
-            dfn.classList.add('has-dfn-panel');
-            dfn.addEventListener('click', (event) => {
-                showDfnPanel(dfnPanel, dfn);
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-            dfn.addEventListener('keypress', (event) => {
-                const kc = event.keyCode;
-                // 32->Space, 13->Enter
-                if(kc == 32 || kc == 13) {
-                    toggleDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            });
+                event.preventDefault();
+            }
+        });
 
-            dfnPanel.addEventListener('click', (event) => {
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
                 pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
                 event.stopPropagation();
-            });
-
-            dfnPanel.addEventListener('keydown', (event) => {
-                if(event.keyCode == 27) { // Escape key
-                    hideDfnPanel(dfnPanel, dfn);
-                    event.stopPropagation();
-                    event.preventDefault();
-                }
-            })
-
-        } else {
-            console.log("Couldn't find .dfn-panel[data-for='" + dfn.id + "']");
-        }
+                event.preventDefault();
+            }
+        })
     }
 }
 </script>
+<script>/* script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['dataset'] = {"dfnID": "dataset", "url": "#dataset", "dfnText": "Dataset", "refSections": [{"refs": [{"id": "ref-for-dataset"}], "title": "1. Introduction"}, {"refs": [{"id": "ref-for-dataset\u2460"}, {"id": "ref-for-dataset\u2461"}, {"id": "ref-for-dataset\u2462"}, {"id": "ref-for-dataset\u2463"}], "title": "2. Definitions"}, {"refs": [{"id": "ref-for-dataset\u2464"}], "title": "3. Conceptual model"}, {"refs": [{"id": "ref-for-dataset\u2465"}], "title": "4.1. Available in RDF"}, {"refs": [{"id": "ref-for-dataset\u2466"}], "title": "4.1.1. Durable identifiers"}, {"refs": [{"id": "ref-for-dataset\u2467"}], "title": "4.2. Dataset information"}, {"refs": [{"id": "ref-for-dataset\u2468"}], "title": "4.3. Creator/publisher information"}], "external": false};
+window.dfnpanelData['data-catalog'] = {"dfnID": "data-catalog", "url": "#data-catalog", "dfnText": "Data catalog", "refSections": [{"refs": [{"id": "ref-for-data-catalog"}], "title": "3. Conceptual model"}, {"refs": [{"id": "ref-for-data-catalog\u2460"}], "title": "4.5. Data catalog"}, {"refs": [{"id": "ref-for-data-catalog\u2461"}], "title": "4.5.1. Pagination"}], "external": false};
+window.dfnpanelData['distribution'] = {"dfnID": "distribution", "url": "#distribution", "dfnText": "Distribution", "refSections": [{"refs": [{"id": "ref-for-distribution"}], "title": "2. Definitions"}, {"refs": [{"id": "ref-for-distribution\u2460"}], "title": "3. Conceptual model"}, {"refs": [{"id": "ref-for-distribution\u2461"}], "title": "4.4. Distributions"}], "external": false};
+window.dfnpanelData['api'] = {"dfnID": "api", "url": "#api", "dfnText": "API", "refSections": [{"refs": [{"id": "ref-for-api"}], "title": "4.4.1. Developer documentation"}], "external": false};
+window.dfnpanelData['machine-readability'] = {"dfnID": "machine-readability", "url": "#machine-readability", "dfnText": "Machine-readability", "refSections": [{"refs": [{"id": "ref-for-machine-readability"}], "title": "1. Introduction"}, {"refs": [{"id": "ref-for-machine-readability\u2460"}], "title": "4.1. Available in RDF"}], "external": false};
+window.dfnpanelData['publisher'] = {"dfnID": "publisher", "url": "#publisher", "dfnText": "Publisher", "refSections": [{"refs": [{"id": "ref-for-publisher"}], "title": "1. Introduction"}, {"refs": [{"id": "ref-for-publisher\u2460"}, {"id": "ref-for-publisher\u2461"}], "title": "2. Definitions"}, {"refs": [{"id": "ref-for-publisher\u2462"}], "title": "3. Conceptual model"}, {"refs": [{"id": "ref-for-publisher\u2463"}], "title": "4.1. Available in RDF"}, {"refs": [{"id": "ref-for-publisher\u2464"}], "title": "4.2.4. Version"}, {"refs": [{"id": "ref-for-publisher\u2465"}], "title": "4.3. Creator/publisher information"}, {"refs": [{"id": "ref-for-publisher\u2466"}], "title": "4.5.1. Pagination"}], "external": false};
+window.dfnpanelData['consumer'] = {"dfnID": "consumer", "url": "#consumer", "dfnText": "Consumer", "refSections": [{"refs": [{"id": "ref-for-consumer"}], "title": "1. Introduction"}, {"refs": [{"id": "ref-for-consumer\u2460"}], "title": "4.1.1. Durable identifiers"}, {"refs": [{"id": "ref-for-consumer\u2461"}], "title": "4.1.2. Information remains available"}, {"refs": [{"id": "ref-for-consumer\u2462"}], "title": "4.2. Dataset information"}, {"refs": [{"id": "ref-for-consumer\u2463"}], "title": "4.2.2. License"}, {"refs": [{"id": "ref-for-consumer\u2464"}], "title": "4.2.4. Version"}, {"refs": [{"id": "ref-for-consumer\u2465"}], "title": "4.4. Distributions"}, {"refs": [{"id": "ref-for-consumer\u2466"}], "title": "4.5. Data catalog"}, {"refs": [{"id": "ref-for-consumer\u2467"}], "title": "4.6.2. Organization attributes"}], "external": false};</script>
+<script>/* script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>
