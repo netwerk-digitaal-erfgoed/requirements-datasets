@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="5a25251fe58e9c801f4f8097adacdf532fa5d269" name="document-revision">
+  <meta content="c6d5cac5e97b283d3ce4333a2568497f39bbb245" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2158,7 +2158,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2023-11-02">2 November 2023</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2023-12-05">5 December 2023</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2175,7 +2175,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 2 November 2023,
+In addition, as of 5 December 2023,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2706,8 +2706,9 @@ At the least, the organization’s name and HTTP IRI must be provided.</p>
     <p>Therefore, publishers <em>SHOULD</em> add at least one distribution.
 Each distribution <em>MUST</em> have at least a MIME format and the URL where the distribution can be accessed.</p>
    </blockquote>
-   <p>Distributions can be data dumps in RDF or some other format such as CSV, live SPARQL endpoints,
-OAI-PMH endpoints or other <a data-link-type="dfn" href="#web-api" id="ref-for-web-api">web APIs</a>.</p>
+   <p>Examples of distributions are data dumps in one or more RDF serializations, such as JSON-LD and Turtle,
+CSV files, SPARQL endpoints, OAI-PMH endpoints or other <a data-link-type="dfn" href="#web-api" id="ref-for-web-api">web APIs</a>.
+All distributions of a dataset <em>MUST</em> contain broadly the same data.</p>
    <div class="example" id="example-f920f92c">
     <a class="self-link" href="#example-f920f92c"></a> A minimal definition of a SPARQL endpoint distribution.
     In the Schema.org vocabulary, each type of distribution is called a <a href="https://schema.org/DataDownload">DataDownload</a>,
