@@ -1488,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 4416b18d5, updated Tue Jan 2 15:52:39 2024 -0800" name="generator">
+  <meta content="Bikeshed version d5d58a306, updated Fri Jan 26 16:12:28 2024 -0800" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="70a443c3acccf65c2b7d4d7e94c2cf7c89cb74a5" name="revision">
+  <meta content="3178ea8343c978cfe919120a033f3c65006480ef" name="revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2254,7 +2254,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-01-07">7 January 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-02-12">12 February 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2271,7 +2271,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 7 January 2024,
+In addition, as of 12 February 2024,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2279,7 +2279,7 @@ Parts of this work may be from another specification document.  If so, those par
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>This document describes requirements for publishing datasets.
+   <p>This document describes requirements for publishing dataset descriptions.
 By following these requirements, publishers enable users to find and use their datasets.</p>
   </div>
   <div data-fill-with="at-risk"></div>
@@ -2358,12 +2358,12 @@ By following these requirements, publishers enable users to find and use their d
    <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
    <p><em>This section is non-normative.</em></p>
    <p>To enable <a data-link-type="dfn" href="#dataset" id="ref-for-dataset">datasets</a> to be found and used,
-they must be published according to a well-documented,
+they must be described according to a well-documented,
 shared and <a data-link-type="dfn" href="#machine-readability" id="ref-for-machine-readability">machine-readable</a> publication model.</p>
    <p>This document describes such a model and its rules.
-When <a data-link-type="dfn" href="#publisher" id="ref-for-publisher">publishers</a> make their datasets adhere to these rules,
-they enable consumers – both humans and machines – to use the published data in new and better ways.</p>
-   <p>The requirements prescribe the metadata that publishers should provide with their data.
+When <a data-link-type="dfn" href="#publisher" id="ref-for-publisher">publishers</a> make their <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description">dataset descriptions</a> adhere to these rules,
+they enable consumers – both humans and machines – to use the datasets in new and better ways.</p>
+   <p>These requirements prescribe the metadata that publishers must provide for their dataset.
 This metadata tells <a data-link-type="dfn" href="#consumer" id="ref-for-consumer">consumers</a>:</p>
    <ul>
     <li data-md>
@@ -2376,7 +2376,7 @@ This metadata tells <a data-link-type="dfn" href="#consumer" id="ref-for-consume
    <h3 class="heading settled" data-level="1.1" id="audience"><span class="secno">1.1. </span><span class="content">Audience</span><a class="self-link" href="#audience"></a></h3>
    <p>This document is mainly geared towards two groups of readers.</p>
    <p>Digital heritage collection managers can follow the requirements in this document to make their published datasets findable and usable,
-for instance through <a href="https://datasetsearch.research.google.com">Google Dataset Search</a> and the <a href="https://www.netwerkdigitaalerfgoed.nl/kennis-en-voorzieningen/digitaal-erfgoed-bruikbaar/register/">NDE Registry</a>.</p>
+for instance through <a href="https://datasetsearch.research.google.com">Google Dataset Search</a> and the <a href="https://datasetregister.netwerkdigitaalerfgoed.nl/?lang=en">NDE Dataset Register</a>.</p>
    <p>Suppliers of collection management systems can implement these requirements in their software
 to help collection managers using it to publish datasets in the correct format.
 These requirements are scoped to the online publication output of collection management systems;
@@ -2395,23 +2395,26 @@ improving findability, one of the main goals of publishing datasets on the web.<
    <dl>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="dataset">Dataset</dfn>
     <dd data-md>
-     <p>The description of a collection of data.
-A set of metadata that includes the dataset’s name and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publisher</a>.
-The data objects themselves are not part of the dataset proper but provided in its <a data-link-type="dfn" href="#distribution" id="ref-for-distribution">distributions</a>.</p>
+     <p>A collection of data objects. These are made available through the dataset’s <a data-link-type="dfn" href="#distribution" id="ref-for-distribution">distributions</a>.</p>
+    <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="dataset-description">Dataset description</dfn>
+    <dd data-md>
+     <p>Metadata about the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset①">dataset</a>, including the dataset’s name and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publisher</a>.
+This description must be distinguished from the data objects themselves.</p>
      <p>For example: imagine a dataset of Van Gogh paintings called ‘Sunflowers’,
 which is published by the Van Gogh Museum under a specific license.
-These are all part of the dataset.
-The dataset also tells us the URLs of distributions where we can download or query the data.
-If we consult the data provided by one of these distributions, we’ve left the sphere of the dataset proper.
-That is to say, the data itself, which may include descriptions of paintings, persons and places,
-are <em>not</em> properties of the dataset.</p>
+The name, license and publishers are all part of the dataset description.
+The dataset description also tells us the URLs of distributions where we can download or query the data.
+Using these distributions, we can access the data objects themselves,
+which may include descriptions of paintings, persons, places etc. 
+These are <em>not</em> part of the dataset description.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="data-catalog">Data catalog</dfn>
     <dd data-md>
-     <p>A collection of <a data-link-type="dfn" href="#dataset" id="ref-for-dataset①">datasets</a>.</p>
+     <p>A collection of <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description①">dataset descriptions</a>.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="distribution">Distribution</dfn>
     <dd data-md>
-     <p>A channel through which a <a data-link-type="dfn" href="#dataset" id="ref-for-dataset②">dataset</a> is available,
-for example a CSV file download or a <a data-link-type="biblio" href="#biblio-sparql11-overview" title="SPARQL 1.1 Overview">SPARQL</a> endpoint.</p>
+     <p>A channel through which a <a data-link-type="dfn" href="#dataset" id="ref-for-dataset②">dataset</a> is made available,
+either for downloading (such as a CSV file download or RDF dump),
+or for querying (such as a <a data-link-type="biblio" href="#biblio-sparql11-overview" title="SPARQL 1.1 Overview">SPARQL</a> endpoint).</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="web-api">Web API</dfn>
     <dd data-md>
      <p>An API that is available over HTTP, for example an OAI-PMH, OpenAPI or SPARQL endpoint.</p>
@@ -2429,7 +2432,7 @@ This would probably be ‘heritage institution’ in <a href="https://www.netwer
    </dl>
    <h2 class="heading settled" data-level="3" id="conceptual-model"><span class="secno">3. </span><span class="content">Conceptual model</span><a class="self-link" href="#conceptual-model"></a></h2>
    <p>The model consists of four resource types: <a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">organizations</a> publish <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">datasets</a>, which are available in <a data-link-type="dfn" href="#distribution" id="ref-for-distribution①">distributions</a>.
-Optionally, the datasets are grouped in <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog">data catalogs</a>.</p>
+Optionally, the datasets are grouped in data catalogs.</p>
    <p></p>
    <svg content="<mxfile host=&quot;Electron&quot; modified=&quot;2021-10-05T07:07:49.264Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/15.4.0 Chrome/91.0.4472.164 Electron/13.5.0 Safari/537.36&quot; etag=&quot;wlF9FwQLq7R4mR6CaEHz&quot; version=&quot;15.4.0&quot; type=&quot;device&quot; pages=&quot;2&quot;><diagram id=&quot;urrUrFw95YwCIsGvFkr1&quot; name=&quot;Overview&quot;>3Vpbc5s6EP41fnSGi8HwGNtpmlP3Mm1PktOXjgwCdCwjCiKx8+srGckgg4nvuTxk4l2tFrH77bcrjzvmcDa/TkESfSY+xB1D8+cdc9QxDF3XbPaPaxaFxnX7hSJMkS+MSsUP9ASFUhPaHPkwUwwpIZiiRFV6JI6hRxUdSFPyqJoFBKtPTUAIa4ofHsB17R3yaVRoHaNf6j9CFEbyybrtFiszII3Fm2QR8MljRWVedcxhSggtPs3mQ4h58GRcin0fNqyuDpbCmG6z4VfvOu8m2Zd/8ttpNPXcyHafuropDkcX8o2hzwIgRJLSiIQkBviq1A5Sksc+5G51JpU2Y0ISofwfUroQ2QQ5JUwV0RkWq3CO6H3l83/ss3ZhCWnEwaNJYSGFmKaL+6pQ2cXFcttSKvf5lxwHTIxJDAvNB4SxWM9oSqZwSDBJmcaHAcgxi+egiAsPxsZ4C1VG8tQTVn96wb3dvXGNz1/GNpok8Go+6YoYU5CGkLbYOfYKFqyeIJlB9iJsYwoxoOhBPQgQwA5XdmIre1uwqBgkBMU0q3j+xhXMQNaoIwAqKlR313D0nL2u2LMPxQmkVHmVUrXEZjNOG0PDH8Cf+QBwLuLgI5Y6NMkpIvFBINb2AzEGE4gHwJuGS1cSQQJkAKMwZiKGAUdTQGIqPOm9FbpOCSbpcA3BdXSJtGoXum33lcxahbQb/Eq8SBMSBBk7qoqRXVFB/OjT4PprlnpJf9ofDsbffz90rYPJyyMz5O2PgX1JqR07FcryMMgyfsIKa+kNeJJw89hzYHoWgMnW8SzAzktfhrYbfRn2cemrsc2aNfbqGDaWxKBA2P6TE7nQzZYpvmQGei+Zl4vsU8j/Y8QSnkHpjJ2t8FesNlbHmENPRXENPA8wpYjNQJdiYYZ8vygeyE4EJkt/HMciOcy5NehYI95OE+ChOPy5LCBrdQjuEc4VBIiJTXgr56QqZjdXfQuPWY6rZvgwGhN+u7ra9QzVwVFIrrXOjg6em+832wKnApaAkZDkq45h+gA6gVebo9iK7TlwEjRxVZYUk3qA5pyIN3NVDTUbsy6reJVzU8iP5dCuS11UGdgt90JzN2NBSeaumXPsWua+piGIWQk1Di1HjfIJgupsGVO57ZCANt9WjIMb/l5Nfr8bxL7DQWNbfbaXm3By9+9l+K3763b6dPfJmoBrKgekN3LzMF/24tEMuXoNH4d9k3yCURaxfvvqmveAUEpmbKFf6sbLe8zIOLSjt9R1S0vvq833WB1d9dp1TtDS28qygqkRoGDI/jAJX29bOAfvN8bLqcXLZ7GSyXl39/6DqHzbW9mp7/i1crN7F5ZSb+twKUIgdu3iSO+veSqCVPN0rJ7gNrSENRxybCQHEWV72nS7YRazGmrSOVVN6rUgcA4bkccYE+DXArI7c7XXWZUUn62x1ixuPw6vf9FQz8BZWbH+leh7jLq+NvSdMept/LqG+6ZedOK+fWB4X+4Sp708fZq9M9Jn45dYvbdOn6s0vgX+bExBcyW/6xS8NjI13vwUsUMOThBlJpY/ICjG2/JnGObVXw==</diagram><diagram id=&quot;a6mHWFwkpfAQTan6lGMU&quot; name=&quot;Classes&quot;>ldHJDsIgEADQr+FoYouperWucYv24BnLWEig0yDG6tdbQxeJFz0Bj2FgBkJjXS4MK8QWOSgS9nlJ6JSEYTCIomp4y6MRGjjJjOS1dZDIJ9TYr/UmOVy9QIuorCx8TDHPIbWeMWPw7oddUPm3FiyDL0hSpr71JLkVTkfhsPMlyEw0NwfR2O1o1gTXlVwF43j/IDojNDaI1s10GYN6d6/tizju10xPVnLztLvbBg9n6Llk83+OtCUYyO2vqatJ97Rq4f0wnb0A</diagram></mxfile>" height="421px" version="1.1" viewBox="-0.5 -0.5 391 421" width="391px" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
     <defs></defs>
@@ -2615,7 +2618,7 @@ Optionally, the datasets are grouped in <a data-link-type="dfn" href="#data-cata
 it needs to be published in an <a href="https://www.w3.org/TR/rdf11-primer/#section-graph-syntax">RDF format</a>.
 RDF formats include <a data-link-type="biblio" href="#biblio-json-ld" title="JSON-LD 1.0">[JSON-LD]</a>, <a data-link-type="biblio" href="#biblio-n3" title="Notation3 (N3): A readable RDF syntax">[N3]</a> and <a data-link-type="biblio" href="#biblio-turtle" title="RDF 1.1 Turtle">[Turtle]</a>.</p>
    <blockquote>
-    <p><a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">Publishers</a> <em>MUST</em> make their <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑥">dataset</a> description available in RDF.</p>
+    <p><a data-link-type="dfn" href="#publisher" id="ref-for-publisher④">Publishers</a> <em>MUST</em> make their <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description②">dataset description</a> available in RDF.</p>
    </blockquote>
    <p>Both the Schema.org and DCAT vocabularies <em>MAY</em> be used;
 Schema.org is <a href="#examples">recommended</a>.</p>
@@ -2644,7 +2647,7 @@ Schema.org is <a href="#examples">recommended</a>.</p>
    <h4 class="heading settled" data-level="4.1.1" id="identifiers"><span class="secno">4.1.1. </span><span class="content">Durable identifiers</span><a class="self-link" href="#identifiers"></a></h4>
    <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer①">Consumers</a> want to refer to datasets. They prefer to do so by linking to them.</p>
    <blockquote>
-    <p>Therefore, publishers <em>MUST</em> maintain a permanent and unique identifier for each <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑦">dataset</a>.
+    <p>Therefore, publishers <em>MUST</em> maintain a permanent and unique identifier for each <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑥">dataset</a>.
 Publishers <em>MUST</em> use HTTP <a data-link-type="biblio" href="#biblio-iri" title="Internationalized Resource Identifiers (IRIs)">IRIs</a> as identifiers.</p>
    </blockquote>
    <p>See also <a href="https://w3c.github.io/dwbp/usecasesv1.html#R-UniqueIdentifier">Data on the Web Best Practices Use Cases &amp; Requirements § R-UniqueIdentifier</a> and <a href="https://w3c.github.io/dwbp/usecasesv1.html#R-PersistentIdentification">Data on the Web Best Practices Use Cases &amp; Requirements § R-PersistentIdentification</a>.</p>
@@ -2656,7 +2659,7 @@ so they can be consulted in the future.</p>
     <p>Therefore, publishers <em>MUST</em> ensure information remains available in the future.</p>
    </blockquote>
    <h3 class="heading settled" data-level="4.2" id="dataset-information"><span class="secno">4.2. </span><span class="content">Dataset information</span><a class="self-link" href="#dataset-information"></a></h3>
-   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> want to consult information about the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑧">dataset</a> to decide whether and how they want to use its data.
+   <p><a data-link-type="dfn" href="#consumer" id="ref-for-consumer③">Consumers</a> want to consult information about the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑦">dataset</a> to decide whether and how they want to use its data.
 This information answers user questions such as:</p>
    <ul>
     <li data-md>
@@ -2697,7 +2700,7 @@ for example one of the <a href="https://creativecommons.org/choose/">Creative Co
    </div>
    <p>See also <a href="https://w3c.github.io/dwbp/usecasesv1.html#R-LicenseAvailable">Data on the Web Best Practices Use Cases &amp; Requirements § R-LicenseAvailable</a>.</p>
    <h4 class="heading settled" data-level="4.2.3" id="dataset-date"><span class="secno">4.2.3. </span><span class="content">Creation, publication and modification dates</span><a class="self-link" href="#dataset-date"></a></h4>
-   <p>Publishers <em>SHOULD</em> make known when the dataset description was originally created, published and when it was last updated.</p>
+   <p>Publishers <em>SHOULD</em> make known when the <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description③">dataset description</a> was originally created, published and when it was last updated.</p>
    <div class="example" id="example-bb0355e3">
     <a class="self-link" href="#example-bb0355e3"></a> Specify dataset description dates: 
 <pre class="highlight"><c- p>{</c->
@@ -2710,7 +2713,7 @@ for example one of the <a href="https://creativecommons.org/choose/">Creative Co
 </pre>
    </div>
    <h4 class="heading settled" data-level="4.2.4" id="dataset-versions"><span class="secno">4.2.4. </span><span class="content">Version</span><a class="self-link" href="#dataset-versions"></a></h4>
-   <p>A dataset description may change over time. <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">Consumers</a>, such as researchers, may want to determine which information was valid at a certain moment.</p>
+   <p>A <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description④">dataset description</a> may change over time. <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑤">Consumers</a>, such as researchers, may want to determine which information was valid at a certain moment.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> not only publish the current version of the dataset description,
 but keep historical versions accessible to users.</p>
@@ -2725,9 +2728,9 @@ but keep historical versions accessible to users.</p>
    </div>
    <p>See <a href="#dataset-overview">§ 4.6.1 Dataset attributes</a> for an overview of attributes.</p>
    <h3 class="heading settled" data-level="4.3" id="creator-publisher-information"><span class="secno">4.3. </span><span class="content">Creator/publisher information</span><a class="self-link" href="#creator-publisher-information"></a></h3>
-   <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑨">dataset</a> came from (<a href="https://w3c.github.io/dwbp/bp.html#provenance">provenance</a>).
+   <p>Users want to know where the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑧">dataset</a> came from (<a href="https://w3c.github.io/dwbp/bp.html#provenance">provenance</a>).
 The dataset’s creator and/or <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑥">publisher</a> is either a person or an organization.
-Providing information about the person/organization behind the dataset (the ) answers user questions such as:</p>
+Providing information about the person/organization behind the dataset answers user questions such as:</p>
    <ul>
     <li data-md>
      <p>Which person/organization has published this dataset? How reliable and credible does that make the dataset?</p>
@@ -2887,7 +2890,8 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
    </div>
    <p>See also <a href="https://w3c.github.io/dwbp/usecasesv1.html#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements § R-APIDocumented</a>.</p>
    <h3 class="heading settled" data-level="4.5" id="data-catalog-info"><span class="secno">4.5. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog-info"></a></h3>
-   <p>A <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog①">data catalog</a> provides <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑦">consumers</a> with a complete overview of available datasets, which improves discoverability.</p>
+   <p>A <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog">data catalog</a> provides <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑦">consumers</a> with a complete overview of available <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description⑤">dataset descriptions</a>,
+which improves discoverability.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
    </blockquote>
@@ -2919,7 +2923,7 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
    </div>
    <p>See <a href="#datacatalog-attributes">§ 4.6.4 DataCatalog attributes</a> for a full overview of catalog attributes.</p>
    <h4 class="heading settled" data-level="4.5.1" id="data-catalog-pagination"><span class="secno">4.5.1. </span><span class="content">Pagination</span><a class="self-link" href="#data-catalog-pagination"></a></h4>
-   <p>Large <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog②">data catalogs</a> may be harder to process for clients.</p>
+   <p>Large <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog①">data catalogs</a> may be harder to process for clients.</p>
    <blockquote>
     <p>Therefore, <a data-link-type="dfn" href="#publisher" id="ref-for-publisher⑦">publishers</a> <em>SHOULD</em> split large data catalogs in parts of at most a 1000 datasets, using the <a href="https://www.markus-lanthaler.com/hydra/spec/latest/core/#example-20-a-hydra-partialcollectionview-splits-a-collection-into-multiple-views">Hydra Core Vocabulary</a>.</p>
    </blockquote>
@@ -3187,7 +3191,7 @@ The value should indicate the Media type of the response of the schema:contentUr
    </table>
    <h4 class="heading settled" data-level="4.6.5" id="dataset-example"><span class="secno">4.6.5. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
    <div class="example" id="example-158a08b8">
-    <a class="self-link" href="#example-158a08b8"></a> A full dataset description that includes <a href="#dataset-overview">required and recommended attributes</a>. 
+    <a class="self-link" href="#example-158a08b8"></a> A full <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description⑥">dataset description</a> that includes <a href="#dataset-overview">required and recommended attributes</a>. 
 <pre class="include-code highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -3405,6 +3409,7 @@ can help with testing RDF metadata in general.</p>
    <li><a href="#consumer">Consumer</a><span>, in § 2</span>
    <li><a href="#data-catalog">Data catalog</a><span>, in § 2</span>
    <li><a href="#dataset">Dataset</a><span>, in § 2</span>
+   <li><a href="#dataset-description">Dataset description</a><span>, in § 2</span>
    <li><a href="#distribution">Distribution</a><span>, in § 2</span>
    <li><a href="#machine-readability">Machine-readability</a><span>, in § 2</span>
    <li><a href="#publisher">Publisher</a><span>, in § 2</span>
@@ -3654,8 +3659,9 @@ function parseHTML(markup) {
 {
 let dfnPanelData = {
 "consumer": {"dfnID":"consumer","dfnText":"Consumer","external":false,"refSections":[{"refs":[{"id":"ref-for-consumer"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-consumer\u2460"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-consumer\u2461"}],"title":"4.1.2. Information remains available"},{"refs":[{"id":"ref-for-consumer\u2462"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-consumer\u2463"}],"title":"4.2.2. License"},{"refs":[{"id":"ref-for-consumer\u2464"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-consumer\u2465"}],"title":"4.4. Distributions"},{"refs":[{"id":"ref-for-consumer\u2466"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-consumer\u2467"}],"title":"4.6.2. Organization attributes"}],"url":"#consumer"},
-"data-catalog": {"dfnID":"data-catalog","dfnText":"Data catalog","external":false,"refSections":[{"refs":[{"id":"ref-for-data-catalog"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-data-catalog\u2460"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-data-catalog\u2461"}],"title":"4.5.1. Pagination"}],"url":"#data-catalog"},
-"dataset": {"dfnID":"dataset","dfnText":"Dataset","external":false,"refSections":[{"refs":[{"id":"ref-for-dataset"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-dataset\u2460"},{"id":"ref-for-dataset\u2461"},{"id":"ref-for-dataset\u2462"},{"id":"ref-for-dataset\u2463"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-dataset\u2464"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-dataset\u2465"}],"title":"4.1. Available in RDF"},{"refs":[{"id":"ref-for-dataset\u2466"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-dataset\u2467"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-dataset\u2468"}],"title":"4.3. Creator/publisher information"}],"url":"#dataset"},
+"data-catalog": {"dfnID":"data-catalog","dfnText":"Data catalog","external":false,"refSections":[{"refs":[{"id":"ref-for-data-catalog"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-data-catalog\u2460"}],"title":"4.5.1. Pagination"}],"url":"#data-catalog"},
+"dataset": {"dfnID":"dataset","dfnText":"Dataset","external":false,"refSections":[{"refs":[{"id":"ref-for-dataset"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-dataset\u2460"},{"id":"ref-for-dataset\u2461"},{"id":"ref-for-dataset\u2462"},{"id":"ref-for-dataset\u2463"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-dataset\u2464"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-dataset\u2465"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-dataset\u2466"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-dataset\u2467"}],"title":"4.3. Creator/publisher information"}],"url":"#dataset"},
+"dataset-description": {"dfnID":"dataset-description","dfnText":"Dataset description","external":false,"refSections":[{"refs":[{"id":"ref-for-dataset-description"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-dataset-description\u2460"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-dataset-description\u2461"}],"title":"4.1. Available in RDF"},{"refs":[{"id":"ref-for-dataset-description\u2462"}],"title":"4.2.3. Creation, publication and modification dates"},{"refs":[{"id":"ref-for-dataset-description\u2463"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-dataset-description\u2464"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-dataset-description\u2465"}],"title":"4.6.5. Full example"}],"url":"#dataset-description"},
 "distribution": {"dfnID":"distribution","dfnText":"Distribution","external":false,"refSections":[{"refs":[{"id":"ref-for-distribution"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-distribution\u2460"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-distribution\u2461"}],"title":"4.4. Distributions"}],"url":"#distribution"},
 "machine-readability": {"dfnID":"machine-readability","dfnText":"Machine-readability","external":false,"refSections":[{"refs":[{"id":"ref-for-machine-readability"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-machine-readability\u2460"}],"title":"4.1. Available in RDF"}],"url":"#machine-readability"},
 "publisher": {"dfnID":"publisher","dfnText":"Publisher","external":false,"refSections":[{"refs":[{"id":"ref-for-publisher"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-publisher\u2460"},{"id":"ref-for-publisher\u2461"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-publisher\u2462"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-publisher\u2463"}],"title":"4.1. Available in RDF"},{"refs":[{"id":"ref-for-publisher\u2464"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-publisher\u2465"}],"title":"4.3. Creator/publisher information"},{"refs":[{"id":"ref-for-publisher\u2466"}],"title":"4.5.1. Pagination"}],"url":"#publisher"},
@@ -3768,7 +3774,7 @@ function showDfnPanel(dfn) {
 
 function positionDfnPanel(dfnPanel) {
     const dfn = dfnPanel.dfn;
-    const dfnPos = getRootLevelAbsolutePosition(dfn);
+    const dfnPos = getBounds(dfn);
     dfnPanel.style.top = dfnPos.bottom + "px";
     dfnPanel.style.left = dfnPos.left + "px";
 
@@ -3837,40 +3843,19 @@ function refocusOnTarget(event) {
     });
 }
 
+// TODO: shared util
 // Returns the root-level absolute position {left and top} of element.
-function getRootLevelAbsolutePosition(el) {
-    const boundsRect = el.getBoundingClientRect();
-    let xPos = 0;
-    let yPos = 0;
-
-    while (el) {
-        let xScroll = el.scrollLeft;
-        let yScroll = el.scrollTop;
-
-        // Ignore scrolling of body.
-        if (el.tagName === "BODY") {
-            xScroll = 0;
-            yScroll = 0;
-        }
-        xPos += (el.offsetLeft - xScroll + el.clientLeft);
-        yPos += (el.offsetTop - yScroll + el.clientTop);
-
-        el = el.offsetParent;
-    }
+function getBounds(el, relativeTo=document.body) {
+    const relativeRect = relativeTo.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    const top = elRect.top - relativeRect.top;
+    const left = elRect.left - relativeRect.left;
     return {
-        left: xPos,
-        top: yPos,
-        right: xPos + boundsRect.width,
-        bottom: yPos + boundsRect.height,
-    };
-}
-
-function scrolledIntoView(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top > 0 &&
-        rect.bottom < window.innerHeight
-    );
+        top,
+        left,
+        bottom: top + elRect.height,
+        right: left + elRect.width,
+    }
 }
 
 function scrollToTargetAndHighlight(event) {
@@ -3879,10 +3864,6 @@ function scrollToTargetAndHighlight(event) {
         hash = decodeURIComponent(hash.substring(1));
         const dest = document.getElementById(hash);
         if (dest) {
-            // Maybe prevent default scroll.
-            if (scrolledIntoView(dest)) {
-                event.preventDefault();
-            }
             dest.classList.add('highlighted');
             setTimeout(() => dest.classList.remove('highlighted'), 1000);
         }
@@ -4076,6 +4057,7 @@ let refsData = {
 "#consumer": {"export":true,"for_":[],"level":"1","normative":true,"shortname":"nde-datasets","spec":"nde-datasets-1","status":"local","text":"consumer","type":"dfn","url":"#consumer"},
 "#data-catalog": {"export":true,"for_":[],"level":"1","normative":true,"shortname":"nde-datasets","spec":"nde-datasets-1","status":"local","text":"data catalog","type":"dfn","url":"#data-catalog"},
 "#dataset": {"export":true,"for_":[],"level":"1","normative":true,"shortname":"nde-datasets","spec":"nde-datasets-1","status":"local","text":"dataset","type":"dfn","url":"#dataset"},
+"#dataset-description": {"export":true,"for_":[],"level":"1","normative":true,"shortname":"nde-datasets","spec":"nde-datasets-1","status":"local","text":"dataset description","type":"dfn","url":"#dataset-description"},
 "#distribution": {"export":true,"for_":[],"level":"1","normative":true,"shortname":"nde-datasets","spec":"nde-datasets-1","status":"local","text":"distribution","type":"dfn","url":"#distribution"},
 "#machine-readability": {"export":true,"for_":[],"level":"1","normative":true,"shortname":"nde-datasets","spec":"nde-datasets-1","status":"local","text":"machine-readability","type":"dfn","url":"#machine-readability"},
 "#publisher": {"export":true,"for_":[],"level":"1","normative":true,"shortname":"nde-datasets","spec":"nde-datasets-1","status":"local","text":"publisher","type":"dfn","url":"#publisher"},
@@ -4212,7 +4194,7 @@ function setupRefHintEventListeners(link, refHint) {
 
 function positionRefHint(refHint) {
     const link = refHint.forLink;
-    const linkPos = getRootLevelAbsolutePosition(link);
+    const linkPos = getBounds(link);
     refHint.style.top = linkPos.bottom + "px";
     refHint.style.left = linkPos.left + "px";
 
@@ -4228,47 +4210,46 @@ function positionRefHint(refHint) {
 
 // TODO: shared util
 // Returns the root-level absolute position {left and top} of element.
-function getRootLevelAbsolutePosition(el) {
-    const boundsRect = el.getBoundingClientRect();
-    let xPos = 0;
-    let yPos = 0;
-
-    while (el) {
-        let xScroll = el.scrollLeft;
-        let yScroll = el.scrollTop;
-
-        // Ignore scrolling of body.
-        if (el.tagName === "BODY") {
-            xScroll = 0;
-            yScroll = 0;
-        }
-        xPos += (el.offsetLeft - xScroll + el.clientLeft);
-        yPos += (el.offsetTop - yScroll + el.clientTop);
-
-        el = el.offsetParent;
-    }
+function getBounds(el, relativeTo=document.body) {
+    const relativeRect = relativeTo.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    const top = elRect.top - relativeRect.top;
+    const left = elRect.left - relativeRect.left;
     return {
-        left: xPos,
-        top: yPos,
-        right: xPos + boundsRect.width,
-        bottom: yPos + boundsRect.height,
-    };
+        top,
+        left,
+        bottom: top + elRect.height,
+        right: left + elRect.width,
+    }
+}
+
+function showRefHintListener(e) {
+    // If the target isn't in a link (or is a link),
+    // just ignore it.
+    let link = e.target.closest("a");
+    if(!link) return;
+
+    // If the target is in a ref-hint panel
+    // (aka a link in the already-open one),
+    // also just ignore it.
+    if(link.closest(".ref-hint")) return;
+
+    // Otherwise, show the panel for the link.
+    showRefHint(link);
+}
+
+function hideAllHintsListener(e) {
+    // If the click is inside a ref-hint panel, ignore it.
+    if(e.target.closest(".ref-hint")) return;
+    // Otherwise, close all the current panels.
+    hideAllRefHints();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.addEventListener("mouseover", e=>{
-        let link = e.target.closest("a");
-        if(link) showRefHint(link);
-    });
-    document.body.addEventListener("focus", e=>{
-        let link = e.target.closest("a");
-        if(link) showRefHint(link);
-    });
+    document.body.addEventListener("mousedown", showRefHintListener);
+    document.body.addEventListener("focus", showRefHintListener);
 
-    document.body.addEventListener("click", (e) => {
-        // If not handled already, just hide all link panels.
-        hideAllRefHints();
-    });
+    document.body.addEventListener("click", hideAllHintsListener);
 });
 
 window.addEventListener("resize", () => {
