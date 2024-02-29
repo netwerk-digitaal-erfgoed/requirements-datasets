@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version d5d58a306, updated Fri Jan 26 16:12:28 2024 -0800" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="e2c8b5c78e2c3307d89fa057f5641d5e77c92337" name="revision">
+  <meta content="068da0585637a5b35e583e5a8e62857428887f12" name="revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2254,7 +2254,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-02-12">12 February 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-02-29">29 February 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2271,7 +2271,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 12 February 2024,
+In addition, as of 29 February 2024,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2395,16 +2395,16 @@ improving findability, one of the main goals of publishing datasets on the web.<
    <dl>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="dataset">Dataset</dfn>
     <dd data-md>
-     <p>A collection of data objects. These are made available through the dataset’s <a data-link-type="dfn" href="#distribution" id="ref-for-distribution">distributions</a>.</p>
+     <p>A collection of metadata records. These are made available through the dataset’s <a data-link-type="dfn" href="#distribution" id="ref-for-distribution">distributions</a>.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="dataset-description">Dataset description</dfn>
     <dd data-md>
      <p>Metadata about the <a data-link-type="dfn" href="#dataset" id="ref-for-dataset①">dataset</a>, including the dataset’s name and <a data-link-type="dfn" href="#publisher" id="ref-for-publisher①">publisher</a>.
-This description must be distinguished from the data objects themselves.</p>
+This description must be distinguished from the metadata records themselves.</p>
      <p>For example: imagine a dataset of Van Gogh paintings called ‘Sunflowers’,
 which is published by the Van Gogh Museum under a specific license.
 The name, license and publisher are all part of the dataset description.
 The dataset description also tells us the URLs of distributions where we can download or query the data.
-Using these distributions, we can access the data objects themselves,
+Using these distributions, we can access the metadata records themselves,
 which may include descriptions of paintings, persons, places etc. 
 These are <em>not</em> part of the dataset description.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="data-catalog">Data catalog</dfn>
