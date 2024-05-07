@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version d765c696b, updated Fri Mar 8 15:58:52 2024 -0800" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="0e8c79501050bbbc49077977836fe49f540f0483" name="revision">
+  <meta content="e58d39c9b984e16debc5211bb2d5258698703277" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2255,7 +2255,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-04-24">24 April 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-05-07">7 May 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2272,7 +2272,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 24 April 2024,
+In addition, as of 7 May 2024,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2322,7 +2322,8 @@ By following these requirements, publishers enable users to find and use their d
       <li>
        <a href="#dataset-distributions"><span class="secno">4.4</span> <span class="content">Distributions</span></a>
        <ol class="toc">
-        <li><a href="#developer-docs"><span class="secno">4.4.1</span> <span class="content">Developer documentation</span></a>
+        <li><a href="#distribution-date"><span class="secno">4.4.1</span> <span class="content">Creation and modification dates</span></a>
+        <li><a href="#developer-docs"><span class="secno">4.4.2</span> <span class="content">Developer documentation</span></a>
        </ol>
       <li>
        <a href="#data-catalog-info"><span class="secno">4.5</span> <span class="content">Data catalog</span></a>
@@ -2848,7 +2849,22 @@ All distributions of a dataset <em>MUST</em> contain broadly the same data.</p>
 </pre>
    </div>
    <p>See <a href="#distribution-attributes">§ 4.6.3 Distribution attributes</a> for a full overview.</p>
-   <h4 class="heading settled" data-level="4.4.1" id="developer-docs"><span class="secno">4.4.1. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h4>
+   <h4 class="heading settled" data-level="4.4.1" id="distribution-date"><span class="secno">4.4.1. </span><span class="content">Creation and modification dates</span><a class="self-link" href="#distribution-date"></a></h4>
+   <p>Publishers <em>SHOULD</em> make known when the <a data-link-type="dfn" href="#distribution" id="ref-for-distribution③">distribution</a> was originally created and when it was last updated.
+Please note that this is different from <a href="#dataset-date">dataset description’s dates</a>.
+Datetimes (‘2019-08-15T08:05:00Z’) are preferred because they offer greater precision, 
+but simple dates (‘2019-04-14’) are also allowed.</p>
+   <div class="example" id="example-bec7408c">
+    <a class="self-link" href="#example-bec7408c"></a> Specify distribution dates: 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Distribution"</c-><c- p>,</c->
+  <c- f>"dateCreated"</c-><c- p>:</c-> <c- u>"2019-04-14"</c-><c- p>,</c->
+  <c- f>"dateModified"</c-><c- p>:</c-> <c- u>"2019-08-15T08:05:00"</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <h4 class="heading settled" data-level="4.4.2" id="developer-docs"><span class="secno">4.4.2. </span><span class="content">Developer documentation</span><a class="self-link" href="#developer-docs"></a></h4>
    <p>Publishers <em>SHOULD</em> link to documentation URLs via the <a href="https://schema.org/usageInfo">schema:usageInfo</a> attribute. For datadumps this should be documentation about the
 data model. For <a data-link-type="dfn" href="#web-api" id="ref-for-web-api①">web APIs</a> this should be documentation about the specific capabilities of the API (like content-type support) <em>AND</em> the generic specification of the 
 protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
@@ -3150,7 +3166,7 @@ The value should indicate the Media type of the response of the schema:contentUr
       <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/usageInfo">schema:usageInfo</a>
-      <td>A link to the <a data-link-type="dfn" href="#web-api" id="ref-for-web-api②">web API</a> documentation; see <a href="#developer-docs">§ 4.4.1 Developer documentation</a>.
+      <td>A link to the <a data-link-type="dfn" href="#web-api" id="ref-for-web-api②">web API</a> documentation; see <a href="#developer-docs">§ 4.4.2 Developer documentation</a>.
       <td>0..1
       <td>Required if custom API
    </table>
@@ -3191,8 +3207,8 @@ The value should indicate the Media type of the response of the schema:contentUr
       <td>Required
    </table>
    <h4 class="heading settled" data-level="4.6.5" id="dataset-example"><span class="secno">4.6.5. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
-   <div class="example" id="example-158a08b8">
-    <a class="self-link" href="#example-158a08b8"></a> A full <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description⑥">dataset description</a> that includes <a href="#dataset-overview">required and recommended attributes</a>. 
+   <div class="example" id="example-6d61ba27">
+    <a class="self-link" href="#example-6d61ba27"></a> A full <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description⑥">dataset description</a> that includes <a href="#dataset-overview">required and recommended attributes</a>. 
 <pre class="include-code highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -3236,14 +3252,16 @@ The value should indicate the Media type of the response of the schema:contentUr
     <c- p>{</c->
       <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
       <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"application/sparql-query"</c-><c- p>,</c->
-      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/sparql"</c->
+      <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/sparql"</c-><c- p>,</c->
+      <c- f>"dateCreated"</c-><c- p>:</c-> <c- u>"2023-06-01T08:00:00+01:00"</c-><c- p>,</c->
+      <c- f>"dateModified"</c-><c- p>:</c-> <c- u>"2024-03-04T01:09:00+01:00"</c->
     <c- p>},</c->
     <c- p>{</c->
       <c- nd>"@type"</c-><c- p>:</c-> <c- u>"DataDownload"</c-><c- p>,</c->
       <c- f>"encodingFormat"</c-><c- p>:</c-> <c- u>"text/turtle"</c-><c- p>,</c->
       <c- f>"contentUrl"</c-><c- p>:</c-> <c- u>"http://data.bibliotheken.nl/files/alba_20201016.ttl.gz"</c-><c- p>,</c->
       <c- f>"name"</c-><c- p>:</c-> <c- u>"Datadump Alba Amicorum"</c-><c- p>,</c->
-      <c- f>"datePublished"</c-><c- p>:</c-> <c- u>"2019-05-21"</c-><c- p>,</c->
+      <c- f>"dateCreated"</c-><c- p>:</c-> <c- u>"2019-05-21"</c-><c- p>,</c->
       <c- f>"dateModified"</c-><c- p>:</c-> <c- u>"2019-08-15"</c-><c- p>,</c->
       <c- f>"contentSize"</c-><c- p>:</c-> <c- u>"614K"</c->
     <c- p>}</c->
@@ -3663,10 +3681,10 @@ let dfnPanelData = {
 "data-catalog": {"dfnID":"data-catalog","dfnText":"Data catalog","external":false,"refSections":[{"refs":[{"id":"ref-for-data-catalog"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-data-catalog\u2460"}],"title":"4.5.1. Pagination"}],"url":"#data-catalog"},
 "dataset": {"dfnID":"dataset","dfnText":"Dataset","external":false,"refSections":[{"refs":[{"id":"ref-for-dataset"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-dataset\u2460"},{"id":"ref-for-dataset\u2461"},{"id":"ref-for-dataset\u2462"},{"id":"ref-for-dataset\u2463"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-dataset\u2464"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-dataset\u2465"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-dataset\u2466"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-dataset\u2467"}],"title":"4.3. Creator/publisher information"}],"url":"#dataset"},
 "dataset-description": {"dfnID":"dataset-description","dfnText":"Dataset description","external":false,"refSections":[{"refs":[{"id":"ref-for-dataset-description"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-dataset-description\u2460"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-dataset-description\u2461"}],"title":"4.1. Available in RDF"},{"refs":[{"id":"ref-for-dataset-description\u2462"}],"title":"4.2.3. Creation, publication and modification dates"},{"refs":[{"id":"ref-for-dataset-description\u2463"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-dataset-description\u2464"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-dataset-description\u2465"}],"title":"4.6.5. Full example"}],"url":"#dataset-description"},
-"distribution": {"dfnID":"distribution","dfnText":"Distribution","external":false,"refSections":[{"refs":[{"id":"ref-for-distribution"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-distribution\u2460"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-distribution\u2461"}],"title":"4.4. Distributions"}],"url":"#distribution"},
+"distribution": {"dfnID":"distribution","dfnText":"Distribution","external":false,"refSections":[{"refs":[{"id":"ref-for-distribution"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-distribution\u2460"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-distribution\u2461"}],"title":"4.4. Distributions"},{"refs":[{"id":"ref-for-distribution\u2462"}],"title":"4.4.1. Creation and modification dates"}],"url":"#distribution"},
 "machine-readability": {"dfnID":"machine-readability","dfnText":"Machine-readability","external":false,"refSections":[{"refs":[{"id":"ref-for-machine-readability"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-machine-readability\u2460"}],"title":"4.1. Available in RDF"}],"url":"#machine-readability"},
 "publisher": {"dfnID":"publisher","dfnText":"Publisher","external":false,"refSections":[{"refs":[{"id":"ref-for-publisher"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-publisher\u2460"},{"id":"ref-for-publisher\u2461"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-publisher\u2462"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-publisher\u2463"}],"title":"4.1. Available in RDF"},{"refs":[{"id":"ref-for-publisher\u2464"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-publisher\u2465"}],"title":"4.3. Creator/publisher information"},{"refs":[{"id":"ref-for-publisher\u2466"}],"title":"4.5.1. Pagination"}],"url":"#publisher"},
-"web-api": {"dfnID":"web-api","dfnText":"Web API","external":false,"refSections":[{"refs":[{"id":"ref-for-web-api"}],"title":"4.4. Distributions"},{"refs":[{"id":"ref-for-web-api\u2460"}],"title":"4.4.1. Developer documentation"},{"refs":[{"id":"ref-for-web-api\u2461"}],"title":"4.6.3. Distribution attributes"}],"url":"#web-api"},
+"web-api": {"dfnID":"web-api","dfnText":"Web API","external":false,"refSections":[{"refs":[{"id":"ref-for-web-api"}],"title":"4.4. Distributions"},{"refs":[{"id":"ref-for-web-api\u2460"}],"title":"4.4.2. Developer documentation"},{"refs":[{"id":"ref-for-web-api\u2461"}],"title":"4.6.3. Distribution attributes"}],"url":"#web-api"},
 };
 
 document.addEventListener("DOMContentLoaded", ()=>{
