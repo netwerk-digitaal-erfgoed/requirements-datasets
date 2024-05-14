@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version d765c696b, updated Fri Mar 8 15:58:52 2024 -0800" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="fdcc72c42c05891fe7aba4a3a1720b1280cd7918" name="revision">
+  <meta content="3b131073c6530c591885b4363af689f94cd4452d" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2255,7 +2255,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-05-07">7 May 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-05-14">14 May 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2272,7 +2272,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 7 May 2024,
+In addition, as of 14 May 2024,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2317,8 +2317,9 @@ By following these requirements, publishers enable users to find and use their d
       <li>
        <a href="#creator-publisher-information"><span class="secno">4.3</span> <span class="content">Creator/publisher information</span></a>
        <ol class="toc">
-        <li><a href="#contact"><span class="secno">4.3.1</span> <span class="content">Contact information</span></a>
-        <li><a href="#dataset-publisher"><span class="secno">4.3.2</span> <span class="content">Dataset publisher</span></a>
+        <li><a href="#isil"><span class="secno">4.3.1</span> <span class="content">ISIL identifier</span></a>
+        <li><a href="#contact"><span class="secno">4.3.2</span> <span class="content">Contact information</span></a>
+        <li><a href="#dataset-publisher"><span class="secno">4.3.3</span> <span class="content">Dataset publisher</span></a>
        </ol>
       <li>
        <a href="#dataset-distributions"><span class="secno">4.4</span> <span class="content">Distributions</span></a>
@@ -2766,23 +2767,38 @@ At the least, the organization’s name and HTTP IRI must be provided.</p>
 <c- p>}</c->
 </pre>
    </div>
-   <h4 class="heading settled" data-level="4.3.1" id="contact"><span class="secno">4.3.1. </span><span class="content">Contact information</span><a class="self-link" href="#contact"></a></h4>
+   <h4 class="heading settled" data-level="4.3.1" id="isil"><span class="secno">4.3.1. </span><span class="content">ISIL identifier</span><a class="self-link" href="#isil"></a></h4>
+   <blockquote>
+    <p>Publishers <em>SHOULD</em> include the organization’s <a href="https://www.nationaalarchief.nl/archiveren/kennisbank/isil-codes">ISIL code</a>.</p>
+   </blockquote>
+   <div class="example" id="example-be063b35">
+    <a class="self-link" href="#example-be063b35"></a> An organization with an ISIL code: 
+<pre class="highlight"><c- p>{</c->
+  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
+  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
+  <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
+  <c- f>"identifier"</c-><c- p>:</c-> <c- u>"NL-HaKB"</c->
+<c- p>}</c->
+</pre>
+   </div>
+   <h4 class="heading settled" data-level="4.3.2" id="contact"><span class="secno">4.3.2. </span><span class="content">Contact information</span><a class="self-link" href="#contact"></a></h4>
    <p>Publishers <em>SHOULD</em> include contact information so <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑥">consumers</a> can reach them with questions or feedback.
 The e-mail address <em>SHOULD</em> be functional (i.e. non-personal) because of GDPR reasons.</p>
    <div class="example" id="example-bb059d17">
     <a class="self-link" href="#example-bb059d17"></a> A publisher with contact information. 
 <pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- p>{</c-></span><span class="line-no" data-line="2"></span><span class="line">  <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c-></span><span class="line-no" data-line="3"></span><span class="line">  <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c-></span><span class="line-no" data-line="4"></span><span class="line">  <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no" data-line="5"></span><span class="line">    <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c-></span><span class="line-no" data-line="6"></span><span class="line">    <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c-></span><span class="line-no" data-line="7"></span><span class="line">    <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c-></span><span class="line-no" data-line="8"></span><span class="line">    <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="9"></span><span class="line highlight-line">    <c- f>"contactPoint"</c-><c- p>:</c-> <c- p>{</c-></span><span class="line-no highlight-line" data-line="10"></span><span class="line highlight-line">      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"ContactPoint"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="11"></span><span class="line highlight-line">      <c- f>"name"</c-><c- p>:</c-> <c- u>"Datasets Department"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="12"></span><span class="line highlight-line">      <c- f>"email"</c-><c- p>:</c-> <c- u>"datasets@kb.nl"</c-><c- p>,</c-></span><span class="line-no highlight-line" data-line="13"></span><span class="line highlight-line">      <c- f>"telephone"</c-><c- p>:</c-> <c- u>"+31 6 12345678"</c-></span><span class="line-no highlight-line" data-line="14"></span><span class="line highlight-line">    <c- p>}</c-></span><span class="line-no" data-line="15"></span><span class="line">  <c- p>}</c-></span><span class="line-no" data-line="16"></span><span class="line"><c- p>}</c-></span></pre>
    </div>
-   <h4 class="heading settled" data-level="4.3.2" id="dataset-publisher"><span class="secno">4.3.2. </span><span class="content">Dataset publisher</span><a class="self-link" href="#dataset-publisher"></a></h4>
+   <h4 class="heading settled" data-level="4.3.3" id="dataset-publisher"><span class="secno">4.3.3. </span><span class="content">Dataset publisher</span><a class="self-link" href="#dataset-publisher"></a></h4>
    <p>The person/organization data is then included as the dataset’s publisher:</p>
-   <div class="example" id="example-2e03a297">
-    <a class="self-link" href="#example-2e03a297"></a> A dataset with an organization as publisher. 
+   <div class="example" id="example-a53cd457">
+    <a class="self-link" href="#example-a53cd457"></a> A dataset with an organization as publisher. 
 <pre class="highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
   <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
     <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
+    <c- f>"identifier"</c-><c- p>:</c-> <c- f>"NL-HaKB"</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
     <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
     <c- f>"contactPoint"</c-><c- p>:</c-> <c- p>{</c->
@@ -3093,6 +3109,11 @@ even if that resource is the same on all pages.</p>
       <td>1
       <td>Required
      <tr>
+      <th scope="row"><a href="https://schema.org/identifier">schema:identifier</a>
+      <td>Identifier(s) of the organization, at least its <a href="https://www.nationaalarchief.nl/archiveren/kennisbank/isil-codes">ISIL code</a>
+      <td>1..n
+      <td>Recommended (will become required)
+     <tr>
       <th scope="row"><a href="https://schema.org/name">schema:name</a>
       <td>The organization’s full name.
       <td>1
@@ -3111,7 +3132,7 @@ even if that resource is the same on all pages.</p>
       <th scope="row"><a href="https://schema.org/contactPoint">schema:contactPoint</a>
       <td>Where <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑨">consumers</a> can reach the organization for questions and suggestions about the dataset.
       <td>1
-      <td>Recommended (scheduled to become Required for schema:publisher)
+      <td>Recommended (will become required for schema:publisher)
    </table>
    <h4 class="heading settled" data-level="4.6.3" id="distribution-attributes"><span class="secno">4.6.3. </span><span class="content">Distribution attributes</span><a class="self-link" href="#distribution-attributes"></a></h4>
     When the distribution is compressed, the compression format (e.g. zip, gzip) should be added to the <code>schema:encodingFormat</code> (eq. <code>text/turtle+gzip</code>). 
@@ -3144,7 +3165,7 @@ The value should indicate the Media type of the response of the schema:contentUr
       <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/description">schema:description</a>
-      <td>A description of the the distribution.
+      <td>A description of the distribution.
       <td>0..1
       <td>Recommended
      <tr>
@@ -3215,8 +3236,8 @@ The value should indicate the Media type of the response of the schema:contentUr
       <td>Required
    </table>
    <h4 class="heading settled" data-level="4.6.5" id="dataset-example"><span class="secno">4.6.5. </span><span class="content">Full example</span><a class="self-link" href="#dataset-example"></a></h4>
-   <div class="example" id="example-6d61ba27">
-    <a class="self-link" href="#example-6d61ba27"></a> A full <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description⑥">dataset description</a> that includes <a href="#dataset-overview">required and recommended attributes</a>. 
+   <div class="example" id="example-0cae58b2">
+    <a class="self-link" href="#example-0cae58b2"></a> A full <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description⑥">dataset description</a> that includes <a href="#dataset-overview">required and recommended attributes</a>. 
 <pre class="include-code highlight"><c- p>{</c->
   <c- nd>"@context"</c-><c- p>:</c-> <c- u>"https://schema.org/"</c-><c- p>,</c->
   <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Dataset"</c-><c- p>,</c->
@@ -3239,13 +3260,21 @@ The value should indicate the Media type of the response of the schema:contentUr
   <c- f>"publisher"</c-><c- p>:</c-> <c- p>{</c->
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
     <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
+    <c- f>"identifier"</c-><c- p>:</c-> <c- u>"NL-HaKB"</c-><c- p>,</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
     <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
-    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c->
+    <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c-><c- p>,</c->
+    <c- f>"contactPoint"</c-><c- p>:</c-> <c- p>{</c->
+      <c- nd>"@type"</c-><c- p>:</c-> <c- u>"ContactPoint"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"Dataset manager’s name"</c-><c- p>,</c->
+      <c- f>"email"</c-><c- p>:</c-> <c- u>"datasets@kb.nl"</c-><c- p>,</c->
+      <c- f>"telephone"</c-><c- p>:</c-> <c- u>"+31 6 12345678"</c->
+    <c- p>}</c->
   <c- p>},</c->
   <c- f>"creator"</c-><c- p>:</c-> <c- p>{</c->
     <c- nd>"@type"</c-><c- p>:</c-> <c- u>"Organization"</c-><c- p>,</c->
     <c- nd>"@id"</c-><c- p>:</c-> <c- u>"https://www.kb.nl"</c-><c- p>,</c->
+    <c- f>"identifier"</c-><c- p>:</c-> <c- u>"NL-HaKB"</c-><c- p>,</c->
     <c- f>"name"</c-><c- p>:</c-> <c- u>"Koninklijke Bibliotheek"</c-><c- p>,</c->
     <c- f>"alternateName"</c-><c- p>:</c-> <c- u>"KB"</c-><c- p>,</c->
     <c- f>"sameAs"</c-><c- p>:</c-> <c- u>"https://ror.org/02w4jbg70"</c-><c- p>,</c->
@@ -3685,7 +3714,7 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"consumer": {"dfnID":"consumer","dfnText":"Consumer","external":false,"refSections":[{"refs":[{"id":"ref-for-consumer"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-consumer\u2460"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-consumer\u2461"}],"title":"4.1.2. Information remains available"},{"refs":[{"id":"ref-for-consumer\u2462"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-consumer\u2463"}],"title":"4.2.2. License"},{"refs":[{"id":"ref-for-consumer\u2464"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-consumer\u2465"}],"title":"4.3.1. Contact information"},{"refs":[{"id":"ref-for-consumer\u2466"}],"title":"4.4. Distributions"},{"refs":[{"id":"ref-for-consumer\u2467"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-consumer\u2468"}],"title":"4.6.2. Organization attributes"}],"url":"#consumer"},
+"consumer": {"dfnID":"consumer","dfnText":"Consumer","external":false,"refSections":[{"refs":[{"id":"ref-for-consumer"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-consumer\u2460"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-consumer\u2461"}],"title":"4.1.2. Information remains available"},{"refs":[{"id":"ref-for-consumer\u2462"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-consumer\u2463"}],"title":"4.2.2. License"},{"refs":[{"id":"ref-for-consumer\u2464"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-consumer\u2465"}],"title":"4.3.2. Contact information"},{"refs":[{"id":"ref-for-consumer\u2466"}],"title":"4.4. Distributions"},{"refs":[{"id":"ref-for-consumer\u2467"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-consumer\u2468"}],"title":"4.6.2. Organization attributes"}],"url":"#consumer"},
 "data-catalog": {"dfnID":"data-catalog","dfnText":"Data catalog","external":false,"refSections":[{"refs":[{"id":"ref-for-data-catalog"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-data-catalog\u2460"}],"title":"4.5.1. Pagination"}],"url":"#data-catalog"},
 "dataset": {"dfnID":"dataset","dfnText":"Dataset","external":false,"refSections":[{"refs":[{"id":"ref-for-dataset"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-dataset\u2460"},{"id":"ref-for-dataset\u2461"},{"id":"ref-for-dataset\u2462"},{"id":"ref-for-dataset\u2463"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-dataset\u2464"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-dataset\u2465"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-dataset\u2466"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-dataset\u2467"}],"title":"4.3. Creator/publisher information"}],"url":"#dataset"},
 "dataset-description": {"dfnID":"dataset-description","dfnText":"Dataset description","external":false,"refSections":[{"refs":[{"id":"ref-for-dataset-description"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-dataset-description\u2460"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-dataset-description\u2461"}],"title":"4.1. Available in RDF"},{"refs":[{"id":"ref-for-dataset-description\u2462"}],"title":"4.2.3. Creation, publication and modification dates"},{"refs":[{"id":"ref-for-dataset-description\u2463"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-dataset-description\u2464"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-dataset-description\u2465"}],"title":"4.6.5. Full example"}],"url":"#dataset-description"},
