@@ -1488,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version d765c696b, updated Fri Mar 8 15:58:52 2024 -0800" name="generator">
+  <meta content="Bikeshed version a1dabb26c, updated Mon Jun 17 15:00:44 2024 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="3b131073c6530c591885b4363af689f94cd4452d" name="revision">
+  <meta content="1a3df21ee9d067330b606eb18c59d561d1331786" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2255,7 +2255,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-05-14">14 May 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-06-21">21 June 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2272,9 +2272,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 14 May 2024,
-the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
-which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
+In addition, as of 21 June 2024,
+the editors have made this specification available under the <a href="https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
+which is available at https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
    <hr title="Separator for header">
   </div>
@@ -2432,7 +2432,7 @@ or for querying (such as a <a data-link-type="biblio" href="#biblio-sparql11-ove
 This would probably be ‘heritage institution’ in <a href="https://www.netwerkdigitaalerfgoed.nl/wp-content/uploads/2019/05/190513-DERA2.0-ENG.pdf">DERA</a>.</p>
     <dt data-md><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="consumer">Consumer</dfn>
     <dd data-md>
-     <p>On organization or an individual that uses one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset④">datasets</a> that are provided by a <a data-link-type="dfn" href="#publisher" id="ref-for-publisher②">publisher</a>.</p>
+     <p>On organization, individual or service platform that uses one or more <a data-link-type="dfn" href="#dataset" id="ref-for-dataset④">datasets</a> that are provided by a <a data-link-type="dfn" href="#publisher" id="ref-for-publisher②">publisher</a>.</p>
    </dl>
    <h2 class="heading settled" data-level="3" id="conceptual-model"><span class="secno">3. </span><span class="content">Conceptual model</span><a class="self-link" href="#conceptual-model"></a></h2>
    <p>The model consists of four resource types: <a data-link-type="dfn" href="#publisher" id="ref-for-publisher③">organizations</a> publish <a data-link-type="dfn" href="#dataset" id="ref-for-dataset⑤">datasets</a>, which are available in <a data-link-type="dfn" href="#distribution" id="ref-for-distribution①">distributions</a>.
@@ -2874,7 +2874,8 @@ All distributions of a dataset <em>MUST</em> contain broadly the same data.</p>
    </div>
    <p>See <a href="#distribution-attributes">§ 4.6.3 Distribution attributes</a> for a full overview.</p>
    <h4 class="heading settled" data-level="4.4.1" id="distribution-date"><span class="secno">4.4.1. </span><span class="content">Creation and modification dates</span><a class="self-link" href="#distribution-date"></a></h4>
-   <p>Publishers <em>SHOULD</em> make known when the <a data-link-type="dfn" href="#distribution" id="ref-for-distribution③">distribution</a> was originally created and when it was last updated.
+   <p>Publishers <em>SHOULD</em> make known when the <a data-link-type="dfn" href="#distribution" id="ref-for-distribution③">distribution</a> was originally created and when it was last updated,
+so <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑧">consumers</a> can efficiently stay up-to-date with the latest changes. 
 Please note that this is different from <a href="#dataset-date">dataset description’s dates</a>.
 Datetimes (‘2019-08-15T08:05:00Z’) are preferred because they offer greater precision, 
 but simple dates (‘2019-04-14’) are also allowed.</p>
@@ -2931,7 +2932,7 @@ protocol which also types the distribution such as OAI-PMH, SPARQL and REST.</p>
    </div>
    <p>See also <a href="https://w3c.github.io/dwbp/usecasesv1.html#R-APIDocumented">Data on the Web Best Practices Use Cases &amp; Requirements § R-APIDocumented</a>.</p>
    <h3 class="heading settled" data-level="4.5" id="data-catalog-info"><span class="secno">4.5. </span><span class="content">Data catalog</span><a class="self-link" href="#data-catalog-info"></a></h3>
-   <p>A <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog">data catalog</a> provides <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑧">consumers</a> with a complete overview of available <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description⑤">dataset descriptions</a>,
+   <p>A <a data-link-type="dfn" href="#data-catalog" id="ref-for-data-catalog">data catalog</a> provides <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑨">consumers</a> with a complete overview of available <a data-link-type="dfn" href="#dataset-description" id="ref-for-dataset-description⑤">dataset descriptions</a>,
 which improves discoverability.</p>
    <blockquote>
     <p>Therefore, publishers <em>SHOULD</em> provide a catalog.</p>
@@ -3130,7 +3131,7 @@ even if that resource is the same on all pages.</p>
       <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/contactPoint">schema:contactPoint</a>
-      <td>Where <a data-link-type="dfn" href="#consumer" id="ref-for-consumer⑨">consumers</a> can reach the organization for questions and suggestions about the dataset.
+      <td>Where <a data-link-type="dfn" href="#consumer" id="ref-for-consumer①⓪">consumers</a> can reach the organization for questions and suggestions about the dataset.
       <td>1
       <td>Recommended (will become required for schema:publisher)
    </table>
@@ -3714,7 +3715,7 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"consumer": {"dfnID":"consumer","dfnText":"Consumer","external":false,"refSections":[{"refs":[{"id":"ref-for-consumer"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-consumer\u2460"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-consumer\u2461"}],"title":"4.1.2. Information remains available"},{"refs":[{"id":"ref-for-consumer\u2462"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-consumer\u2463"}],"title":"4.2.2. License"},{"refs":[{"id":"ref-for-consumer\u2464"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-consumer\u2465"}],"title":"4.3.2. Contact information"},{"refs":[{"id":"ref-for-consumer\u2466"}],"title":"4.4. Distributions"},{"refs":[{"id":"ref-for-consumer\u2467"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-consumer\u2468"}],"title":"4.6.2. Organization attributes"}],"url":"#consumer"},
+"consumer": {"dfnID":"consumer","dfnText":"Consumer","external":false,"refSections":[{"refs":[{"id":"ref-for-consumer"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-consumer\u2460"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-consumer\u2461"}],"title":"4.1.2. Information remains available"},{"refs":[{"id":"ref-for-consumer\u2462"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-consumer\u2463"}],"title":"4.2.2. License"},{"refs":[{"id":"ref-for-consumer\u2464"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-consumer\u2465"}],"title":"4.3.2. Contact information"},{"refs":[{"id":"ref-for-consumer\u2466"}],"title":"4.4. Distributions"},{"refs":[{"id":"ref-for-consumer\u2467"}],"title":"4.4.1. Creation and modification dates"},{"refs":[{"id":"ref-for-consumer\u2468"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-consumer\u2460\u24ea"}],"title":"4.6.2. Organization attributes"}],"url":"#consumer"},
 "data-catalog": {"dfnID":"data-catalog","dfnText":"Data catalog","external":false,"refSections":[{"refs":[{"id":"ref-for-data-catalog"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-data-catalog\u2460"}],"title":"4.5.1. Pagination"}],"url":"#data-catalog"},
 "dataset": {"dfnID":"dataset","dfnText":"Dataset","external":false,"refSections":[{"refs":[{"id":"ref-for-dataset"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-dataset\u2460"},{"id":"ref-for-dataset\u2461"},{"id":"ref-for-dataset\u2462"},{"id":"ref-for-dataset\u2463"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-dataset\u2464"}],"title":"3. Conceptual model"},{"refs":[{"id":"ref-for-dataset\u2465"}],"title":"4.1.1. Durable identifiers"},{"refs":[{"id":"ref-for-dataset\u2466"}],"title":"4.2. Dataset information"},{"refs":[{"id":"ref-for-dataset\u2467"}],"title":"4.3. Creator/publisher information"}],"url":"#dataset"},
 "dataset-description": {"dfnID":"dataset-description","dfnText":"Dataset description","external":false,"refSections":[{"refs":[{"id":"ref-for-dataset-description"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-dataset-description\u2460"}],"title":"2. Definitions"},{"refs":[{"id":"ref-for-dataset-description\u2461"}],"title":"4.1. Available in RDF"},{"refs":[{"id":"ref-for-dataset-description\u2462"}],"title":"4.2.3. Creation, publication and modification dates"},{"refs":[{"id":"ref-for-dataset-description\u2463"}],"title":"4.2.4. Version"},{"refs":[{"id":"ref-for-dataset-description\u2464"}],"title":"4.5. Data catalog"},{"refs":[{"id":"ref-for-dataset-description\u2465"}],"title":"4.6.5. Full example"}],"url":"#dataset-description"},
