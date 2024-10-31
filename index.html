@@ -1488,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version a1dabb26c, updated Mon Jun 17 15:00:44 2024 -0700" name="generator">
+  <meta content="Bikeshed version 9e4e5f0f6, updated Mon Oct 28 14:51:59 2024 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="1a3df21ee9d067330b606eb18c59d561d1331786" name="revision">
+  <meta content="6d4efe5ae752fac9bd80d5a1322203f826951245" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2255,7 +2255,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-06-21">21 June 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-10-31">31 October 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2272,7 +2272,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 21 June 2024,
+In addition, as of 31 October 2024,
 the editors have made this specification available under the <a href="https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2392,7 +2392,7 @@ this document is based on broader, international best practices for publishing d
 which provides more background on choices made here.</p>
    <h3 class="heading settled" data-level="1.3" id="examples"><span class="secno">1.3. </span><span class="content">Code examples</span><a class="self-link" href="#examples"></a></h3>
    <p>RDF code examples are in the <a data-link-type="biblio" href="#biblio-schema-org" title="Schema.org">[SCHEMA-ORG]</a> vocabulary, serialized as <a data-link-type="biblio" href="#biblio-json-ld" title="JSON-LD 1.0">[JSON-LD]</a>.</p>
-   <p>While other vocabularies, such as <a data-link-type="biblio" href="#biblio-vocab-dcat-2" title="Data Catalog Vocabulary (DCAT) - Version 2">[VOCAB-DCAT-2]</a> can also be used,
+   <p>While other vocabularies, such as <a data-link-type="biblio" href="#biblio-vocab-dcat-2" title="Data Catalog Vocabulary (DCAT) - Version 3">[VOCAB-DCAT-2]</a> can also be used,
 Schema.org has the advantage that it’s <a href="https://github.com/netwerk-digitaal-erfgoed/project-organisations-datasets/tree/master/publication-model#considerations">better picked up by search engines</a>,
 improving findability, one of the main goals of publishing datasets on the web.</p>
    <h2 class="heading settled" data-level="2" id="definitions"><span class="secno">2. </span><span class="content">Definitions</span><a class="self-link" href="#definitions"></a></h2>
@@ -3050,7 +3050,8 @@ even if that resource is the same on all pages.</p>
       <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/mainEntityOfPage">schema:mainEntityOfPage</a>
-      <td>URL of a landing page where the dataset is described.
+      <td> URL of a landing page where the dataset is described for human users.
+                The human-readable description <em>MUST</em> be consistent with and include at least all details (such as distributions) from the RDF dataset description. 
       <td>0..1
       <td>Recommended
      <tr>
@@ -3507,7 +3508,7 @@ can help with testing RDF metadata in general.</p>
    <dt id="biblio-turtle">[Turtle]
    <dd>Eric Prud'hommeaux; Gavin Carothers. <a href="https://w3c.github.io/rdf-turtle/spec/"><cite>RDF 1.1 Turtle</cite></a>. URL: <a href="https://w3c.github.io/rdf-turtle/spec/">https://w3c.github.io/rdf-turtle/spec/</a>
    <dt id="biblio-vocab-dcat-2">[VOCAB-DCAT-2]
-   <dd>Riccardo Albertoni; et al. <a href="https://w3c.github.io/dxwg/dcat/"><cite>Data Catalog Vocabulary (DCAT) - Version 2</cite></a>. URL: <a href="https://w3c.github.io/dxwg/dcat/">https://w3c.github.io/dxwg/dcat/</a>
+   <dd>Simon Cox; et al. <a href="https://w3c.github.io/dxwg/dcat/"><cite>Data Catalog Vocabulary (DCAT) - Version 3</cite></a>. URL: <a href="https://w3c.github.io/dxwg/dcat/">https://w3c.github.io/dxwg/dcat/</a>
   </dl>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
