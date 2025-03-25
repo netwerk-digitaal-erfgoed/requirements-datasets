@@ -781,6 +781,18 @@ This is an overview of required and recommended attributes.
             <td>0..n</td>
             <td>Recommended</td>
         </tr>
+        <tr>    
+            <th scope="row">[schema:includedInDataCatalog](https://schema.org/includedInDataCatalog)</th>
+            <td>The HTTP [[IRI]] of the data catalog(s) that the dataset belongs to.</td>
+            <td>0..n</td>
+            <td>Recommended</td>
+        </tr>        
+        <tr>    
+            <th scope="row">[schema:hasPart](https://schema.org/hasPart)</th>
+            <td>Indicates a dataset that is part of this dataset and also available as a separate dataset.</td>
+            <td>0..n</td>
+            <td>Recommended</td>
+        </tr>
     </tbody>
 </table>
 
