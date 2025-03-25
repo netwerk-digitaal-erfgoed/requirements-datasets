@@ -667,7 +667,7 @@ This is an overview of required and recommended attributes.
         <tr>
             <th scope="row">[schema:description](https://schema.org/description)</th>
             <td>See [[#dataset-basic]].</td>
-            <td>0..1</td>
+            <td>1..n</td>
             <td>Recommended</td>
         </tr>
         <tr>
@@ -824,7 +824,7 @@ This is an overview of required and recommended attributes.
         <tr>
             <th scope="row">[schema:name](https://schema.org/name)</th>
             <td>The organization’s full name.</td>
-            <td>1</td>
+            <td>1..n</td>
             <td>Required</td>
         </tr>
         <tr>
@@ -944,7 +944,7 @@ When the distribution is compressed, the compression format (e.g. zip, gzip) sho
         <tr>
             <th scope="row">@id</th>
             <td>The HTTP [[IRI]] of the data catalog.</td>
-            <td>1</td>
+            <td>1..n</td>
             <td>Required</td>
         </tr>
         <tr>
