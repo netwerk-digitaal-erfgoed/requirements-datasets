@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-datasets/" rel="canonical">
-  <meta content="c0a48379ef9f2d17f79215ad0fd09dcc07d2632b" name="revision">
+  <meta content="423c5dfb069dca9d09e89c3d41854af8faba2148" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2255,7 +2255,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for Datasets</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-03-26">26 March 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-03-28">28 March 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2272,7 +2272,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 26 March 2025,
+In addition, as of 28 March 2025,
 the editors have made this specification available under the <a href="https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -3001,7 +3001,7 @@ even if that resource is the same on all pages.</p>
      <tr>
       <th scope="row"><a href="https://schema.org/description">schema:description</a>
       <td>See <a href="#dataset-basic">§ 4.2.1 Basic information</a>.
-      <td>0..1
+      <td>1..n
       <td>Recommended
      <tr>
       <th scope="row"><a href="https://schema.org/publisher">schema:publisher</a>
@@ -3089,6 +3089,16 @@ even if that resource is the same on all pages.</p>
       <td>The HTTP <a data-link-type="biblio" href="#biblio-iri" title="Internationalized Resource Identifiers (IRIs)">[IRI]</a> of the data catalog(s) that the dataset belongs to.
       <td>0..n
       <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/includedInDataCatalog">schema:includedInDataCatalog</a>
+      <td>The HTTP <a data-link-type="biblio" href="#biblio-iri" title="Internationalized Resource Identifiers (IRIs)">[IRI]</a> of the data catalog(s) that the dataset belongs to.
+      <td>0..n
+      <td>Recommended
+     <tr>
+      <th scope="row"><a href="https://schema.org/hasPart">schema:hasPart</a>
+      <td>Indicates a dataset that is part of this dataset and also available as a separate dataset.
+      <td>0..n
+      <td>Recommended
    </table>
    <h4 class="heading settled" data-level="4.6.2" id="organization-overview"><span class="secno">4.6.2. </span><span class="content">Organization attributes</span><a class="self-link" href="#organization-overview"></a></h4>
    <table>
@@ -3113,7 +3123,7 @@ even if that resource is the same on all pages.</p>
      <tr>
       <th scope="row"><a href="https://schema.org/name">schema:name</a>
       <td>The organization’s full name.
-      <td>1
+      <td>1..n
       <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/alternateName">schema:alternateName</a>
@@ -3209,7 +3219,7 @@ The value should indicate the Media type of the response of the schema:contentUr
      <tr>
       <th scope="row">@id
       <td>The HTTP <a data-link-type="biblio" href="#biblio-iri" title="Internationalized Resource Identifiers (IRIs)">[IRI]</a> of the data catalog.
-      <td>1
+      <td>1..n
       <td>Required
      <tr>
       <th scope="row"><a href="https://schema.org/name">schema:name</a>
