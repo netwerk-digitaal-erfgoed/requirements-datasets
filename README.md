@@ -1,3 +1,5 @@
 # Requirements for Datasets
 
-This is the source code for the public document available at https://docs.nde.nl/requirements-datasets/.
+## ⚠️ This repository is archived.
+
+The requirements have moved to https://github.com/netwerk-digitaal-erfgoed/dataset-register/tree/main/requirements. 
